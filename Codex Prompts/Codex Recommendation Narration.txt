@@ -1,0 +1,32 @@
+“Current Recommendation Basket Context” is the MySQL model’s current shortlist of preferred replacement or deployment candidates. It came from jstockdata_reco_basket_current, which had been refreshed on June 20, 2026 at 05:55.
+In plain English: it is not saying you already own those symbols. It is saying, “if you are going to rotate money into model-approved holdings, these are the current candidates.”
+The basket rows in the PDF pair ranked equity and ETF candidates:
+
+Rank	Equity 	ETF 	Meaning
+=======================================
+1		GEV		QQQM	Strongest current basket choices
+2		CFG		JEPQ	Next tier candidates
+3		TER		FLQL	Still current basket holds
+4		HWM		IYF	Current signals look fresher than some legacy holdings
+5		ETR		USPX	Valid, but USPX had weaker daily SMA trend
+6		HOOD	XMMO	HOOD also aligns with your Roth short-put bullish setup
+
+How to use it:
+Do not treat it as an automatic buy list.
+It is a model-ranked watchlist/replacement list.
+
+Use it when trimming weak positions.
+For example, if you decide to reduce MSFT or SLV, the basket gives candidates where the current model signal is stronger.
+
+Prefer matching account purpose.
+For broad/core ETF exposure, look at QQQM, JEPQ, FLQL, IYF, XMMO.
+For more aggressive single-stock rotation, look at GEV, CFG, TER, HWM, ETR, HOOD.
+
+Check tradability and price before action.
+The basket is based on MySQL signals. Before any trade, I should check live Robinhood quote/tradability and, if in the Agentic account, run a review order first.
+
+Suggested practical actions:
+Hold SPY/IVV unless you want to rebalance.
+Do not add MSFT or SLV from the current signal read.
+If freeing capital, consider basket candidates first, especially QQQM, JEPQ, GEV, CFG, or HOOD.
+For HOOD, your current Roth short puts already align with the bullish basket signal, so the action is more “monitor/hold” than “add blindly.”

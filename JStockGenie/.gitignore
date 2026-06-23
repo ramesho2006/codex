@@ -1,0 +1,32 @@
+# Local secrets and environment files
+.env
+.env.*
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Node / web tooling
+node_modules/
+dist/
+build/
+.next/
+.vite/
+
+# Windows / editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Logs and temp files
+*.log
+tmp/
+temp/

@@ -1,0 +1,11 @@
+basket_rank,symbol,name,etf_appearances,combined_top10_weight_pct,avg_weight_per_appearing_etf_pct,signal_note,source_etfs
+1,AVGO,Broadcom Inc.,4,19.23,4.81,"Weekly BUY, daily SELL",VIG #1 (AVGO 5.39%) | VYM #1 (AVGO 8.49%) | DGRO #4 (AVGO 2.81%) | DGRW #9 (AVGO 2.54%)
+2,XOM,Exxon Mobil Corporation,4,15.24,3.81,"Weekly BUY, daily SELL",VIG #6 (XOM 2.66%) | VYM #3 (XOM 2.52%) | DGRO #7 (XOM 2.65%) | HDV #1 (XOM 7.41%)
+3,VZ,Verizon Communications Inc.,4,13.29,3.32,"Weekly BUY, daily SELL",SCHD #10 (VZ 3.54%) | SDY #1 (VZ 2.33%) | DVY #6 (VZ 1.76%) | HDV #3 (VZ 5.66%)
+4,HD,"The Home Depot, Inc.",4,13.26,3.31,Daily and weekly SELL,SCHD #8 (HD 3.61%) | DGRO #9 (HD 2.24%) | HDV #6 (HD 4.75%) | DGRW #8 (HD 2.66%)
+5,MSFT,Microsoft Corporation,3,12.85,4.28,"Weekly mixed/BUY, daily SELL",VIG #3 (MSFT 4.26%) | DGRO #5 (MSFT 2.75%) | DGRW #2 (MSFT 5.84%)
+6,AAPL,Apple Inc.,3,11.4,3.8,"Weekly BUY, daily SELL",VIG #2 (AAPL 4.55%) | DGRO #2 (AAPL 2.87%) | DGRW #3 (AAPL 3.98%)
+7,PG,The Procter & Gamble Company,3,11.13,3.71,"Daily BUY, weekly SELL",SCHD #5 (PG 3.79%) | DGRO #8 (PG 2.35%) | HDV #5 (PG 4.99%)
+8,CVX,Chevron Corporation,3,10.87,3.62,"Weekly BUY, daily SELL",VYM #10 (CVX 1.41%) | SCHD #7 (CVX 3.72%) | HDV #2 (CVX 5.74%)
+9,KO,The Coca-Cola Company,3,10.8,3.6,Daily and weekly BUY,SCHD #4 (KO 4.06%) | HDV #9 (KO 3.93%) | DGRW #7 (KO 2.81%)
+10,ABBV,AbbVie Inc.,3,9.88,3.29,"Daily BUY, weekly SELL",VYM #7 (ABBV 1.59%) | DGRO #6 (ABBV 2.65%) | HDV #4 (ABBV 5.64%)

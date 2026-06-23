@@ -1,0 +1,101 @@
+etf,rank,symbol,name,weight
+VUG,1,NVDA,NVIDIA Corporation,13.1
+VUG,2,AAPL,Apple Inc.,12.31
+VUG,3,MSFT,Microsoft Corporation,8.99
+VUG,4,GOOGL,Alphabet Inc.,5.95
+VUG,5,AVGO,Broadcom Inc.,5.16
+VUG,6,AMZN,"Amazon.com, Inc.",4.85
+VUG,7,GOOG,Alphabet Inc.,4.68
+VUG,8,META,"Meta Platforms, Inc.",3.73
+VUG,9,TSLA,"Tesla, Inc.",3.31
+VUG,10,LLY,Eli Lilly and Company,2.53
+IWF,1,NVDA,NVIDIA Corporation,13.5
+IWF,2,AAPL,Apple Inc.,11.81
+IWF,3,MSFT,Microsoft Corporation,7.82
+IWF,4,AVGO,Broadcom Inc.,5.5
+IWF,5,AMZN,"Amazon.com, Inc.",4.73
+IWF,6,GOOGL,Alphabet Inc.,3.92
+IWF,7,TSLA,"Tesla, Inc.",3.31
+IWF,8,GOOG,Alphabet Inc.,3.19
+IWF,9,META,"Meta Platforms, Inc.",3.02
+IWF,10,LLY,Eli Lilly and Company,2.74
+IVW,1,NVDA,NVIDIA Corporation,14.33
+IVW,2,MSFT,Microsoft Corporation,7.91
+IVW,3,AAPL,Apple Inc.,6.15
+IVW,4,GOOGL,Alphabet Inc.,6.06
+IVW,5,AVGO,Broadcom Inc.,5.47
+IVW,6,GOOG,Alphabet Inc.,4.88
+IVW,7,MU,"Micron Technology, Inc.",3.59
+IVW,8,AMZN,"Amazon.com, Inc.",3.56
+IVW,9,META,"Meta Platforms, Inc.",3.56
+IVW,10,BRK.B,Berkshire Hathaway Inc.,2.52
+SCHG,1,NVDA,NVIDIA Corporation,11.37
+SCHG,2,AAPL,Apple Inc.,9.71
+SCHG,3,MSFT,Microsoft Corporation,6.25
+SCHG,4,AMZN,"Amazon.com, Inc.",5.3
+SCHG,5,GOOGL,Alphabet Inc.,4.79
+SCHG,6,AVGO,Broadcom Inc.,4.33
+SCHG,7,GOOG,Alphabet Inc.,3.85
+SCHG,8,TSLA,"Tesla, Inc.",3.72
+SCHG,9,META,"Meta Platforms, Inc.",3.26
+SCHG,10,AMD,"Advanced Micro Devices, Inc.",3.16
+SPYG,1,NVDA,NVIDIA Corporation,14.44
+SPYG,2,MSFT,Microsoft Corporation,7.95
+SPYG,3,AAPL,Apple Inc.,6.17
+SPYG,4,GOOGL,Alphabet Inc.,6.09
+SPYG,5,AVGO,Broadcom Inc.,5.5
+SPYG,6,GOOG,Alphabet Inc.,4.9
+SPYG,7,MU,"Micron Technology, Inc.",3.6
+SPYG,8,AMZN,"Amazon.com, Inc.",3.57
+SPYG,9,META,"Meta Platforms, Inc.",3.56
+SPYG,10,BRK.B,Berkshire Hathaway Inc.,2.53
+VBK,2,ALAB,"Astera Labs, Inc.",1.37
+VBK,3,CIEN,Ciena Corporation,1.14
+VBK,4,RKLB,Rocket Lab Corporation,1.13
+VBK,5,CRDO,Credo Technology Group Holding Ltd,1.06
+VBK,6,BE,Bloom Energy Corporation,1.05
+VBK,7,COHR,Coherent Corp.,0.94
+VBK,8,FIX,"Comfort Systems USA, Inc.",0.89
+VBK,9,RVMD,"Revolution Medicines, Inc.",0.87
+VBK,10,LITE,Lumentum Holdings Inc.,0.85
+VBK,11,NTRA,"Natera, Inc.",0.82
+IWP,1,VRT,Vertiv Holdings Co,4.12
+IWP,2,HWM,Howmet Aerospace Inc.,3.62
+IWP,3,PWR,"Quanta Services, Inc.",2.61
+IWP,4,HLT,Hilton Worldwide Holdings Inc.,2.59
+IWP,5,RCL,Royal Caribbean Cruises Ltd.,2.58
+IWP,6,MPWR,"Monolithic Power Systems, Inc.",2.35
+IWP,7,NET,"Cloudflare, Inc.",2.29
+IWP,8,DDOG,"Datadog, Inc.",2.26
+IWP,9,FIX,"Comfort Systems USA, Inc.",2.23
+IWP,10,VST,Vistra Corp.,1.8
+IUSG,1,NVDA,NVIDIA Corporation,13.55
+IUSG,2,MSFT,Microsoft Corporation,7.67
+IUSG,3,AAPL,Apple Inc.,5.92
+IUSG,4,GOOGL,Alphabet Inc.,5.81
+IUSG,5,AVGO,Broadcom Inc.,5.08
+IUSG,6,GOOG,Alphabet Inc.,4.66
+IUSG,7,META,"Meta Platforms, Inc.",3.38
+IUSG,8,AMZN,"Amazon.com, Inc.",3.35
+IUSG,9,MU,"Micron Technology, Inc.",3.2
+IUSG,10,BRK.B,Berkshire Hathaway Inc.,2.46
+EFG,1,ASML,ASML Holding N.V.,6.72
+EFG,2,AZN,AstraZeneca PLC,2.38
+EFG,3,8035,Tokyo Electron Limited,1.91
+EFG,4,CBA,Commonwealth Bank of Australia,1.72
+EFG,5,285A,Kioxia Holdings Corporation,1.7
+EFG,6,SU,Schneider Electric S.E.,1.65
+EFG,7,ABBN,ABB Ltd,1.53
+EFG,8,UBSG,UBS Group AG,1.47
+EFG,9,SAP,SAP SE,1.46
+EFG,10,RR,Rolls-Royce Holdings plc,1.41
+IWO,1,BE,Bloom Energy Corporation,3.92
+IWO,2,CRDO,Credo Technology Group Holding Ltd,2.39
+IWO,3,STRL,"Sterling Infrastructure, Inc.",1.4
+IWO,4,FN,Fabrinet,1.13
+IWO,5,IONQ,"IonQ, Inc.",1.06
+IWO,6,SITM,SiTime Corporation,0.89
+IWO,7,GH,"Guardant Health, Inc.",0.89
+IWO,8,MOD,Modine Manufacturing Company,0.85
+IWO,9,RMBS,Rambus Inc.,0.83
+IWO,10,SMTC,Semtech Corporation,0.8

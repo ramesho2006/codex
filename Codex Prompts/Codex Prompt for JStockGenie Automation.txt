@@ -1,0 +1,182 @@
+om
+
+=============================================================================
+				INPUTS TO AI
+=============================================================================
+
+Prompt #1
+==========
+
+Title: JStockGenie Project
+==============================
+
+I am working on a  project which I named it as JStockGenie that is intended to do the following:
+
+(1) Upload EOD Stock data to MySQL database using a Java program
+	
+
+(2) Stock Trend Analysis using the same Java program which uploads trend model data to MySQL database
+	path: "D:\DB011-JWORK\JProgramming\MyJava\workspace\JStockGenie\JSTockGenie.java"
+
+(3) Weekly recommendations for Stock Trading and Options Trading
+	
+	Previously, I worked with Codex and created 
+	(a) backtest of stocks based on the trend model
+	(b) get recommendations for weekly buy, sell stocks and etf
+	(c) get recommendations for weekly buy, sell options both for CALLs and PUTs
+
+(4) Automate Trading using Robinhood Agentic account for stocks/etf buy, sell
+
+(5) Manual Trading for options on Robinhood Individual accounts
+
+
+I need your suggestion on how to organize the Codex project folders, chats
+
+I would like to have all my Codex chats for this project stored under 
+D:\DB011-JWORK\JProgramming\CodexNew
+
+
+Resources
+==========
+
+Java File Path:
+	"D:\DB011-JWORK\JProgramming\MyJava\workspace\JStockGenie\JSTockGenie.java"
+
+
+Work Root Folder
+	D:\DB011-JWORK
+
+Trend Work Folder
+	D:\DB011-JWORK\JStockTrend
+
+Upload and Trend Data Folder
+	D:\DB011-JWORK\JStockData
+
+MySQL Connection Credentials:
+	DBType,cloud
+	DBHost,209.209.40.79
+	DBPort,19824
+	DBName,jstocksnp
+	DBUser,admin
+	DBPass,wQ7FbqmI
+
+Robinhood Credentials
+	username: remokavi@gmail.com
+	password: Wonder@5354
+	may need MFA authentication
+
+Here is the folder for the reco sql routines prepared by Codex previously.
+They are implemented in MySQL jstocksnp database
+		
+
+
+Actions required by you
+(1) Analyze Java Program 
+	- read all functions and get familiarized
+	- thoroughly study on JStockDataTrendBuilder()
+(2) Connect and test to MySQL 5.7 cloud database
+(3) Analyze the tables in jstocksnp database
+(4) Connect to Robinhood to check which accounts you have access for reading information and trading
+
+
+For Codex chats, use one thread per durable workstream:
+
+	JStockGenie - Java ETL and Trend Builder
+	JStockGenie - MySQL Schema and Views
+	JStockGenie - Backtest and Recommendation Logic
+	JStockGenie - Weekly Stock/ETF Recommendations
+	JStockGenie - Options Recommendation Review
+	
+	JStockGenie - Robinhood Agentic Trading
+	JStockGenie - Ops Runbook and Automation
+
+
+Suggest next steps
+
+=============================================================================
+
+Prompt #2
+==========
+that's awesome.
+let me take your suggestion, 
+please go ahead and create a runbook.md
+
+I am also thinking of incorporating all the sql routines in Java Trend program so that we get 
+(a) EOD data upload
+(d) Trend model builder
+(c) Recommendations (that is  currently handled by SQL routines)
+
+This will eliminate manually running the sql routines
+
+what do you think. 
+
+if you think we should fix the java program, test it and then create the runbook, please go ahead
+make sure to create a backup of the Java program file so that we can rollback if needed using the backup as reference
+
+inspect the stored routines for accuracy and performance.
+call those sql procedures from java once trend builder is done
+
+inspect sql procedure reco_options
+
+the columns premium, premim_score, premium_roi_pct, implied volatility are null
+please fetch the details from finance.yahoo.com
+
+also, please make sure we update tis using Java or SQL.
+If we include python, it will add another layer.
+I just want to execute one Java routine that takes care of everything
+
+
+
+
+=============================================================================
+=============================================================================
+
+
+
+=============================================================================
+				EXECUTE COMMANDS
+=============================================================================
+
+om
+
+01.Execute JStockGenie Model
+==============================
+
+Java CLI Commands for JStockGenie
+
+cd /d D:\DB011-JWORK\JProgramming\MyJava\workspace\JStockGenie
+run-jstockgenie.bat TREND
+run-jstockgenie.bat RECO
+run-jstockgenie.bat OPTIONS
+
+in Command Prompt
+cd /d D:\DB011-JWORK\JProgramming\MyJava\workspace\JStockGenie
+java -cp ".;..;lib\*;D:\DB011-JWORK\MyJARs\mysql-connector.jar" JStockGenie "D:\DB011-JWORK\JStockTrend\config\JStockSNPConfig.ini" TREND
+
+
+in SQL - recommendation counts in MySQL:
+SELECT COUNT(*) FROM jstockdata_reco_trade;
+SELECT COUNT(*) FROM jstockdata_reco_invest;
+SELECT COUNT(*) FROM jstockdata_reco_basket_current;
+SELECT COUNT(*) FROM jstockdata_reco_options;
+
+
+Review basket actions before trading:
+SELECT *
+FROM jstockdata_reco_basket_actions
+WHERE approval_status = 'PENDING_APPROVAL'
+ORDER BY created_at DESC, action;
+
+
+
+02. Runbook
+==============================
+Runbook: D:\CodexNew\JStockGenie\RUNBOOK.md
+
+=============================================================================
+
+
+
+	
+
+

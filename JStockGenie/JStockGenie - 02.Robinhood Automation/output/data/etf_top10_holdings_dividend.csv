@@ -1,0 +1,101 @@
+etf,rank,symbol,name,weight
+VIG,1,AVGO,Broadcom Inc.,5.39
+VIG,2,AAPL,Apple Inc.,4.55
+VIG,3,MSFT,Microsoft Corporation,4.26
+VIG,4,LLY,Eli Lilly and Company,3.83
+VIG,5,JPM,JPMorgan Chase & Co.,3.31
+VIG,6,XOM,Exxon Mobil Corporation,2.66
+VIG,7,JNJ,Johnson & Johnson,2.38
+VIG,8,V,Visa Inc.,2.24
+VIG,9,WMT,Walmart Inc.,2.22
+VIG,10,CSCO,"Cisco Systems, Inc.",2.08
+VYM,1,AVGO,Broadcom Inc.,8.49
+VYM,2,JPM,JPMorgan Chase & Co.,3.13
+VYM,3,XOM,Exxon Mobil Corporation,2.52
+VYM,4,JNJ,Johnson & Johnson,2.23
+VYM,5,CSCO,"Cisco Systems, Inc.",1.97
+VYM,6,CAT,Caterpillar Inc.,1.67
+VYM,7,ABBV,AbbVie Inc.,1.59
+VYM,8,ORCL,Oracle Corporation,1.56
+VYM,9,UNH,UnitedHealth Group Incorporated,1.42
+VYM,10,CVX,Chevron Corporation,1.41
+SCHD,1,TXN,Texas Instruments Incorporated,6.36
+SCHD,2,QCOM,QUALCOMM Incorporated,6.19
+SCHD,3,UNH,UnitedHealth Group Incorporated,5.48
+SCHD,4,KO,The Coca-Cola Company,4.06
+SCHD,5,PG,The Procter & Gamble Company,3.79
+SCHD,6,MRK,"Merck & Co., Inc.",3.78
+SCHD,7,CVX,Chevron Corporation,3.72
+SCHD,8,HD,"The Home Depot, Inc.",3.61
+SCHD,9,AMGN,Amgen Inc.,3.55
+SCHD,10,VZ,Verizon Communications Inc.,3.54
+DGRO,1,JPM,JPMorgan Chase & Co.,3.04
+DGRO,2,AAPL,Apple Inc.,2.87
+DGRO,3,JNJ,Johnson & Johnson,2.84
+DGRO,4,AVGO,Broadcom Inc.,2.81
+DGRO,5,MSFT,Microsoft Corporation,2.75
+DGRO,6,ABBV,AbbVie Inc.,2.65
+DGRO,7,XOM,Exxon Mobil Corporation,2.65
+DGRO,8,PG,The Procter & Gamble Company,2.35
+DGRO,9,HD,"The Home Depot, Inc.",2.24
+DGRO,10,PM,Philip Morris International Inc.,2.07
+SDY,1,VZ,Verizon Communications Inc.,2.33
+SDY,2,O,Realty Income Corporation,2.11
+SDY,3,QCOM,QUALCOMM Incorporated,1.95
+SDY,4,TXN,Texas Instruments Incorporated,1.71
+SDY,5,KVUE,Kenvue Inc.,1.69
+SDY,6,KMB,Kimberly-Clark Corporation,1.66
+SDY,7,TGT,Target Corporation,1.57
+SDY,8,ADP,"Automatic Data Processing, Inc.",1.52
+SDY,9,MCHP,Microchip Technology Incorporated,1.47
+SDY,10,PEP,"PepsiCo, Inc.",1.42
+DVY,1,MO,"Altria Group, Inc.",2.2
+DVY,2,TROW,"T. Rowe Price Group, Inc.",2.14
+DVY,3,PFE,Pfizer Inc.,2.12
+DVY,4,PRU,"Prudential Financial, Inc.",2.02
+DVY,5,HPQ,HP Inc.,1.83
+DVY,6,VZ,Verizon Communications Inc.,1.76
+DVY,7,OKE,"ONEOK, Inc.",1.7
+DVY,8,F,Ford Motor Company,1.63
+DVY,9,EIX,Edison International,1.6
+DVY,10,KMB,Kimberly-Clark Corporation,1.59
+FVD,1,WIT,Wipro Limited,0.48
+FVD,2,HRL,Hormel Foods Corporation,0.48
+FVD,3,MS,Morgan Stanley,0.45
+FVD,4,GS,"The Goldman Sachs Group, Inc.",0.45
+FVD,5,HUBB,Hubbell Incorporated,0.45
+FVD,6,REYN,Reynolds Consumer Products Inc.,0.45
+FVD,7,MSM,"MSC Industrial Direct Co., Inc.",0.45
+FVD,8,SJM,The J. M. Smucker Company,0.45
+FVD,9,BNS,The Bank of Nova Scotia,0.44
+FVD,10,SLF,Sun Life Financial Inc.,0.44
+NOBL,1,CAT,Caterpillar Inc.,1.77
+NOBL,2,BEN,"Franklin Resources, Inc.",1.74
+NOBL,3,WST,"West Pharmaceutical Services, Inc.",1.71
+NOBL,4,NUE,Nucor Corporation,1.68
+NOBL,5,GWW,"W.W. Grainger, Inc.",1.67
+NOBL,6,SJM,The J. M. Smucker Company,1.66
+NOBL,7,SWK,"Stanley Black & Decker, Inc.",1.63
+NOBL,8,HRL,Hormel Foods Corporation,1.63
+NOBL,9,CL,Colgate-Palmolive Company,1.57
+NOBL,10,TROW,"T. Rowe Price Group, Inc.",1.56
+HDV,1,XOM,Exxon Mobil Corporation,7.41
+HDV,2,CVX,Chevron Corporation,5.74
+HDV,3,VZ,Verizon Communications Inc.,5.66
+HDV,4,ABBV,AbbVie Inc.,5.64
+HDV,5,PG,The Procter & Gamble Company,4.99
+HDV,6,HD,"The Home Depot, Inc.",4.75
+HDV,7,PFE,Pfizer Inc.,4.56
+HDV,8,PM,Philip Morris International Inc.,4.41
+HDV,9,KO,The Coca-Cola Company,3.93
+HDV,10,PEP,"PepsiCo, Inc.",3.74
+DGRW,1,NVDA,NVIDIA Corporation,8.37
+DGRW,2,MSFT,Microsoft Corporation,5.84
+DGRW,3,AAPL,Apple Inc.,3.98
+DGRW,4,META,"Meta Platforms, Inc.",3.04
+DGRW,5,ORCL,Oracle Corporation,2.93
+DGRW,6,UNH,UnitedHealth Group Incorporated,2.82
+DGRW,7,KO,The Coca-Cola Company,2.81
+DGRW,8,HD,"The Home Depot, Inc.",2.66
+DGRW,9,AVGO,Broadcom Inc.,2.54
+DGRW,10,GOOG,Alphabet Inc.,2.4

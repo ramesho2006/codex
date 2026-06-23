@@ -1,0 +1,34 @@
+
+I have created the following environmental variables
+
+For MySQL connection, use
+MYSQL57_HOST
+MYSQL57_PORT
+MYSQL57_DBNAME
+MYSQL57_USER
+MYSQL57_PASS
+
+For Robinhood broker connection, use
+RBHOOD_USER
+RNHOOD_PASS
+
+
+use this mysql cli url path
+mysql://admin:wQ7FbqmI@209.209.40.79:19824/jstocksnp
+
+
+great. can you conenct to Robinhood and provide
+account names, balances and 
+which accounts, securities you can automate
+
+
+
+Other than Agentic account, can you analyze the existing positions,
+
+connect to mysql tables 
+jstockdata_hatrend, jstockdata_hatrend_extend,
+jstockdata_harecent, jstockdata_harecent_extend,
+jstockdata_reco_* tables, 
+reco_* routines
+
+and provide the best actions for the current Robinhood positions by account wise

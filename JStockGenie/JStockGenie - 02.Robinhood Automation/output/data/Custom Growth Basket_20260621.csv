@@ -1,0 +1,11 @@
+basket_rank,symbol,name,etf_appearances,combined_top10_weight_pct,avg_weight_per_appearing_etf_pct,signal_note,source_etfs
+1,NVDA,NVIDIA Corporation,6,80.29,13.38,"Weekly BUY, daily SELL",VUG #1 (NVDA 13.10%) | IWF #1 (NVDA 13.50%) | IVW #1 (NVDA 14.33%) | SCHG #1 (NVDA 11.37%) | SPYG #1 (NVDA 14.44%) | IUSG #1 (NVDA 13.55%)
+2,GOOGL/GOOG,Alphabet Inc.,6,58.78,9.8,"reco_backtest BUY; weekly BUY, daily SELL",VUG #4 (GOOGL 5.95%) | VUG #7 (GOOG 4.68%) | IWF #6 (GOOGL 3.92%) | IWF #8 (GOOG 3.19%) | IVW #4 (GOOGL 6.06%) | IVW #6 (GOOG 4.88%) | SCHG #5 (GOOGL 4.79%) | SCHG #7 (GOOG 3.85%) | SPYG #4 (GOOGL 6.09%) | SPYG #6 (GOOG 4.90%) | IUSG #4 (GOOGL 5.81%) | IUSG #6 (GOOG 4.66%)
+3,AAPL,Apple Inc.,6,52.07,8.68,"Weekly BUY, daily SELL",VUG #2 (AAPL 12.31%) | IWF #2 (AAPL 11.81%) | IVW #3 (AAPL 6.15%) | SCHG #2 (AAPL 9.71%) | SPYG #3 (AAPL 6.17%) | IUSG #3 (AAPL 5.92%)
+4,MSFT,Microsoft Corporation,6,46.59,7.77,"Weekly mixed/BUY, daily SELL",VUG #3 (MSFT 8.99%) | IWF #3 (MSFT 7.82%) | IVW #2 (MSFT 7.91%) | SCHG #3 (MSFT 6.25%) | SPYG #2 (MSFT 7.95%) | IUSG #2 (MSFT 7.67%)
+5,AVGO,Broadcom Inc.,6,31.04,5.17,"Weekly BUY, daily SELL",VUG #5 (AVGO 5.16%) | IWF #4 (AVGO 5.50%) | IVW #5 (AVGO 5.47%) | SCHG #6 (AVGO 4.33%) | SPYG #5 (AVGO 5.50%) | IUSG #5 (AVGO 5.08%)
+6,AMZN,"Amazon.com, Inc.",6,25.36,4.23,"Weekly BUY, daily SELL",VUG #6 (AMZN 4.85%) | IWF #5 (AMZN 4.73%) | IVW #8 (AMZN 3.56%) | SCHG #4 (AMZN 5.30%) | SPYG #8 (AMZN 3.57%) | IUSG #8 (AMZN 3.35%)
+7,META,"Meta Platforms, Inc.",6,20.51,3.42,Daily and weekly SELL,VUG #8 (META 3.73%) | IWF #9 (META 3.02%) | IVW #9 (META 3.56%) | SCHG #9 (META 3.26%) | SPYG #9 (META 3.56%) | IUSG #7 (META 3.38%)
+8,MU,"Micron Technology, Inc.",3,10.39,3.46,Daily and weekly BUY,IVW #7 (MU 3.59%) | SPYG #7 (MU 3.60%) | IUSG #9 (MU 3.20%)
+9,TSLA,"Tesla, Inc.",3,10.34,3.45,"Weekly BUY, daily SELL",VUG #9 (TSLA 3.31%) | IWF #7 (TSLA 3.31%) | SCHG #8 (TSLA 3.72%)
+10,BRK.B,Berkshire Hathaway Inc.,3,7.51,2.5,No current HA signal found,IVW #10 (BRK.B 2.52%) | SPYG #10 (BRK.B 2.53%) | IUSG #10 (BRK.B 2.46%)
