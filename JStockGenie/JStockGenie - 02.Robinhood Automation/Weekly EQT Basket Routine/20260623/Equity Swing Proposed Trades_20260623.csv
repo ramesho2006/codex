@@ -1,0 +1,1 @@
+trade_id,run_date,account_name,account_last4,symbol,side,order_type,time_in_force,market_hours,quantity,dollar_amount,limit_price,estimated_price,estimated_notional,reason,review_status,user_confirmation,order_id,order_status,notes

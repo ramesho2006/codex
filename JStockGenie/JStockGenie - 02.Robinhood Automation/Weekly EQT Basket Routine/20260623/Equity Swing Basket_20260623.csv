@@ -1,0 +1,11 @@
+basket_rank,symbol,company_name,reco_source,trade_signal,recent_signal_date,days_since_recent_signal,daily_signal,weekly_signal,sma_delta_trend,backtest_win_rate_pct,backtest_total_return_pct,backtest_avg_trade_return_pct,backtest_worst_trade_pct,target_weight_pct,planned_action,notes
+1,LLY,,jstockdata_reco_trade/WEEKLY,BUY,2026-06-01,15,BUY,BUY,UP,66.67,-2.24,-0.29,-13.13,20.00,TARGET_BUY_CANDIDATE,Initial target candidate from reco_trade; review Robinhood quote/tradability before any order.
+2,CAT,,jstockdata_reco_trade/DAILY,BUY,2026-06-04,15,BUY,BUY,UP,60.00,127.27,9.67,-7.51,20.00,TARGET_BUY_CANDIDATE,Initial target candidate from reco_trade; review Robinhood quote/tradability before any order.
+3,GEV,,jstockdata_reco_trade/DAILY,BUY,2026-06-18,1,BUY,BUY,UP,70.00,369.82,21.38,-7.28,20.00,TARGET_BUY_CANDIDATE,Initial target candidate from reco_trade; review Robinhood quote/tradability before any order.
+4,HWM,,jstockdata_reco_trade/DAILY,BUY,2026-06-15,4,BUY,BUY,UP,72.73,153.77,9.48,-8.87,20.00,TARGET_BUY_CANDIDATE,Initial target candidate from reco_trade; review Robinhood quote/tradability before any order.
+5,CMI,,jstockdata_reco_trade/DAILY,BUY,2026-06-16,3,BUY,BUY,UP,70.00,98.33,7.79,-11.00,20.00,TARGET_BUY_CANDIDATE,Initial target candidate from reco_trade; review Robinhood quote/tradability before any order.
+6,TER,,jstockdata_reco_trade/DAILY,BUY,2026-05-27,23,BUY,BUY,UP,75.00,182.31,15.33,-6.87,WATCHLIST,WATCHLIST,Backup candidate if target basket slot opens.
+7,ETR,,jstockdata_reco_trade/DAILY,BUY,2026-06-17,2,BUY,BUY,UP,77.78,63.48,6.59,-7.59,WATCHLIST,WATCHLIST,Backup candidate if target basket slot opens.
+8,CFG,,jstockdata_reco_trade/DAILY,BUY,2026-06-08,11,BUY,BUY,UP,85.71,88.53,9.70,-1.05,WATCHLIST,WATCHLIST,Backup candidate if target basket slot opens.
+9,SYF,,jstockdata_reco_trade/DAILY,BUY,2026-06-15,4,BUY,BUY,UP,66.67,54.54,5.52,-7.32,WATCHLIST,WATCHLIST,Backup candidate if target basket slot opens.
+10,RL,,jstockdata_reco_trade/DAILY,BUY,2026-05-26,24,BUY,BUY,UP,77.78,59.62,5.60,-5.63,WATCHLIST,WATCHLIST,Backup candidate if target basket slot opens.

@@ -1,0 +1,2 @@
+run_date,account_name,account_last4,symbol,quantity,shares_available_for_sells,average_buy_price,latest_price,market_value,cost_basis,unrealized_pnl,unrealized_pnl_pct,basket_status,planned_action,notes
+2026-06-23,My Agentic,1224,AAPL,0.031935,0.031935,313.140000,,,,,,REVIEW_EXISTING,Review against next weekly basket run
