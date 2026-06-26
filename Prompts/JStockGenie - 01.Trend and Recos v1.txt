@@ -4,11 +4,9 @@ om
 				INPUTS TO AI
 =============================================================================
 
-Prompt #1
-==========
+Prompt #1: Project Introduction
+====================================
 
-Title: JStockGenie Project
-==============================
 
 I am working on a  project which I named it as JStockGenie that is intended to do the following:
 
@@ -36,8 +34,8 @@ I would like to have all my Codex chats for this project stored under
 D:\DB011-JWORK\JProgramming\CodexNew
 
 
-Resources
-==========
+Resource Locations
+==================
 
 Java File Path:
 	"D:\DB011-JWORK\JProgramming\MyJava\workspace\JStockGenie\JSTockGenie.java"
@@ -94,10 +92,12 @@ For Codex chats, use one thread per durable workstream:
 Suggest next steps
 
 =============================================================================
+=============================================================================
 
-Prompt #2
-==========
-that's awesome.
+
+Prompt #2: Create JStockGenie Runbook
+====================================
+
 let me take your suggestion, 
 please go ahead and create a runbook.md
 
@@ -129,18 +129,12 @@ I just want to execute one Java routine that takes care of everything
 
 
 =============================================================================
-=============================================================================
-
-
-
-=============================================================================
 				EXECUTE COMMANDS
 =============================================================================
 
-om
 
-01.Execute JStockGenie Model
-==============================
+Prompt #03.Execute JStockGenie Model
+====================================
 
 Java CLI Commands for JStockGenie
 
@@ -169,8 +163,7 @@ ORDER BY created_at DESC, action;
 
 
 
-02. Runbook
-==============================
+Runbook Location
 Runbook: D:\CodexNew\JStockGenie\RUNBOOK.md
 
 =============================================================================

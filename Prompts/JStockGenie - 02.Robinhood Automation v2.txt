@@ -1,0 +1,16 @@
+20260625 22:53
+------------------------------------------------------------
+moving forward, save all the prompts I provide in this chat in the file 
+"D:\Codex\Prompts\JStockGenie - 02.Robinhood Automation v2.txt"
+
+organize it with YYYYMMDD HH:MM followed by a line divider
+
+20260625 23:06
+------------------------------------------------------------
+read "D:\Codex\Prompts\JStockGenie - 02.Robinhood Automation.txt" file again
+
+These are the prompts used in the previous Codex session
+
+Analyze to get familiar with the instructions and the progress made earlier
+
+connect with MySQL, check the routines mentioned in the prompt v1 file

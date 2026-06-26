@@ -1,29 +1,37 @@
+PROMPT#1: Initial Connection
+==============================
 
 I have created the following environmental variables
 
 For MySQL connection, use
-MYSQL57_HOST
-MYSQL57_PORT
-MYSQL57_DBNAME
-MYSQL57_USER
-MYSQL57_PASS
+MYSQL57_URL
+
+use this mysql cli url path
+mysql://admin:wQ7FbqmI@209.209.40.79:19824/jstocksnp
+
 
 For Robinhood broker connection, use
 RBHOOD_USER
 RNHOOD_PASS
 
-use this mysql cli url path
-mysql://admin:wQ7FbqmI@209.209.40.79:19824/jstocksnp
+
+PROMPT#2: Test Connections
+==============================
 
 Test the connections to MYSQL and Robinhood
 
-======
-great. can you conenct to Robinhood and provide
+connect to MySQL cloud database and get all records of jstockdata_config
+
+great. can you connect to Robinhood and provide
 account names, balances and 
 which accounts, securities you can automate
 
 
-======
+
+
+PROMPT#3: Robinhood Account Summary
+====================================
+
 Other than Agentic account, can you analyze the existing positions,
 
 connect to mysql tables 
@@ -34,12 +42,13 @@ reco_* routines
 
 and provide the best actions for the current Robinhood positions by account wise
 
-
-======
-what is "Current Recommendation Basket Context " in the pdf.
+specify what is "Current Recommendation Basket Context " in the pdf.
 please explain about that and how to use or what actions to take
 
-======
+
+
+PROMPT#4: Robinhood Trade Preparation
+====================================
 If I give you the top 10 ETFs each for growth and dividend, can you do the following
 (a) Collect all the holdings under each of the ETFs
 (b) Use JStockGenie reco_backtest routine and jstockdata_reco_backtest table results 
@@ -47,19 +56,19 @@ If I give you the top 10 ETFs each for growth and dividend, can you do the follo
 (d) Build a custom growth basket and a dividend basket with top 10 in each baskets
 
 
-======
+
+PROMPT#5: ETF Basket Weekly Routine
+====================================
 can you use this link to find out the top growth and dividend ETFs 
 https://www.etf.com/etfanalytics/etf-screener?utm_medium=nav
 
-======
-great. 
 
 now, can you go over these ETFs and
 (a) pick top 10 of the holdings each from top growth and dividend etfs
 (b) create a basket of top 10 growth stocks
 (c) create a basket of top 10 dividend stocks
 
-======
+
 Let us just stick with "Custom Growth Basket" and "Custom Dividend Basket" only.
 Ignore other csv files, just use them for your analysis.
 
@@ -72,35 +81,17 @@ as a weekly routine and give an appropriate name to the routine so that when I a
 (c) create a basket of top 10 dividend stocks
 
 
-======
-create a subfolder under the chat folder and save all the relavant files including routine, baskets CSVs, etc
-
-
-======
-awesome. thanks.
+create a subfolder under the chat folder and save all the relevant files including routine, baskets CSVs, etc
+name it as "Weekly ETF Basket Routine"
 
 
 
+PROMPT#6: EQT (Stocks) Basket Weekly Routine
+====================================
 
-now, similar to this "ETF Growth Dividend Basket Weekly Routine"
+now, similar to this "ETF Growth Dividend Basket Weekly Routine" - named "Weekly ETF Basket Routine"
 I want you to create a "Equity Swing Basket Weekly Routine" using JStockGenie trend model
- 
-
-
-to achieve this, 
-connect to mysql tables 
-jstockdata_hatrend, jstockdata_hatrend_extend,
-jstockdata_harecent, jstockdata_harecent_extend,
-jstockdata_reco_* tables, 
-reco_* routines
-
-awesome. thanks.
-Let us keep this Weekly ETF routine aside for now and will continue later.
-
-
-now, similar to this "ETF Growth Dividend Basket Weekly Routine"
-I want you to create a "Equity Swing Basket Weekly Routine" using JStockGenie trend model 
-
+name it as "Weekly EQT Basket Routine"
 
 to achieve this, 
 connect to mysql tables 
@@ -108,38 +99,10 @@ jstockdata_hatrend, jstockdata_hatrend_extend,
 jstockdata_harecent, jstockdata_harecent_extend,
 jstockdata_reco_* tables, 
 reco_* routines
-
-
-so that, if I invest $1000 or $1500 in Robinhood Agentic account,
-can you manage 
-
-(a) run the weekly swing routine
-(b) execute SELL/BUY based on the routine
-(c) maintain/update current positions in Agentic account
-(d) keep track of weekly profits
-(c) maintain  a weekly trade journal
-
-======
-om
-
-Rename
-"ETF Growth Dividend Basket Weekly Routine_20260621" 
-to
-"Weekly ETF Basket Routine"
-
-
-
-
-Rename
-"Equity Swing Basket Weekly Routine_20260623"
-to
-"Weekly EQT Basket Routine"
-======
 
 
 Avoid YYYYMMDD suffix for folders
 create subfolders YYYYMMDD inside each of the parent routine
-
 
 
 example
@@ -159,11 +122,22 @@ or
 "perform Weekly EQT Basket Routine"
 
 ======
+
+PROMPT#7: Robinhood Trade Automation
+====================================
+so that, if I invest $1000 or $1500 in Robinhood Agentic account,
+can you manage 
+
+(a) run the weekly swing routine
+(b) execute SELL/BUY based on the routine
+(c) maintain/update current positions in Agentic account
+(d) keep track of weekly profits
+(c) maintain  a weekly trade journal
+
+
 om
 
 connect to mysql tables
-
-
 
 ############ MySQL resources
 analyze 

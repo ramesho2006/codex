@@ -30,3 +30,7 @@ Desktop.ini
 *.log
 tmp/
 temp/
+
+# Codex local runtime/session state
+Sessions/
+sync.ffs_db

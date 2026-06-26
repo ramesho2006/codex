@@ -1,0 +1,27 @@
+20260625 22:15
+=============================================================================
+use "D:\Codex\Projects\JStockGenie\JStockGenie - 01.Trend and Recos" as the folder for this chat
+
+use "D:\Codex\Prompts\JStockGenie - 01.Trend and Recos.txt" file as the prompt file for this chat
+
+
+20260625 22:45
+=============================================================================
+moving forward, save all the prompts I provide in this chat in the file 
+"D:\Codex\Prompts\JStockGenie - 01.Trend and Recos v2.txt"
+
+organize it with YYYYMMDD followed by a line divider
+
+20260625 22:46
+=============================================================================
+read "D:\Codex\Prompts\JStockGenie - 01.Trend and Recos.txt" file again.
+I have organized and updated with Prompt separators.
+I used these prompts in previous sessions.
+
+analyze these, connect
+MYSQL, Java file using the "Resource Locations" mentioned under Prompt #2
+
+20260625 22:47
+=============================================================================
+for prompt v2 logging, use YYYYMMDD HH:MM as the prompt log stamp
+update the previous prompt log stamps if possible 
