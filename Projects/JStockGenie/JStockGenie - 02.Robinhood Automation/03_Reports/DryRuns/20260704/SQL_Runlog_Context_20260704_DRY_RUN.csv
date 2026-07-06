@@ -1,0 +1,5 @@
+routine_name,last_run_at,last_status,last_message
+reco_basket_refresh,2026-07-04 01:23:29,SUCCESS,Completed by reco_weekly_projection_refresh
+reco_options,2026-07-04 01:21:49,SUCCESS,Completed by reco_weekly_projection_refresh
+reco_weekly_projection_refresh,2026-07-04 01:23:29,SUCCESS,Completed wrapper; started at 2026-07-04 01:20:27
+reco_weekly_target_refresh,2026-07-04 19:00:56,SUCCESS,Generated weekly 1%-3% target rows at 2026-07-04 19:00:56

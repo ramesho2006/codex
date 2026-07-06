@@ -1,0 +1,11 @@
+basket_rank,symbol,name,etf_appearances,combined_top10_weight_pct,avg_weight_per_appearing_etf_pct,signal_note,source_etfs,trading_horizon_weeks,upward_projection_pct,upward_probability_pct,downward_projection_pct,downward_probability_pct,expected_return_pct,risk_reward_ratio,projection_confidence_score
+1,ABBV,AbbVie Inc.,5,14.43,2.89,No current reco_trade/backtest match,VYM #7 (ABBV 1.59%) | DGRO #3 (ABBV 3.03%) | SDY #5 (ABBV 1.61%) | NOBL #2 (ABBV 1.73%) | HDV #2 (ABBV 6.47%),,,,,,,,
+2,XOM,ExxonMobil Holdings Corporation,4,15.0,3.75,No current reco_trade/backtest match,VIG #6 (XOM 2.66%) | VYM #3 (XOM 2.52%) | DGRO #6 (XOM 2.58%) | HDV #1 (XOM 7.24%),,,,,,,,
+3,HD,"The Home Depot, Inc.",4,14.56,3.64,No current reco_trade/backtest match,SCHD #2 (HD 4.51%) | DGRO #8 (HD 2.31%) | HDV #5 (HD 4.94%) | DGRW #7 (HD 2.80%),,,,,,,,
+4,VZ,Verizon Communications Inc.,4,12.53,3.13,No current reco_trade/backtest match,SCHD #10 (VZ 3.62%) | SDY #2 (VZ 2.12%) | DVY #9 (VZ 1.60%) | HDV #4 (VZ 5.19%),,,,,,,,
+5,JNJ,Johnson & Johnson,4,10.07,2.52,No current reco_trade/backtest match,VIG #7 (JNJ 2.38%) | VYM #4 (JNJ 2.23%) | DGRO #1 (JNJ 3.11%) | DGRW #9 (JNJ 2.35%),,,,,,,,
+6,AVGO,Broadcom Inc.,3,16.36,5.45,No current reco_trade/backtest match,VIG #1 (AVGO 5.39%) | VYM #1 (AVGO 8.49%) | DGRO #7 (AVGO 2.48%),,,,,,,,
+7,MSFT,Microsoft Corporation,3,12.93,4.31,No current reco_trade/backtest match,VIG #3 (MSFT 4.26%) | DGRO #5 (MSFT 2.74%) | DGRW #2 (MSFT 5.93%),,,,,,,,
+8,PG,The Procter & Gamble Company,3,11.34,3.78,No current reco_trade/backtest match,SCHD #6 (PG 4.23%) | DGRO #9 (PG 2.27%) | HDV #6 (PG 4.84%),,,,,,,,
+9,AAPL,Apple Inc.,3,11.28,3.76,No current reco_trade/backtest match,VIG #2 (AAPL 4.55%) | DGRO #4 (AAPL 2.79%) | DGRW #3 (AAPL 3.94%),,,,,,,,
+10,KO,The Coca-Cola Company,3,11.02,3.67,No current reco_trade/backtest match,SCHD #7 (KO 4.15%) | HDV #10 (KO 3.98%) | DGRW #6 (KO 2.89%),,,,,,,,

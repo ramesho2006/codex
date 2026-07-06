@@ -1,0 +1,6 @@
+"run_date","account_name","account_ending","symbol","side","requested_order","submission_status","order_id","broker_message"
+"2026-06-29","My Agentic","1224","AAPL","SELL","market quantity 0.031935","SUBMITTED_QUEUED","6a433dff-3c0b-4a39-bdd1-1b709bfe5de1","Queued; cumulative quantity 0.000000 at status check."
+"2026-06-29","My Agentic","1224","MAS","BUY","market dollar_amount 100.00","SUBMITTED_QUEUED","6a433fd9-4d1e-4521-b7a6-83e8b5936c9f","Queued; cumulative quantity 0.000000 at status check."
+"2026-06-29","My Agentic","1224","SYF","BUY","market dollar_amount 100.00","SUBMITTED_QUEUED","6a433fdb-174f-411d-ab96-df0a501c3813","Queued; cumulative quantity 0.000000 at status check."
+"2026-06-29","My Agentic","1224","GEV","BUY","market dollar_amount 100.00","SUBMITTED_QUEUED","6a433fdd-6da9-4261-a1b1-285f21f550f3","Queued; cumulative quantity 0.000000 at status check."
+"2026-06-29","My Agentic","1224","AEP","BUY","market dollar_amount 100.00","SUBMITTED_QUEUED","6a433fde-ddc0-41e0-abb7-a4e097ca3bac","Queued; cumulative quantity 0.000000 at status check."

@@ -1,0 +1,2 @@
+run_date,account_name,account_ending,symbol,quantity,shares_available_for_sells,average_buy_price,last_price,market_value,unrealized_pl_pct,in_target_basket,routine_action_review,notes
+2026-06-29,My Agentic,1224,AAPL,0.031935,0.031935,313.140000,281.01,8.97,-10.26,N,SELL_REVIEW,Tiny residual position; not in current EQT target basket.

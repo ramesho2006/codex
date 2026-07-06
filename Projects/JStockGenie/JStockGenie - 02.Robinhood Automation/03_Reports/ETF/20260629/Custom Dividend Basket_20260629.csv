@@ -1,0 +1,11 @@
+basket_rank,symbol,name,etf_appearances,combined_top10_weight_pct,avg_weight_per_appearing_etf_pct,signal_note,source_etfs,trading_horizon_weeks,upward_projection_pct,upward_probability_pct,downward_projection_pct,downward_probability_pct,expected_return_pct,risk_reward_ratio,projection_confidence_score
+1,ABBV,AbbVie Inc.,6,14.55,2.43,No current reco_trade/backtest match,VYM #7 (ABBV 1.59%) | DGRO #3 (ABBV 2.96%) | SDY #6 (ABBV 1.62%) | FVD #7 (ABBV 0.42%) | NOBL #4 (ABBV 1.72%) | HDV #2 (ABBV 6.24%),,,,,,,,
+2,JNJ,Johnson & Johnson,5,10.42,2.08,No current reco_trade/backtest match,VIG #7 (JNJ 2.38%) | VYM #4 (JNJ 2.23%) | DGRO #2 (JNJ 3.02%) | FVD #8 (JNJ 0.42%) | DGRW #9 (JNJ 2.37%),,,,,,,,
+3,AVGO,Broadcom Inc.,4,18.73,4.68,No current reco_trade/backtest match,VIG #1 (AVGO 5.39%) | VYM #1 (AVGO 8.49%) | DGRO #6 (AVGO 2.57%) | DGRW #10 (AVGO 2.28%),,,,,,,,
+4,XOM,Exxon Mobil Corporation,4,15.09,3.77,No current reco_trade/backtest match,VIG #6 (XOM 2.66%) | VYM #3 (XOM 2.52%) | DGRO #5 (XOM 2.63%) | HDV #1 (XOM 7.28%),,,,,,,,
+5,HD,"The Home Depot, Inc.",4,14.33,3.58,No current reco_trade/backtest match,SCHD #3 (HD 4.41%) | DGRO #9 (HD 2.29%) | HDV #6 (HD 4.83%) | DGRW #7 (HD 2.80%),,,,,,,,
+6,VZ,Verizon Communications Inc.,4,13.71,3.43,No current reco_trade/backtest match,SCHD #8 (VZ 3.95%) | SDY #1 (VZ 2.34%) | DVY #6 (VZ 1.75%) | HDV #3 (VZ 5.67%),,,,,,,,
+7,MSFT,Microsoft Corporation,3,12.6,4.2,No current reco_trade/backtest match,VIG #3 (MSFT 4.26%) | DGRO #7 (MSFT 2.54%) | DGRW #2 (MSFT 5.80%),,,,,,,,
+8,PG,The Procter & Gamble Company,3,11.36,3.79,No current reco_trade/backtest match,SCHD #5 (PG 4.21%) | DGRO #8 (PG 2.30%) | HDV #5 (PG 4.85%),,,,,,,,
+9,KO,The Coca-Cola Company,3,11.03,3.68,No current reco_trade/backtest match,SCHD #7 (KO 4.15%) | HDV #10 (KO 3.92%) | DGRW #5 (KO 2.96%),,,,,,,,
+10,AAPL,Apple Inc.,3,11.01,3.67,No current reco_trade/backtest match,VIG #2 (AAPL 4.55%) | DGRO #4 (AAPL 2.63%) | DGRW #3 (AAPL 3.83%),,,,,,,,

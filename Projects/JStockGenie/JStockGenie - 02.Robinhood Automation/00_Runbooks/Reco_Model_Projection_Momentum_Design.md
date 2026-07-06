@@ -1,6 +1,7 @@
 # JStockGenie Reco Model Projection Upgrade
 
 Created: 2026-06-23
+Updated: 2026-07-04
 
 ## Goal
 
@@ -17,6 +18,7 @@ The enhanced outputs should improve:
 - Weekly EQT Basket Routine for short-term swing trades
 - Weekly ETF Basket Routine for longer-term investment baskets
 - options recommendations in jstockdata_reco_options
+- weekly target-band recommendations in jstockdata_reco_weekly_target_recos
 
 ## Current Signal Foundation
 
@@ -174,12 +176,15 @@ Weekly EQT Basket Routine:
 - Prefer high upward probability, strong risk/reward, and low downward probability.
 - Use downward_projection_pct for stop review.
 - Use upward_projection_pct for profit-lock review.
+- Use jstockdata_reco_weekly_target_recos to prioritize modeled 1% to 3% weekly target candidates.
+- Treat the 1% to 3% band as a target screen, not a guaranteed profit.
 
 Weekly ETF Basket Routine:
 
 - Use 4 to 16 week projections.
 - Prefer higher confidence and smoother downside profile.
 - Rank ETF common holdings by ETF overlap plus projection-adjusted trend score.
+- Use jstockdata_reco_weekly_target_recos ETF rows when the user asks for weekly ETF basket recommendations.
 
 Options:
 
@@ -187,6 +192,8 @@ Options:
 - For BUY CALL or SELL PUT, require high upward_probability_pct.
 - For BUY PUT or SELL CALL, require high downward_probability_pct.
 - Use expected_underlying_move_pct to choose strike moneyness.
+- For manual weekly options recommendations, use weeklyized_target_profit_pct from jstockdata_reco_weekly_target_recos and target 1% to 3% weeklyized premium ROI.
+- Keep options recommendations non-Agentic/manual-only unless the user gives a separate explicit automation instruction in the future.
 
 ## Implementation Order
 
@@ -197,6 +204,7 @@ Options:
 5. Update reco_trade and reco_invest to rank with projection-adjusted score.
 6. Update reco_options to map DTE to projection horizon and probability direction.
 7. Update Weekly EQT Basket Routine and Weekly ETF Basket Routine outputs to include projection fields.
+8. Refresh reco_weekly_target_refresh after projection enrichment to create EQT, ETF, and manual options target-band recos.
 
 ## Guardrail
 

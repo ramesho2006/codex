@@ -1,0 +1,5 @@
+"run_date","account_name","symbol","side","planned_notional_or_qty","planned_status","fill_status","fill_price","fill_quantity","fees","notes"
+"2026-07-03","My Agentic","SYF","SELL","1.270488","SUBMITTED","QUEUED","","","0.000000","Order id 6a486ba6-267a-4c3e-af14-e7dd24528fdd; cumulative quantity 0.000000 as of submit status check."
+"2026-07-03","My Agentic","GEV","SELL","0.089889","SUBMITTED","QUEUED","","","0.000000","Order id 6a486ba7-8e33-44f7-ab9b-94f0d58b1779; cumulative quantity 0.000000 as of submit status check."
+"2026-07-03","My Agentic","HWM","BUY","104.94","SUBMITTED","QUEUED","","","0.000000","Order id 6a489c41-c67f-47cb-b6fd-c4edfdc53af0; cumulative quantity 0.000000 as of submit status check."
+"2026-07-03","My Agentic","CASY","BUY","104.94","SUBMITTED","QUEUED","","","0.000000","Order id 6a489c43-d9e5-4f39-bc73-e0282dcdf6cb; cumulative quantity 0.000000 as of submit status check."

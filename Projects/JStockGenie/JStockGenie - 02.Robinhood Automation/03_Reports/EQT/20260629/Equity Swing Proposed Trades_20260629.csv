@@ -1,0 +1,6 @@
+run_date,account_name,account_ending,symbol,side,order_type_review,dollar_amount_review,quantity_review,estimated_price,estimated_notional,regular_hours_tradable,fractional_tradable,reason,status
+2026-06-29,My Agentic,1224,AAPL,SELL,market or marketable limit,,0.031935,281.01,8.97,True,True,Existing position is not in target EQT swing basket; review tiny residual sale.,REVIEW_ONLY_NOT_PLACED
+2026-06-29,My Agentic,1224,MAS,BUY,market fractional during regular hours,100.00,,80.5,100.0,True,True,"Target equity basket rank from refreshed reco_trade; projection confidence 62.93, expected return 7.96%.",REVIEW_ONLY_NOT_PLACED
+2026-06-29,My Agentic,1224,SYF,BUY,market fractional during regular hours,100.00,,78.76,100.0,True,True,"Target equity basket rank from refreshed reco_trade; projection confidence 67.49, expected return 3.37%.",REVIEW_ONLY_NOT_PLACED
+2026-06-29,My Agentic,1224,GEV,BUY,market fractional during regular hours,100.00,,1107.9,100.0,True,True,"Target equity basket rank from refreshed reco_trade; projection confidence 61.10, expected return 6.19%.",REVIEW_ONLY_NOT_PLACED
+2026-06-29,My Agentic,1224,AEP,BUY,market fractional during regular hours,100.00,,137.98,100.0,True,True,"Target equity basket rank from refreshed reco_trade; projection confidence 57.79, expected return 3.56%.",REVIEW_ONLY_NOT_PLACED

@@ -1,0 +1,5 @@
+run_date,account_name,account_ending,symbol,quantity,shares_available_for_sells,average_buy_price,last_price,market_value,unrealized_pl_pct,in_target_basket,routine_action_review,notes
+2026-07-03,My Agentic,1224,MAS,1.244632,1.244632,80.35,82.77,103.02,3.01,Y,HOLD_REVIEW,Still in current EQT target basket.
+2026-07-03,My Agentic,1224,SYF,1.270488,1.270488,78.71,76.33,96.98,-3.02,N,HOLD_REVIEW,Still in current EQT target basket.
+2026-07-03,My Agentic,1224,GEV,0.089889,0.089889,1112.48,1119.0,100.59,0.59,N,HOLD_REVIEW,Still in current EQT target basket.
+2026-07-03,My Agentic,1224,AEP,0.725531,0.725531,137.83,138.0,100.12,0.12,Y,HOLD_REVIEW,Still in current EQT target basket.

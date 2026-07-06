@@ -22,7 +22,7 @@ Suggested position sizing:
 
 - 1000 USD account: 4 to 5 positions, about 20% to 25% each.
 - 1500 USD account: 5 to 6 positions, about 16% to 20% each.
-- Keep 5% to 10% cash reserve when possible.
+- Keep a 25% cash reserve for weekly BUY/SELL rotations.
 - Use fractional market orders only during regular market hours, or marketable limit orders when exact share sizing is needed.
 
 ## MySQL Inputs
@@ -35,6 +35,7 @@ Use these JStockGenie tables:
 - jstockdata_harecent_extend
 - jstockdata_reco_trade
 - jstockdata_reco_backtest
+- jstockdata_reco_weekly_target_recos
 - jstockdata_reco_basket_current
 - jstockdata_reco_basket_actions
 - jstockdata_reco_basket_positions
@@ -49,15 +50,29 @@ Use these routines when a fresh refresh is requested or approved:
 - reco_trade
 - reco_backtest
 - reco_basket_refresh
+- reco_weekly_target_refresh
 
-Do not run mutating routines silently. If the user asks for a fresh weekly run, confirm whether to refresh the reco tables or use the latest available outputs.
+Before running any mutating SQL routine, check:
+
+```sql
+SELECT routine_name, last_run_at, last_status
+FROM jstockdata_reco_routine_runlog
+WHERE routine_name = 'reco_weekly_projection_refresh';
+```
+
+- If `last_run_at` is within 1 day, do not rerun SQL routines. Use the latest available outputs.
+- If `last_run_at` is more than 2 days old, ask the user to confirm whether to run `CALL reco_weekly_projection_refresh();`.
+- If the timestamp is between 1 and 2 days old, use the latest available outputs unless the user explicitly asks for a refresh.
 
 ## Weekly Steps
 
 1. Pull current Robinhood Agentic account portfolio, buying power, open equity positions, and recent equity orders.
-2. Pull the current JStockGenie swing candidates from jstockdata_reco_trade and supporting backtest rows from jstockdata_reco_backtest.
-3. Join candidates to jstockdata_harecent and jstockdata_harecent_extend for daily and weekly HA trend context.
-4. Score candidates using:
+2. Pull current target-band EQT candidates from jstockdata_reco_weekly_target_recos where reco_category = 'EQT'.
+3. Pull supporting rows from jstockdata_reco_trade and jstockdata_reco_backtest.
+4. Join candidates to jstockdata_harecent and jstockdata_harecent_extend for daily and weekly HA trend context.
+5. Score candidates using:
+   - target_band_status = IN_BAND preferred
+   - target_profit_pct between 1% and 3% preferred
    - trade_signal = BUY
    - daily/weekly trend alignment
    - SMADeltaTrend = UP
@@ -74,15 +89,15 @@ Do not run mutating routines silently. If the user asks for a fresh weekly run, 
    - average trade return
    - worst trade drawdown
    - days since recent signal
-5. Build a weekly swing basket of 4 to 6 stocks depending on account value.
-6. Compare the target basket with current Agentic positions:
+6. Build a weekly swing basket of 4 to 6 stocks depending on account value.
+7. Compare the target basket with current Agentic positions:
    - HOLD positions still in the target basket with valid BUY/HOLD signals.
    - SELL positions no longer in the target basket or with failed trend confirmation.
    - BUY new target names using available buying power after planned sells.
-7. Check Robinhood tradability for all proposed symbols.
-8. Prepare order reviews for proposed buys and sells.
-9. Place orders only after explicit user confirmation of final symbol, side, amount or quantity, order type, and account.
-10. Update the weekly trade journal and current-position tracker after fills are confirmed.
+8. Check Robinhood tradability for all proposed symbols.
+9. Prepare order reviews for proposed buys and sells.
+10. Place orders only after explicit user confirmation of final symbol, side, amount or quantity, order type, and account.
+11. Update the weekly trade journal and current-position tracker after fills are confirmed.
 
 ## Suggested Sell Rules
 
@@ -106,16 +121,18 @@ These are review triggers, not automatic order instructions.
 Buy only when all are true:
 
 - Candidate is in the weekly target swing basket.
+- Candidate is present in jstockdata_reco_weekly_target_recos with reco_category = 'EQT'.
 - Robinhood marks the symbol as tradable in the Agentic account.
 - Account has sufficient buying power.
 - The proposed allocation respects max position size.
+- The proposed allocation preserves the 25% rotation cash buffer unless the user explicitly overrides it.
 - User explicitly confirms the reviewed order.
 
 ## Output Files
 
 For each run, create a dated folder:
 
-Weekly EQT Basket Routine/YYYYMMDD
+03_Reports/EQT/YYYYMMDD
 
 Create or update these files:
 
@@ -141,6 +158,12 @@ Use these enriched recommendation fields when available:
 - projection_confidence_score
 
 For short-term swing trades, prefer 5 to 20 trading-day projection horizons.
+
+Target-return guardrail:
+
+- Target 1% to 3% weekly profit as a modeled review band; it is not a guaranteed result.
+- Prefer target_band_status = IN_BAND.
+- ABOVE_BAND rows may be used only with stronger probability/downside support and conservative sizing.
 
 ## Guardrails
 

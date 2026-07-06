@@ -1,0 +1,5 @@
+run_date,account_name,account_ending,symbol,side,order_type_review,dollar_amount_review,quantity_review,estimated_price,estimated_notional,regular_hours_tradable,fractional_tradable,reason,status
+2026-07-03,My Agentic,1224,SYF,SELL,market or marketable limit,,1.270488,76.33,96.98,True,True,Position dropped out of current target EQT basket; review sell before replacement buys.,REVIEW_ONLY_NOT_PLACED
+2026-07-03,My Agentic,1224,GEV,SELL,market or marketable limit,,0.089889,1119.0,100.59,True,True,Position dropped out of current target EQT basket; review sell before replacement buys.,REVIEW_ONLY_NOT_PLACED
+2026-07-03,My Agentic,1224,HWM,BUY,market fractional during regular hours,104.94,,270.41,104.94,True,True,"New target equity candidate; projection confidence 79.25, expected return 14.12%.",REVIEW_ONLY_NOT_PLACED
+2026-07-03,My Agentic,1224,CASY,BUY,market fractional during regular hours,104.94,,797.42,104.94,True,True,"New target equity candidate; projection confidence 62.31, expected return 3.65%.",REVIEW_ONLY_NOT_PLACED

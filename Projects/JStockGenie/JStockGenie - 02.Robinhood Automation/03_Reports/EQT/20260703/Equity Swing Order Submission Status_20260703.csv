@@ -1,0 +1,5 @@
+"run_date","account_name","account_ending","symbol","side","requested_order","submission_status","order_id","broker_message"
+"2026-07-03","My Agentic","1224","SYF","SELL","market quantity 1.270488","SUBMITTED_QUEUED","6a486ba6-267a-4c3e-af14-e7dd24528fdd","Queued; cumulative quantity 0.000000 at status check."
+"2026-07-03","My Agentic","1224","GEV","SELL","market quantity 0.089889","SUBMITTED_QUEUED","6a486ba7-8e33-44f7-ab9b-94f0d58b1779","Queued; cumulative quantity 0.000000 at status check."
+"2026-07-03","My Agentic","1224","HWM","BUY","market dollar_amount 104.94","SUBMITTED_QUEUED","6a489c41-c67f-47cb-b6fd-c4edfdc53af0","Queued; cumulative quantity 0.000000 at status check."
+"2026-07-03","My Agentic","1224","CASY","BUY","market dollar_amount 104.94","SUBMITTED_QUEUED","6a489c43-d9e5-4f39-bc73-e0282dcdf6cb","Queued; cumulative quantity 0.000000 at status check."

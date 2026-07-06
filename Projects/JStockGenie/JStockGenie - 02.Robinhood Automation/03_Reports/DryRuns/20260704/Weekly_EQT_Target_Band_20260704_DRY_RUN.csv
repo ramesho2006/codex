@@ -1,0 +1,7 @@
+target_rank,symbol,assetclass,account_scope,direction,current_price,target_profit_pct,weeklyized_target_profit_pct,expected_return_pct,upward_projection_pct,upward_probability_pct,downward_projection_pct,downward_probability_pct,risk_reward_ratio,projection_sample_size,projection_confidence_score,recommendation_score,target_band_status,notes
+1,CASY,EQ,Agentic Account,BUY,797.42,3.00,3.00,3.65,6.32,100.00,1.93,0.00,3.28,5,62.31,138.93,ABOVE_BAND,Weekly 1%-3% target screen. ABOVE_BAND; preserve 25% cash buffer and review live quote before order.
+2,VLO,EQ,Agentic Account,BUY,267.76,2.09,2.09,2.09,5.19,83.33,2.93,16.67,1.77,6,54.86,137.35,IN_BAND,Weekly 1%-3% target screen. IN_BAND; preserve 25% cash buffer and review live quote before order.
+3,MAS,EQ,Agentic Account,BUY,82.77,3.00,3.00,7.96,8.91,100.00,0.93,0.00,9.58,3,62.93,136.04,ABOVE_BAND,Weekly 1%-3% target screen. ABOVE_BAND; preserve 25% cash buffer and review live quote before order.
+4,ETR,EQ,Agentic Account,BUY,115.11,3.00,3.00,4.38,5.40,100.00,1.69,0.00,3.20,3,55.76,133.81,ABOVE_BAND,Weekly 1%-3% target screen. ABOVE_BAND; preserve 25% cash buffer and review live quote before order.
+5,AEP,EQ,Agentic Account,BUY,138.51,3.00,3.00,3.56,5.88,83.33,2.05,16.67,2.87,6,57.79,128.37,ABOVE_BAND,Weekly 1%-3% target screen. ABOVE_BAND; preserve 25% cash buffer and review live quote before order.
+6,HWM,EQ,Agentic Account,BUY,270.41,3.00,3.00,14.12,15.84,100.00,0.58,0.00,27.51,4,79.25,116.30,ABOVE_BAND,Weekly 1%-3% target screen. ABOVE_BAND; preserve 25% cash buffer and review live quote before order.
