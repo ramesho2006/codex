@@ -2,6 +2,12 @@
 
 Updated: 2026-07-05
 
+## Standing Instructions
+
+- Log every user prompt for this chat to `D:\Codex\Prompts\JStockGenie - 02.Robinhood Automation v2.txt` using `YYYYMMDD HH:MM` followed by a divider line.
+- Before running weekly routines, refer to `README.md`, this runbook, and `Reco_SQL_Refresh_Runbook.md`.
+- Update README and runbooks whenever SQL routine order, universe ranking, news overlay, reco filters, or trading workflow changes.
+
 ## Weekly Sequence
 
 1. Upload latest EOD data.
@@ -29,20 +35,24 @@ Run the Java Trend model as usual.
 The Java reco path now includes:
 
 ```sql
-CALL reco_weekly_projection_refresh();
+CALL reco_weekly_master_refresh();
 ```
 
 That wrapper runs:
 
-1. `reco_backtest`
-2. `reco_trade`
-3. `reco_invest`
-4. `reco_options`
-5. `reco_projection_refresh`
-6. `reco_projection_enrich_outputs`
-7. `reco_momentum_refresh`
-8. `reco_basket_refresh`
-9. `reco_weekly_target_refresh`
+1. `reco_universe_status_refresh(1000)`
+2. `reco_news_signal_refresh(7)`
+3. `reco_backtest`
+4. `reco_trade`
+5. `reco_invest`
+6. `reco_options`
+7. `reco_projection_refresh`
+8. `reco_projection_enrich_outputs`
+9. `reco_momentum_refresh`
+10. `reco_basket_refresh`
+11. `reco_weekly_target_refresh`
+
+The universe refresh updates `jstockdata_scrips.RecoUniverseStatus` and `RecoUniverseRank` before recommendation tables are rebuilt. Reco routines should only use rows where `RecoUniverseStatus = 'KEEP'` and `RecoUniverseRank <= 1000`. The news signal refresh scores already-fetched headlines; fetch fresh news first with `05_Tools/reco_news_fetcher.py` when an API key is configured.
 
 Java then runs Yahoo options premium enrichment.
 
@@ -53,11 +63,11 @@ Before running basket routines, check the reco routine timestamp:
 ```sql
 SELECT routine_name, last_run_at, last_status, run_count
 FROM jstockdata_reco_routine_runlog
-WHERE routine_name = 'reco_weekly_projection_refresh';
+WHERE routine_name = 'reco_weekly_master_refresh';
 ```
 
 - If `last_run_at` is within 1 day, do not rerun SQL routines. Use the current reco tables.
-- If `last_run_at` is more than 2 days old, ask before running `CALL reco_weekly_projection_refresh();`.
+- If `last_run_at` is more than 2 days old, ask before running `CALL reco_weekly_master_refresh();`.
 - If the run log is missing or unclear, also check `MAX(updated_at)` from `jstockdata_reco_basket_current` and ask before any SQL refresh.
 
 Check these after Java completes:
@@ -67,7 +77,7 @@ Check these after Java completes:
 - `jstockdata_reco_invest`
 - `jstockdata_reco_options`
 - `jstockdata_reco_projection`
-- `jstockdata_momentum_signal`
+- `jstockdata_reco_momentum_signal`
 - `jstockdata_reco_basket_current`
 - `jstockdata_reco_basket_actions`
 - `jstockdata_reco_weekly_target_recos`
@@ -79,7 +89,7 @@ SELECT COUNT(*) FROM jstockdata_reco_projection;
 SELECT COUNT(*), SUM(upward_projection_pct IS NOT NULL) FROM jstockdata_reco_trade;
 SELECT COUNT(*), SUM(underlying_upward_projection_pct IS NOT NULL) FROM jstockdata_reco_options;
 SELECT frequency, momentum_direction, momentum_phase, COUNT(*)
-FROM jstockdata_momentum_signal
+FROM jstockdata_reco_momentum_signal
 GROUP BY frequency, momentum_direction, momentum_phase;
 SELECT reco_category, target_band_status, COUNT(*)
 FROM jstockdata_reco_weekly_target_recos
@@ -88,9 +98,9 @@ GROUP BY reco_category, target_band_status;
 
 Momentum guardrail:
 
-- Use `jstockdata_momentum_signal` as confirmation beside `Combined_Signal`.
+- Use `jstockdata_reco_momentum_signal` as confirmation beside `Combined_Signal`.
 - Do not replace `Combined_Signal`; momentum explains whether the signal is early, accelerating, mature, weakening, or reversal-risk.
-- For new EQT/ETF buys, prefer `momentum_direction = 'BULLISH'` with `momentum_phase IN ('EARLY', 'ACCELERATING')`, or accept `MATURE` only with smaller sizing/profit-lock discipline.
+- For new EQT/ETF buys, prefer `momentum_direction = 'BULLISH'` with `momentum_phase IN ('EARLY', 'BULLISH_ACCELERATING')`, or accept `MATURE` only with smaller sizing/profit-lock discipline.
 - Avoid or reduce candidates with `momentum_phase = 'REVERSAL_RISK'` unless there is a specific override reason.
 - For options, align strategy direction with momentum: bullish momentum favors cash-secured puts; bearish/weakening momentum favors covered-call review only when shares are already held.
 
@@ -117,7 +127,7 @@ Steps:
 2. Confirm the 25% cash buffer target.
 3. Compare positions against EQT target-band rows:
    - `jstockdata_reco_weekly_target_recos.reco_category = 'EQT'`
-   - join/check `jstockdata_momentum_signal`
+   - join/check `jstockdata_reco_momentum_signal`
    - use `Combined_Signal` and momentum together
 4. Prepare SELL candidates first:
    - no longer in EQT target basket
@@ -156,7 +166,7 @@ Steps:
 1. Review account positions manually.
 2. Generate ETF growth/dividend basket output.
 3. Compare holdings to ETF target-band rows and ETF growth/dividend baskets.
-4. Use `Combined_Signal` plus `jstockdata_momentum_signal` for timing:
+4. Use `Combined_Signal` plus `jstockdata_reco_momentum_signal` for timing:
    - add/hold when signal and momentum align
    - wait when signal is positive but momentum is mature or reversal-risk
    - trim/watch when signal weakens and momentum turns bearish

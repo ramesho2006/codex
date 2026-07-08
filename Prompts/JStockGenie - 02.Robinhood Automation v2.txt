@@ -53,9 +53,12 @@ If it is recent within a day, do not run the SQL routines. Just get the basket r
 If it was run more than two days ago, please prompt me to confirm if you should run the SQL routines.
 
 If needed, change all the required SQL routines by adding a last_run timestamp
+
 20260629 23:15
 ------------------------------------------------------------
-if needed, create a separate jstockdata_reco_runlog table, record one row for each routine and record the last run timestamp rather than including timestamp filed in each reco_* tables
+if needed, create a separate jstockdata_reco_runlog table, record one row for each routine and 
+record the last run timestamp rather than including timestamp filed in each reco_* tables
+
 20260629 23:15
 ------------------------------------------------------------
 make the appropriate reco_* routines and tables
@@ -88,9 +91,11 @@ I have added funds to Agentic Account.
 You can place the BUY orders.
 
 In the future, please keep some buffer of 25% cash balance for BUY/SELL weekly rotations
+
 20260704 00:37
 ------------------------------------------------------------
-co nforimed
+confirmed
+
 20260704 00:38
 ------------------------------------------------------------
 confirmed
@@ -153,3 +158,135 @@ go throught the routines and runbooks under
 
 consolidate and organize them into simple set of folders and files
 ----------------------------------------
+20260705 20:49
+under ## Weekly Routine Summary, after
+
+1. Upload EOD data.
+2. Run Java Trend model.
+
+provide the sql routine names to be executed in order.
+also, rename or create a master routine in SQL
+
+----------------------------------------
+20260705 20:50
+clean up and avoid duplicate refresh routines
+avoid duplicate refresh routines 
+----------------------------------------
+20260705 20:55
+rename reco_weekly_projection_refresh as reco_weekly_master_refresh 
+so that I run one refresh routine every week
+----------------------------------------
+20260705 21:02
+I have updated "D:\Codex\Projects\JStockGenie\JStockGenie - 02.Robinhood Automation\README.md"
+please review and maintain section "## Weekly Routine Summary"
+----------------------------------------
+20260705 21:47
+------------------------------------------------------------
+rename table jstockdata_momentum_signal to jstockdata_reco_momentum_signal
+20260705 22:48
+------------------------------------------------------------
+explain "momentum_phase"
+20260705 22:57
+------------------------------------------------------------
+thanks. include this in the README files as appropriate and let me know where it is included.
+please rename "symbol" to "scrip" in all references in tables, routines, and documents.
+20260705 23:15
+------------------------------------------------------------
+great. please run the master SQL routine and provide the time to complete.
+20260706 00:00
+------------------------------------------------------------
+in momentum rating, for "ACCELERATING" momentum score, clearly differentiate between BEARISH and BULLISH. 
+refine and optimize all SQL routines to run faster  without compromising accuracy and quality.
+
+
+20260706 00:00
+------------------------------------------------------------
+for both setups with current data in MySQL, I am not getting any records returned.
+But when I ignore "momentum_phase" condition, I am getting more records.
+Can you please check and alter "momentum_phase" computation if needed
+20260706 16:40
+------------------------------------------------------------
+ok great.
+
+please explain the following using one liners
+
+momentum_score
+momentum_direction
+momentum_phase
+momentum_confidence_pct
+momentum_age_bars
+momentum_acceleration
+momentum_exhaustion_score
+momentum_reversal_risk_pct
+predicted_5bar_return_pct
+predicted_10bar_return_pct
+20260706 16:59
+------------------------------------------------------------
+thanks. using the appropriate columns from above, please give me separate BEARISH and BULLISH setups for catching the ride earlier 
+with best confidence and best returns that is suitable for both swing and options trading from few days to weeks with waiting period for profits 
+
+20260706 17:28
+------------------------------------------------------------
+can you run a quick backtest for both of these bullish and bearish and provide evidence of these setups with date prior to that and results within few days or weeks.
+
+can you prepare a backtest report based on this momentum analysis/predictions 
+
+20260706 21:13
+------------------------------------------------------------
+so, now, we have two types of backtests and recos.
+1 - SMADelta and LODetla, Combined Signal based
+2 - Momentum based
+
+using these two approaches, can you provide a list of scrips to be omitted from and
+keep only the top 1000 or 500 including best of EQ and ETFs.
+
+for this, you can use the following tables
+(a) jstockdata_hatrend for OHLCV
+(b) jstockdata_hatrend_extend for trend analysis
+(c) jstockdata_scrips for scrips, rank, assetclass, etc
+(d) jstockdata_reco_momentum_signal for momentum based analysis
+
+
+20260706 22:01
+------------------------------------------------------------
+great. so, can you include a column to jstockdata_scrips to KEEP or OMIT
+
+
+20260706 22:02
+------------------------------------------------------------
+so that we can include only those with 'KEEP' flag in our trading analysis and recos
+
+
+20260706 22:16
+------------------------------------------------------------
+remember this reco rating routine, if needed create a SQL routine for this that updates jstockdata_scrips periodically 
+
+
+20260706 22:25
+------------------------------------------------------------
+also add a new column RecoUniverseRank that numerically ranks the scrips based this approach 
+
+
+20260706 23:25
+------------------------------------------------------------
+make sure all the other sql reco_* routines use the RecoUniverseRank within 1000 first in the logic and and do not include any of those with OMIT statuses 
+
+
+20260706 23:47
+------------------------------------------------------------
+ok. great. awesome.
+
+now, out of these top 1000, is there a way you can fetch the recent news and recommend swing or options trading ?
+
+
+20260706 23:49
+------------------------------------------------------------
+I agree. please proceed
+
+
+20260707 00:02
+------------------------------------------------------------
+remember to update README and Runbooks so that you can refer them in the future while running the weekly routines. 
+
+also, remember to log the prompts 
+

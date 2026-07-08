@@ -12,7 +12,7 @@ Generate manual-only options candidates using the JStockGenie target-band, proje
 
 - `jstockdata_reco_weekly_target_recos`
 - `jstockdata_reco_options`
-- `jstockdata_momentum_signal`
+- `jstockdata_reco_momentum_signal`
 - `jstockdata_reco_projection`
 - live option chain review by the user before any order
 
@@ -24,7 +24,7 @@ Before generating options recos, check:
 SELECT routine_name, last_run_at, last_status, last_message
 FROM jstockdata_reco_routine_runlog
 WHERE routine_name IN (
-  'reco_weekly_projection_refresh',
+  'reco_weekly_master_refresh',
   'reco_options',
   'reco_projection_enrich_outputs',
   'reco_momentum_refresh',
@@ -34,7 +34,7 @@ ORDER BY routine_name;
 ```
 
 - Within 1 day: use current tables.
-- More than 2 days old: ask before running `CALL reco_weekly_projection_refresh();`.
+- More than 2 days old: ask before running `CALL reco_weekly_master_refresh();`.
 - Between 1 and 2 days: use current tables unless the user explicitly asks for refresh.
 
 ## Candidate Rules

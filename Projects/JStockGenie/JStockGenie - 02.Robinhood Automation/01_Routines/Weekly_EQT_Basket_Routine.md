@@ -44,7 +44,7 @@ Use these JStockGenie tables:
 
 Use these routines when a fresh refresh is requested or approved:
 
-- reco_weekly_projection_refresh
+- reco_weekly_master_refresh
 - reco_projection_refresh
 - reco_projection_enrich_outputs
 - reco_trade
@@ -57,11 +57,11 @@ Before running any mutating SQL routine, check:
 ```sql
 SELECT routine_name, last_run_at, last_status
 FROM jstockdata_reco_routine_runlog
-WHERE routine_name = 'reco_weekly_projection_refresh';
+WHERE routine_name = 'reco_weekly_master_refresh';
 ```
 
 - If `last_run_at` is within 1 day, do not rerun SQL routines. Use the latest available outputs.
-- If `last_run_at` is more than 2 days old, ask the user to confirm whether to run `CALL reco_weekly_projection_refresh();`.
+- If `last_run_at` is more than 2 days old, ask the user to confirm whether to run `CALL reco_weekly_master_refresh();`.
 - If the timestamp is between 1 and 2 days old, use the latest available outputs unless the user explicitly asks for a refresh.
 
 ## Weekly Steps
@@ -94,16 +94,16 @@ WHERE routine_name = 'reco_weekly_projection_refresh';
    - HOLD positions still in the target basket with valid BUY/HOLD signals.
    - SELL positions no longer in the target basket or with failed trend confirmation.
    - BUY new target names using available buying power after planned sells.
-8. Check Robinhood tradability for all proposed symbols.
+8. Check Robinhood tradability for all proposed scrips.
 9. Prepare order reviews for proposed buys and sells.
-10. Place orders only after explicit user confirmation of final symbol, side, amount or quantity, order type, and account.
+10. Place orders only after explicit user confirmation of final scrip, side, amount or quantity, order type, and account.
 11. Update the weekly trade journal and current-position tracker after fills are confirmed.
 
 ## Suggested Sell Rules
 
 Sell or reduce a position when any of these are true:
 
-- Symbol drops out of the weekly target basket.
+- scrip drops out of the weekly target basket.
 - Daily and weekly combined signals are both SELL.
 - SMADeltaTrend turns DOWN on both daily and weekly views.
 - Position has hit a user-defined stop-loss.
@@ -122,7 +122,7 @@ Buy only when all are true:
 
 - Candidate is in the weekly target swing basket.
 - Candidate is present in jstockdata_reco_weekly_target_recos with reco_category = 'EQT'.
-- Robinhood marks the symbol as tradable in the Agentic account.
+- Robinhood marks the scrip as tradable in the Agentic account.
 - Account has sufficient buying power.
 - The proposed allocation respects max position size.
 - The proposed allocation preserves the 25% rotation cash buffer unless the user explicitly overrides it.

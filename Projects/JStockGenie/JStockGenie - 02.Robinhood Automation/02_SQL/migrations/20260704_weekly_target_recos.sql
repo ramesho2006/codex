@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS `jstockdata_reco_weekly_target_recos` (
   `reco_category` VARCHAR(20) NOT NULL,
   `account_scope` VARCHAR(40) NOT NULL,
   `target_rank` INT NOT NULL,
-  `symbol` VARCHAR(20) NOT NULL,
+  `scrip` VARCHAR(20) NOT NULL,
   `assetclass` VARCHAR(30) NULL,
   `source_table` VARCHAR(64) NOT NULL,
   `frequency` VARCHAR(20) NULL,
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `jstockdata_reco_weekly_target_recos` (
   `notes` VARCHAR(500) NULL,
   PRIMARY KEY (`reco_id`),
   KEY `ix_weekly_target_category_rank` (`reco_category`, `target_rank`),
-  KEY `ix_weekly_target_symbol` (`symbol`),
+  KEY `ix_weekly_target_scrip` (`scrip`),
   KEY `ix_weekly_target_generated` (`generated_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -53,7 +53,7 @@ BEGIN
     `reco_category` VARCHAR(20) NOT NULL,
     `account_scope` VARCHAR(40) NOT NULL,
     `target_rank` INT NOT NULL,
-    `symbol` VARCHAR(20) NOT NULL,
+    `scrip` VARCHAR(20) NOT NULL,
     `assetclass` VARCHAR(30) NULL,
     `source_table` VARCHAR(64) NOT NULL,
     `frequency` VARCHAR(20) NULL,
@@ -86,14 +86,14 @@ BEGIN
     `notes` VARCHAR(500) NULL,
     PRIMARY KEY (`reco_id`),
     KEY `ix_weekly_target_category_rank` (`reco_category`, `target_rank`),
-    KEY `ix_weekly_target_symbol` (`symbol`),
+    KEY `ix_weekly_target_scrip` (`scrip`),
     KEY `ix_weekly_target_generated` (`generated_at`)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
   TRUNCATE TABLE `jstockdata_reco_weekly_target_recos`;
 
   INSERT INTO `jstockdata_reco_weekly_target_recos` (
-    generated_at, reco_category, account_scope, target_rank, symbol, assetclass,
+    generated_at, reco_category, account_scope, target_rank, scrip, assetclass,
     source_table, frequency, trade_signal, direction, current_price,
     target_profit_pct, weeklyized_target_profit_pct, stop_review_pct, expected_return_pct, upward_projection_pct,
     upward_probability_pct, downward_projection_pct, downward_probability_pct,
@@ -102,7 +102,7 @@ BEGIN
   )
   SELECT
     v_generated_at, 'EQT', 'Agentic Account', @eqt_rank := @eqt_rank + 1,
-    ranked.symbol, ranked.assetclass, 'jstockdata_reco_trade', ranked.frequency,
+    ranked.scrip, ranked.assetclass, 'jstockdata_reco_trade', ranked.frequency,
     ranked.trade_signal, ranked.trade_signal, ranked.close,
     ranked.target_profit_pct, ranked.target_profit_pct, -2.50, ranked.expected_return_pct,
     ranked.upward_projection_pct, ranked.upward_probability_pct,
@@ -139,13 +139,13 @@ BEGIN
       AND COALESCE(t.risk_reward_ratio, 0) >= 1.20
       AND COALESCE(t.projection_confidence_score, 0) >= 45
       AND COALESCE(t.backtest_worst_trade_pct, -99) >= -12
-    ORDER BY target_score DESC, FIELD(t.frequency, 'DAILY', 'WEEKLY'), t.`rank`, t.symbol
+    ORDER BY target_score DESC, FIELD(t.frequency, 'DAILY', 'WEEKLY'), t.`rank`, t.scrip
     LIMIT 10
   ) ranked
   CROSS JOIN (SELECT @eqt_rank := 0) vars;
 
   INSERT INTO `jstockdata_reco_weekly_target_recos` (
-    generated_at, reco_category, account_scope, target_rank, symbol, assetclass,
+    generated_at, reco_category, account_scope, target_rank, scrip, assetclass,
     source_table, frequency, trade_signal, direction, current_price,
     target_profit_pct, weeklyized_target_profit_pct, stop_review_pct, expected_return_pct, upward_projection_pct,
     upward_probability_pct, downward_projection_pct, downward_probability_pct,
@@ -154,7 +154,7 @@ BEGIN
   )
   SELECT
     v_generated_at, 'ETF', 'ETF Basket Review', @etf_rank := @etf_rank + 1,
-    ranked.symbol, ranked.assetclass, 'jstockdata_reco_trade', ranked.frequency,
+    ranked.scrip, ranked.assetclass, 'jstockdata_reco_trade', ranked.frequency,
     ranked.trade_signal, ranked.trade_signal, ranked.close,
     ranked.target_profit_pct, ranked.target_profit_pct, -2.00, ranked.expected_return_pct,
     ranked.upward_projection_pct, ranked.upward_probability_pct,
@@ -191,13 +191,13 @@ BEGIN
       AND COALESCE(t.risk_reward_ratio, 0) >= 1.20
       AND COALESCE(t.projection_confidence_score, 0) >= 40
       AND COALESCE(t.backtest_worst_trade_pct, -99) >= -8
-    ORDER BY target_score DESC, FIELD(t.frequency, 'DAILY', 'WEEKLY'), t.`rank`, t.symbol
+    ORDER BY target_score DESC, FIELD(t.frequency, 'DAILY', 'WEEKLY'), t.`rank`, t.scrip
     LIMIT 10
   ) ranked
   CROSS JOIN (SELECT @etf_rank := 0) vars;
 
   INSERT INTO `jstockdata_reco_weekly_target_recos` (
-    generated_at, reco_category, account_scope, target_rank, symbol, assetclass,
+    generated_at, reco_category, account_scope, target_rank, scrip, assetclass,
     source_table, direction, option_trade, option_type, option_side, strike_price,
     exp_date, dte, premium, premium_roi_pct, current_price, target_profit_pct,
     weeklyized_target_profit_pct,
@@ -254,51 +254,51 @@ BEGIN
                         CONCAT('Generated weekly 1%-3% target rows at ', v_generated_at));
 END;
 
-DROP PROCEDURE IF EXISTS `reco_weekly_projection_refresh`;
+DROP PROCEDURE IF EXISTS `reco_weekly_master_refresh`;
 
-CREATE PROCEDURE `reco_weekly_projection_refresh`()
+CREATE PROCEDURE `reco_weekly_master_refresh`()
 BEGIN
   DECLARE v_started_at datetime DEFAULT NOW();
-  DECLARE v_current_step varchar(128) DEFAULT 'reco_weekly_projection_refresh';
+  DECLARE v_current_step varchar(128) DEFAULT 'reco_weekly_master_refresh';
 
   DECLARE EXIT HANDLER FOR SQLEXCEPTION
   BEGIN
-    CALL reco_runlog_mark(v_current_step, 'FAILED', 'Failed during reco_weekly_projection_refresh');
-    CALL reco_runlog_mark('reco_weekly_projection_refresh', 'FAILED', CONCAT('Failed wrapper; started at ', v_started_at));
+    CALL reco_runlog_mark(v_current_step, 'FAILED', 'Failed during reco_weekly_master_refresh');
+    CALL reco_runlog_mark('reco_weekly_master_refresh', 'FAILED', CONCAT('Failed master wrapper; started at ', v_started_at));
     RESIGNAL;
   END;
 
   SET v_current_step = 'reco_backtest';
   CALL reco_backtest();
-  CALL reco_runlog_mark('reco_backtest', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_backtest', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_trade';
   CALL reco_trade();
-  CALL reco_runlog_mark('reco_trade', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_trade', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_invest';
   CALL reco_invest();
-  CALL reco_runlog_mark('reco_invest', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_invest', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_options';
   CALL reco_options();
-  CALL reco_runlog_mark('reco_options', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_options', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_projection_refresh';
   CALL reco_projection_refresh();
-  CALL reco_runlog_mark('reco_projection_refresh', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_projection_refresh', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_projection_enrich_outputs';
   CALL reco_projection_enrich_outputs();
-  CALL reco_runlog_mark('reco_projection_enrich_outputs', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_projection_enrich_outputs', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_basket_refresh';
   CALL reco_basket_refresh();
-  CALL reco_runlog_mark('reco_basket_refresh', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_basket_refresh', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_weekly_target_refresh';
   CALL reco_weekly_target_refresh();
-  CALL reco_runlog_mark('reco_weekly_target_refresh', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_weekly_target_refresh', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
-  CALL reco_runlog_mark('reco_weekly_projection_refresh', 'SUCCESS', CONCAT('Completed wrapper; started at ', v_started_at));
+  CALL reco_runlog_mark('reco_weekly_master_refresh', 'SUCCESS', CONCAT('Completed master wrapper; started at ', v_started_at));
 END;

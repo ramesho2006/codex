@@ -1,0 +1,5 @@
+setup_type,frequency,sample_size,avg_5bar_return_pct,win_rate_5bar_pct,avg_10bar_return_pct,win_rate_10bar_pct,avg_confidence_pct,avg_reversal_risk_pct,first_signal_date,last_signal_date
+BEARISH_EARLY_RIDE,DAILY,2963,0.40,53.76,0.23,48.26,62.65,0.01,20250102,20260617
+BEARISH_EARLY_RIDE,WEEKLY,1456,-2.20,37.57,-4.16,34.48,63.61,0.00,20250102,20260420
+BULLISH_EARLY_RIDE,DAILY,16399,0.56,61.07,0.80,60.43,61.85,0.38,20250102,20260617
+BULLISH_EARLY_RIDE,WEEKLY,6869,0.75,57.64,1.36,58.70,65.45,1.06,20250102,20260420

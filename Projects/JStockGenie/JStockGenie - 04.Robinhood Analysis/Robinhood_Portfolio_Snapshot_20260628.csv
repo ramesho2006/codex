@@ -1,0 +1,7 @@
+snapshot_date,account_last4,nickname,brokerage_account_type,account_type,is_default,agentic_trade_access,portfolio_value,equity_value,options_value,cash,buying_power,notes
+2026-06-28,0302,My Trading,individual,cash,true,false,0.00,0.00,0.00,0.00,0.00,Default account; no current value reported.
+2026-06-28,0097,,ira_traditional,margin,false,false,33326.86,35355.24,-3903.00,1874.62,1849.41,Equity and negative options exposure.
+2026-06-28,9459,,ira_roth,cash,false,false,39121.46,0.00,-770.00,39891.46,1641.46,Mostly cash with negative options exposure.
+2026-06-28,1832,,individual_managed,margin,false,false,0.11,0.00,0.00,0.11,0.11,Managed account.
+2026-06-28,1512,My Investments,individual,margin,false,false,211293.20,226909.97,-17391.00,1774.23,1774.23,Largest portfolio; equity and negative options exposure.
+2026-06-28,1224,My Agentic,individual,cash,false,true,457.35,9.02,0.00,448.33,448.33,Only account accessible for agentic trade actions.

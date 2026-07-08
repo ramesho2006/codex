@@ -54,7 +54,7 @@ Current reco routines:
 
 Add an empirical forward-outcome layer based on historical signal rows.
 
-For every symbol, frequency, and signal context, calculate what happened after a BUY or SELL signal over fixed horizons.
+For every scrip, frequency, and signal context, calculate what happened after a BUY or SELL signal over fixed horizons.
 
 Recommended horizons:
 
@@ -75,7 +75,7 @@ For each signal event and horizon:
 - min_low_after_signal
 - horizon_bars_observed
 
-Aggregate by symbol/frequency/signal context:
+Aggregate by scrip/frequency/signal context:
 
 - trading_horizon_days
 - trading_horizon_weeks
@@ -126,7 +126,7 @@ jstockdata_reco_projection
 
 Suggested grain:
 
-- symbol
+- scrip
 - frequency
 - assetclass
 - signal_direction
@@ -163,8 +163,8 @@ DAILY|BUY|BUY|UP|BUY|BLUE|GREEN
 
 If sample size is too small for full context, fall back to broader contexts:
 
-1. symbol + frequency + full context
-2. symbol + frequency + Combined_Signal + SMADeltaTrend
+1. scrip + frequency + full context
+2. scrip + frequency + Combined_Signal + SMADeltaTrend
 3. assetclass + frequency + full context
 4. assetclass + frequency + Combined_Signal
 

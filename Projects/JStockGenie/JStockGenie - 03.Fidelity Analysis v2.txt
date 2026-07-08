@@ -1,0 +1,13 @@
+20260628 18:38
+--------------------------------------------------------------------------------
+moving forward, save all the prompts I provide in this chat in the file 
+"D:\Codex\Projects\JStockGenie\JStockGenie - 03.Fidelity Analysis v2.txt"
+
+organize it with YYYYMMDD HH:MM followed by a line divider
+
+20260707 22:26
+--------------------------------------------------------------------------------
+om 
+In Fidelity account, I have SPAXX, SPMO, SPY and VCR,
+I have around 16K in cash to invest.
+Please suggest top ETFs to buy. also, advise I should sell any of the existing ones

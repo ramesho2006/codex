@@ -14,12 +14,12 @@ VIG, VYM, SCHD, DGRO, SDY, DVY, FVD, NOBL, HDV, DGRW
 
 ## Steps
 
-1. Check `jstockdata_reco_routine_runlog` for `reco_weekly_projection_refresh`.
+1. Check `jstockdata_reco_routine_runlog` for `reco_weekly_master_refresh`.
    - If `last_run_at` is within 1 day, do not rerun SQL routines.
-   - If `last_run_at` is more than 2 days old, ask the user before running `CALL reco_weekly_projection_refresh();`.
+   - If `last_run_at` is more than 2 days old, ask the user before running `CALL reco_weekly_master_refresh();`.
    - If the timestamp is between 1 and 2 days old, use current tables unless the user explicitly asks for a refresh.
 2. Pull the top 10 holdings for each Growth ETF and each Dividend ETF.
-3. Normalize symbols, including combining GOOG and GOOGL as GOOGL/GOOG.
+3. Normalize scrips, including combining GOOG and GOOGL as GOOGL/GOOG.
 4. For each group, rank common holdings by unique ETF appearances, combined top-10 weight, and holding rank inside each ETF.
 5. Use jstockdata_reco_weekly_target_recos as the first-pass weekly target filter:
    - reco_category = 'ETF'
@@ -53,7 +53,7 @@ For each run, create a dated subfolder:
 
 ## Output Columns
 
-basket_rank, symbol, name, etf_appearances, combined_top10_weight_pct,
+basket_rank, scrip, name, etf_appearances, combined_top10_weight_pct,
 avg_weight_per_appearing_etf_pct, signal_note, source_etfs
 
 When projection fields are available, add:

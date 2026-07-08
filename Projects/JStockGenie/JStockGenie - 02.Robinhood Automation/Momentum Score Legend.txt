@@ -1,0 +1,51 @@
+om
+Momentum Columns
+=======================================================================================================================
+momentum_score: 				Overall momentum strength score from -100 bearish to +100 bullish.
+momentum_direction: 			Simple direction label: BULLISH, BEARISH, or NEUTRAL.
+momentum_phase: 				Stage of the move, such as EARLY, BULLISH_ACCELERATING, BEARISH_ACCELERATING, MATURE, NEUTRAL, or REVERSAL_RISK.
+momentum_confidence_pct: 		Confidence level that the momentum reading is reliable.
+momentum_age_bars: 			Approximate age of the current HA rally/trend sequence in bars.
+momentum_acceleration: 			Whether momentum is strengthening or weakening versus recent bars.
+momentum_exhaustion_score:		Risk that the current move is stretched or tired.
+momentum_reversal_risk_pct:		Probability-style warning score that momentum may reverse.
+predicted_5bar_return_pct: 		Estimated return over the next 5 bars based on current momentum inputs.
+predicted_10bar_return_pct: 		Estimated return over the next 10 bars based on current momentum inputs.
+
+
+
+
+Momentum_Phase		Meaning															How to use it
+=======================================================================================================================
+EARLY					Bullish momentum has just started and is still young.					Best new-buy setup.
+BULLISH_ACCELERATING	Bullish momentum is getting stronger.								Strong buy candidate if other signals agree.
+BEARISH_ACCELERATING	Bearish momentum is getting stronger.								Avoid new buys; review for trim/sell risk.
+MATURE					Bullish momentum exists, but the move may be extended.				Hold or buy smaller; use profit discipline.
+WEAKENING				Still bullish overall, but acceleration is slowing or turning negative.		Avoid aggressive new buys; watch for reversal.
+NEUTRAL				Momentum is mixed or below the threshold.							Wait for clearer confirmation.
+REVERSAL_RISK			Signals conflict or the trend setup is unstable.							Avoid unless there is a strong override reason.
+
+
+
+Momentum Phase		Options Idea						Logic
+=======================================================================================================================
+BULLISH_ACCELERATING	SELL PUT / cash-secured put		Underlying has strengthening upside momentum, so selling downside premium can align with trend.
+BEARISH_ACCELERATING	SELL CALL / covered call only		Underlying has strengthening downside momentum, so selling upside premium can align with trend.
+
+
+
+Momentum Column Calculations
+=======================================================================================================================
+momentum_score				Weighted score from HAChangePct, HARallySlope, HARallyAngle, HARunIndex, HARSIValue, LODeltaFlowPct, volume expansion, and close strength.
+momentum_direction				BULLISH, BEARISH, or NEUTRAL, based on HA trend, slope, HARSI zone, and combined signal alignment.
+momentum_phase				Denotes EARLY, ACCELERATING, MATURE, WEAKENING, REVERSAL_RISK
+momentum_age_bars				Number of daily/weekly bars since the current momentum direction began.
+momentum_acceleration			Difference between current momentum score and prior 3-5 bar average.
+momentum_exhaustion_score		Higher when HARSIValue is stretched, rally sequence is long, angle is extreme, or HA change starts flattening.
+momentum_reversal_risk_pct		Probability-style score using exhaustion, weakening HA trend, opposing LODeltaSignal, and negative acceleration.
+predicted_5bar_return_pct			Empirical projection based on historical rows with similar momentum context for next 5bars.
+predicted_10bar_return_pct		Empirical projection based on historical rows with similar momentum context for next 10bars.
+
+
+
+

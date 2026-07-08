@@ -1,5 +1,5 @@
-CREATE TABLE IF NOT EXISTS `jstockdata_momentum_signal` (
-  `symbol` VARCHAR(20) NOT NULL,
+CREATE TABLE IF NOT EXISTS `jstockdata_reco_momentum_signal` (
+  `scrip` VARCHAR(20) NOT NULL,
   `frequency` VARCHAR(20) NOT NULL,
   `signal_date` INT NOT NULL,
   `close_price` DECIMAL(12,2) NULL,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `jstockdata_momentum_signal` (
   `predicted_10bar_return_pct` DECIMAL(10,2) NULL,
   `risk_note` VARCHAR(500) NULL,
   `generated_at` DATETIME NOT NULL,
-  PRIMARY KEY (`symbol`, `frequency`, `signal_date`),
+  PRIMARY KEY (`scrip`, `frequency`, `signal_date`),
   KEY `ix_momentum_frequency_score` (`frequency`, `momentum_direction`, `momentum_score`),
   KEY `ix_momentum_phase` (`frequency`, `momentum_phase`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -47,8 +47,8 @@ CREATE PROCEDURE `reco_momentum_refresh`()
 BEGIN
   DECLARE v_generated_at DATETIME DEFAULT NOW();
 
-  CREATE TABLE IF NOT EXISTS `jstockdata_momentum_signal` (
-    `symbol` VARCHAR(20) NOT NULL,
+  CREATE TABLE IF NOT EXISTS `jstockdata_reco_momentum_signal` (
+    `scrip` VARCHAR(20) NOT NULL,
     `frequency` VARCHAR(20) NOT NULL,
     `signal_date` INT NOT NULL,
     `close_price` DECIMAL(12,2) NULL,
@@ -85,22 +85,22 @@ BEGIN
     `predicted_10bar_return_pct` DECIMAL(10,2) NULL,
     `risk_note` VARCHAR(500) NULL,
     `generated_at` DATETIME NOT NULL,
-    PRIMARY KEY (`symbol`, `frequency`, `signal_date`),
+    PRIMARY KEY (`scrip`, `frequency`, `signal_date`),
     KEY `ix_momentum_frequency_score` (`frequency`, `momentum_direction`, `momentum_score`),
     KEY `ix_momentum_phase` (`frequency`, `momentum_phase`)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-  TRUNCATE TABLE `jstockdata_momentum_signal`;
+  TRUNCATE TABLE `jstockdata_reco_momentum_signal`;
 
   DROP TABLE IF EXISTS `jstockdata_momentum_work_base`;
   CREATE TABLE `jstockdata_momentum_work_base` AS
   SELECT
     ordered.*,
-    @row_num := IF(@row_key = CONCAT(ordered.symbol, '|', ordered.frequency), @row_num + 1, 1) AS seq_num,
-    @row_key := CONCAT(ordered.symbol, '|', ordered.frequency) AS seq_key
+    @row_num := IF(@row_key = CONCAT(ordered.scrip, '|', ordered.frequency), @row_num + 1, 1) AS seq_num,
+    @row_key := CONCAT(ordered.scrip, '|', ordered.frequency) AS seq_key
   FROM (
     SELECT
-      h.`SCRIP` AS symbol,
+      h.`SCRIP` AS scrip,
       TRIM(REPLACE(h.`Frequency`, '\r', '')) AS frequency,
       h.`DATE` AS signal_date,
       h.`CLOSE` AS close_price,
@@ -136,8 +136,8 @@ BEGIN
   CROSS JOIN (SELECT @row_key := '', @row_num := 0) vars;
 
   ALTER TABLE `jstockdata_momentum_work_base`
-    ADD PRIMARY KEY (`symbol`, `frequency`, `seq_num`),
-    ADD KEY `ix_tmp_momentum_latest` (`symbol`, `frequency`, `signal_date`);
+    ADD PRIMARY KEY (`scrip`, `frequency`, `seq_num`),
+    ADD KEY `ix_tmp_momentum_latest` (`scrip`, `frequency`, `signal_date`);
 
   DROP TEMPORARY TABLE IF EXISTS `tmp_momentum_calc`;
   CREATE TEMPORARY TABLE `tmp_momentum_calc` AS
@@ -176,14 +176,14 @@ BEGIN
         END
     ) AS raw_momentum_score
   FROM `jstockdata_momentum_work_base` b
-  LEFT JOIN `jstockdata_momentum_work_base` p1 ON p1.symbol = b.symbol AND p1.frequency = b.frequency AND p1.seq_num = b.seq_num - 1
-  LEFT JOIN `jstockdata_momentum_work_base` p2 ON p2.symbol = b.symbol AND p2.frequency = b.frequency AND p2.seq_num = b.seq_num - 2
-  LEFT JOIN `jstockdata_momentum_work_base` p3 ON p3.symbol = b.symbol AND p3.frequency = b.frequency AND p3.seq_num = b.seq_num - 3
-  LEFT JOIN `jstockdata_momentum_work_base` p4 ON p4.symbol = b.symbol AND p4.frequency = b.frequency AND p4.seq_num = b.seq_num - 4
-  LEFT JOIN `jstockdata_momentum_work_base` p5 ON p5.symbol = b.symbol AND p5.frequency = b.frequency AND p5.seq_num = b.seq_num - 5;
+  LEFT JOIN `jstockdata_momentum_work_base` p1 ON p1.scrip = b.scrip AND p1.frequency = b.frequency AND p1.seq_num = b.seq_num - 1
+  LEFT JOIN `jstockdata_momentum_work_base` p2 ON p2.scrip = b.scrip AND p2.frequency = b.frequency AND p2.seq_num = b.seq_num - 2
+  LEFT JOIN `jstockdata_momentum_work_base` p3 ON p3.scrip = b.scrip AND p3.frequency = b.frequency AND p3.seq_num = b.seq_num - 3
+  LEFT JOIN `jstockdata_momentum_work_base` p4 ON p4.scrip = b.scrip AND p4.frequency = b.frequency AND p4.seq_num = b.seq_num - 4
+  LEFT JOIN `jstockdata_momentum_work_base` p5 ON p5.scrip = b.scrip AND p5.frequency = b.frequency AND p5.seq_num = b.seq_num - 5;
 
-  INSERT INTO `jstockdata_momentum_signal` (
-    symbol, frequency, signal_date, close_price, momentum_score, momentum_direction,
+  INSERT INTO `jstockdata_reco_momentum_signal` (
+    scrip, frequency, signal_date, close_price, momentum_score, momentum_direction,
     momentum_phase, momentum_confidence_pct, momentum_age_bars, momentum_acceleration,
     momentum_exhaustion_score, momentum_reversal_risk_pct, close_change_3bar_pct,
     close_change_5bar_pct, ha_change_pct, ha_change_3bar_delta, ha_trend_correct,
@@ -194,7 +194,7 @@ BEGIN
     risk_note, generated_at
   )
   SELECT
-    c.symbol,
+    c.scrip,
     c.frequency,
     c.signal_date,
     c.close_price,
@@ -206,17 +206,22 @@ BEGIN
     END AS momentum_direction,
     CASE
       WHEN c.raw_momentum_score >= 18
-           AND COALESCE(c.HARallySeq, 0) BETWEEN 1 AND 3
-           AND COALESCE(c.momentum_acceleration, 0) > 0 THEN 'EARLY'
+           AND c.Combined_Signal = 'BUY'
+           AND c.LODeltaSignal = 'BUY'
+           AND COALESCE(c.HARSIValue, 50) < 75
+           AND COALESCE(c.momentum_acceleration, 0) >= 0 THEN 'BULLISH_ACCELERATING'
       WHEN c.raw_momentum_score >= 18
-           AND COALESCE(c.momentum_acceleration, 0) > 0
-           AND COALESCE(c.HARSIValue, 50) < 75 THEN 'ACCELERATING'
+           AND COALESCE(c.HARallySeq, 0) BETWEEN 1 AND 3
+           AND COALESCE(c.momentum_acceleration, 0) >= 0 THEN 'EARLY'
       WHEN c.raw_momentum_score >= 18
            AND (COALESCE(c.HARSIValue, 50) >= 75 OR COALESCE(c.HARallySeq, 0) >= 8) THEN 'MATURE'
       WHEN c.raw_momentum_score >= 18
            AND COALESCE(c.momentum_acceleration, 0) < 0 THEN 'WEAKENING'
       WHEN c.raw_momentum_score <= -18
-           AND COALESCE(c.momentum_acceleration, 0) < 0 THEN 'ACCELERATING'
+           AND c.Combined_Signal = 'SELL'
+           AND c.LODeltaSignal = 'SELL'
+           AND COALESCE(c.HARSIValue, 50) > 25
+           AND COALESCE(c.momentum_acceleration, 0) <= 0 THEN 'BEARISH_ACCELERATING'
       WHEN ABS(c.raw_momentum_score) < 18 THEN 'NEUTRAL'
       ELSE 'REVERSAL_RISK'
     END AS momentum_phase,
@@ -300,55 +305,55 @@ BEGIN
                         CONCAT('Generated momentum rows at ', v_generated_at));
 END;
 
-DROP PROCEDURE IF EXISTS `reco_weekly_projection_refresh`;
+DROP PROCEDURE IF EXISTS `reco_weekly_master_refresh`;
 
-CREATE PROCEDURE `reco_weekly_projection_refresh`()
+CREATE PROCEDURE `reco_weekly_master_refresh`()
 BEGIN
   DECLARE v_started_at datetime DEFAULT NOW();
-  DECLARE v_current_step varchar(128) DEFAULT 'reco_weekly_projection_refresh';
+  DECLARE v_current_step varchar(128) DEFAULT 'reco_weekly_master_refresh';
 
   DECLARE EXIT HANDLER FOR SQLEXCEPTION
   BEGIN
-    CALL reco_runlog_mark(v_current_step, 'FAILED', 'Failed during reco_weekly_projection_refresh');
-    CALL reco_runlog_mark('reco_weekly_projection_refresh', 'FAILED', CONCAT('Failed wrapper; started at ', v_started_at));
+    CALL reco_runlog_mark(v_current_step, 'FAILED', 'Failed during reco_weekly_master_refresh');
+    CALL reco_runlog_mark('reco_weekly_master_refresh', 'FAILED', CONCAT('Failed master wrapper; started at ', v_started_at));
     RESIGNAL;
   END;
 
   SET v_current_step = 'reco_backtest';
   CALL reco_backtest();
-  CALL reco_runlog_mark('reco_backtest', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_backtest', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_trade';
   CALL reco_trade();
-  CALL reco_runlog_mark('reco_trade', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_trade', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_invest';
   CALL reco_invest();
-  CALL reco_runlog_mark('reco_invest', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_invest', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_options';
   CALL reco_options();
-  CALL reco_runlog_mark('reco_options', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_options', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_projection_refresh';
   CALL reco_projection_refresh();
-  CALL reco_runlog_mark('reco_projection_refresh', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_projection_refresh', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_projection_enrich_outputs';
   CALL reco_projection_enrich_outputs();
-  CALL reco_runlog_mark('reco_projection_enrich_outputs', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_projection_enrich_outputs', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_momentum_refresh';
   CALL reco_momentum_refresh();
-  CALL reco_runlog_mark('reco_momentum_refresh', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_momentum_refresh', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_basket_refresh';
   CALL reco_basket_refresh();
-  CALL reco_runlog_mark('reco_basket_refresh', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_basket_refresh', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
   SET v_current_step = 'reco_weekly_target_refresh';
   CALL reco_weekly_target_refresh();
-  CALL reco_runlog_mark('reco_weekly_target_refresh', 'SUCCESS', 'Completed by reco_weekly_projection_refresh');
+  CALL reco_runlog_mark('reco_weekly_target_refresh', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
-  CALL reco_runlog_mark('reco_weekly_projection_refresh', 'SUCCESS', CONCAT('Completed wrapper; started at ', v_started_at));
+  CALL reco_runlog_mark('reco_weekly_master_refresh', 'SUCCESS', CONCAT('Completed master wrapper; started at ', v_started_at));
 END;
