@@ -52,14 +52,15 @@ This folder is organized around the weekly JStockGenie Robinhood workflow.
    7. `reco_projection_refresh`
    8. `reco_projection_enrich_outputs`
    9. `reco_momentum_refresh`
-   10. `reco_basket_refresh`
-   11. `reco_weekly_target_refresh`
+   10. `reco_predictive_direction_refresh`
+   11. `reco_basket_refresh`
+   12. `reco_weekly_target_refresh`
 
    Do not create or run a second weekly wrapper. `reco_weekly_master_refresh()` is the canonical master routine.
 
 4. Use `jstockdata_scrips.RecoUniverseStatus = 'KEEP'` and `RecoUniverseRank <= 1000` as the active EQ/ETF universe gate for trading analysis and recommendation refreshes.
 5. Fetch recent news with `05_Tools/reco_news_fetcher.py` when an API key is configured; otherwise the news overlay remains neutral.
-6. Validate projections, momentum, news overlay, baskets, and target-band tables.
+6. Validate projections, momentum, predictive direction, news overlay, baskets, and target-band tables.
 7. Generate ETF, EQT, and manual options recommendations.
 8. For Agentic account, prepare orders as review-only and place only after explicit confirmation.
 9. For non-Agentic accounts, user manually reviews and places ETF/options trades.
@@ -80,3 +81,12 @@ Use `jstockdata_reco_momentum_signal.momentum_phase` beside `momentum_direction`
 | `REVERSAL_RISK` | Momentum and supporting signals conflict or no longer fit a clean trend. | Avoid new buys unless there is a specific override reason. |
 
 For weekly EQT/ETF picks, prefer `momentum_direction = 'BULLISH'` with `momentum_phase IN ('EARLY', 'BULLISH_ACCELERATING')`.
+
+## Predictive Direction
+
+`reco_predictive_direction_refresh()` maintains:
+
+- `jstockdata_reco_major_pivots` - historical major local peaks/troughs using daily close, a 10-bar pivot window, and a 7% major-move filter.
+- `jstockdata_reco_predictive_direction` - one latest row per scrip with daily/weekly Combined Signal, daily/weekly momentum, probability, confidence, and `weekly_verdict`.
+
+Use `jstockdata_reco_predictive_direction` as the fast screener layer, then drill into `jstockdata_reco_major_pivots` for historical reaction context.

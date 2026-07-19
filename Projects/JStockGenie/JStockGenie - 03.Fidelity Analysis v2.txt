@@ -11,3 +11,80 @@ om
 In Fidelity account, I have SPAXX, SPMO, SPY and VCR,
 I have around 16K in cash to invest.
 Please suggest top ETFs to buy. also, advise I should sell any of the existing ones
+
+20260708 09:53
+--------------------------------------------------------------------------------
+ok. thanks.
+
+Is this reco list aligned with Combined Signal from jstockdata_hatrend, jstockdata_hatrend_extend and 
+Momentum Signal from jstockdata_reco_momentum_signal.
+
+Refer to chat "JStockGenie - 02.Robinhood Automation"
+and "D:\Codex\Projects\JStockGenie\JStockGenie - 02.Robinhood Automation"
+
+
+20260714 21:28
+--------------------------------------------------------------------------------
+om
+
+Use Combined Signal from jstockdata_hatrend, jstockdata_hatrend_extend and 
+Momentum Signal from jstockdata_reco_momentum_signal.
+
+Analyze the following. 
+
+For MSFT, 
+(a) identify major peaks and troughs since Jan 2024
+(b) list the peaks and troughs
+(c) reason out why by looking at stock data. momentum, news, etc.
+(d) identify and determine the factors associated with these ups and downs
+(e) determine a path or approach to guess the future direction, probability and confidence levels
+(f) check if this approach can be used across all other scrips present in jstockdata_scrips
+(e) analyze existing SQL routines if the can contribute towards this "predictive direction analysis"
+
+remember to log this prompt
+
+
+
+
+20260714 22:19
+--------------------------------------------------------------------------------
+om
+
+
+I like your
+(a) Major Pivots Table (Peaks, Troughs, Dates, Price, Move%)
+(b) Current Direction Read
+
+Please proceed with your idea of reco_predictive_direction_refresh routine in SQL
+
+Hold the history of "Major Pivots" for all scrips so that we can cross check and refer to historical performance from past and predict future performance to determine how the scrips may react to a similar news.
+
+Create a way to get the latest "Direction and Prediction" using
+Daily Combined_Signal,
+Weekly Combined_Signal,
+Daily momentum,
+Daily Confidence%,
+Weekly momentum,
+Weekly Confidence%
+
+so that we can quickly use this data to fine tune the screener
+
+summarize your planned steps before proceeding
+
+20260714 22:19
+--------------------------------------------------------------------------------
+include "weekly verdict" for each scrips
+
+20260714 22:21
+--------------------------------------------------------------------------------
+please proceed
+
+20260714 23:36
+--------------------------------------------------------------------------------
+continue
+
+20260714 23:38
+--------------------------------------------------------------------------------
+please create required tables for
+(a) historical peaks, troughs data
+(b) recent directional data

@@ -48,6 +48,10 @@ BEGIN
   CALL reco_momentum_refresh();
   CALL reco_runlog_mark('reco_momentum_refresh', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
+  SET v_current_step = 'reco_predictive_direction_refresh';
+  CALL reco_predictive_direction_refresh();
+  CALL reco_runlog_mark('reco_predictive_direction_refresh', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
+
   SET v_current_step = 'reco_basket_refresh';
   CALL reco_basket_refresh();
   CALL reco_runlog_mark('reco_basket_refresh', 'SUCCESS', 'Completed by reco_weekly_master_refresh');

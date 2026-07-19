@@ -30,8 +30,9 @@ Do not create a duplicate weekly wrapper routine. Maintain this master routine a
 7. reco_projection_refresh
 8. reco_projection_enrich_outputs
 9. reco_momentum_refresh
-10. reco_basket_refresh
-11. reco_weekly_target_refresh
+10. reco_predictive_direction_refresh
+11. reco_basket_refresh
+12. reco_weekly_target_refresh
 
 The wrapper refreshes projection fields in:
 
@@ -47,6 +48,11 @@ The wrapper also refreshes the weekly 1% to 3% target review table:
 The wrapper also refreshes the momentum confirmation table:
 
 - jstockdata_reco_momentum_signal
+
+The wrapper also refreshes predictive direction and major pivot history:
+
+- jstockdata_reco_major_pivots
+- jstockdata_reco_predictive_direction
 
 The wrapper also refreshes the news catalyst overlay from already-fetched raw headlines:
 
@@ -86,6 +92,7 @@ WHERE routine_name IN (
   'reco_projection_refresh',
   'reco_projection_enrich_outputs',
   'reco_momentum_refresh',
+  'reco_predictive_direction_refresh',
   'reco_basket_refresh',
   'reco_weekly_target_refresh'
 )
@@ -112,6 +119,8 @@ Projection source table:
 - jstockdata_reco_projection
 - jstockdata_reco_weekly_target_recos
 - jstockdata_reco_momentum_signal
+- jstockdata_reco_predictive_direction
+- jstockdata_reco_major_pivots
 
 ## 2. Weekly Basket Routines
 

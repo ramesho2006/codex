@@ -14,6 +14,7 @@ SQL files are split into migrations and reusable review queries.
 - `migrations/20260706_apply_reco_universe_keep_filter.sql` - applies the KEEP and `RecoUniverseRank <= 1000` universe gate to active reco refresh routines.
 - `migrations/20260707_universe_status_refresh.sql` - adds `reco_universe_status_refresh(p_keep_limit)` to rerank EQ/ETF scrips periodically.
 - `migrations/20260707_news_signal.sql` - adds news raw/signal tables and `reco_news_signal_refresh(p_lookback_days)`.
+- `migrations/20260714_predictive_direction.sql` - adds major pivot history, latest predictive direction, `weekly_verdict`, and `reco_predictive_direction_refresh()`.
 
 ## Queries
 
@@ -40,8 +41,9 @@ Child routine sequence:
 7. `reco_projection_refresh`
 8. `reco_projection_enrich_outputs`
 9. `reco_momentum_refresh`
-10. `reco_basket_refresh`
-11. `reco_weekly_target_refresh`
+10. `reco_predictive_direction_refresh`
+11. `reco_basket_refresh`
+12. `reco_weekly_target_refresh`
 
 News data is fetched outside SQL with `05_Tools/reco_news_fetcher.py`. The SQL master refresh only rescans already-fetched raw news and applies the latest signal overlay.
 
@@ -60,3 +62,28 @@ News data is fetched outside SQL with `05_Tools/reco_news_fetcher.py`. The SQL m
 | `REVERSAL_RISK` | Momentum and supporting signals conflict or no longer fit a clean trend. |
 
 Weekly EQT/ETF picks should generally prefer `momentum_direction = 'BULLISH'` and `momentum_phase IN ('EARLY', 'BULLISH_ACCELERATING')`.
+
+## Predictive Direction Review
+
+Latest screener direction:
+
+```sql
+SELECT scrip, expected_direction, direction_probability_pct,
+       direction_confidence_pct, weekly_verdict,
+       daily_combined_signal, weekly_combined_signal,
+       daily_momentum_direction, daily_momentum_confidence_pct,
+       weekly_momentum_direction, weekly_momentum_confidence_pct
+FROM jstockdata_reco_predictive_direction
+WHERE reco_universe_status = 'KEEP'
+ORDER BY direction_confidence_pct DESC, direction_probability_pct DESC;
+```
+
+Scrip pivot history:
+
+```sql
+SELECT pivot_type, pivot_date, pivot_close, move_from_prev_pct,
+       move_to_next_pct, daily_combined_signal, weekly_combined_signal
+FROM jstockdata_reco_major_pivots
+WHERE scrip = 'MSFT'
+ORDER BY pivot_date;
+```

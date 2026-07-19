@@ -25,3 +25,223 @@ MYSQL, Java file using the "Resource Locations" mentioned under Prompt #2
 =============================================================================
 for prompt v2 logging, use YYYYMMDD HH:MM as the prompt log stamp
 update the previous prompt log stamps if possible 
+
+20260711 19:02
+=============================================================================
+om
+
+when I run the Java Weekly Trend, I am getting an error while running the Screener SQL Script located at 
+D:\DB011-JWORK\JStockData\EXECSQL\JStockScreener.sql
+
+The error:
+Screening Scrips
+==================
+com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: Unknown column 'e.HAROCValue' in 'field list'
+
+Rewrite the SQL Screener that aligns with Weekly EQT Basket Routine, and Weekly ETF Basket Routine.
+
+Fix the screener section in the java file located at
+D:\DB011-JWORK\JProgramming\MyJava\workspace\JStockGenie\JStockGenie.java 
+
+20260711 19:07
+=============================================================================
+please include the momentum score and direction. update SQL screener and Java code as need
+
+20260711 19:13
+=============================================================================
+can you include if these screened scrips are suitable for options for this week
+
+20260711 19:17
+=============================================================================
+to keep the screener output compact, remove the following fields form the screener output
+WEEKLY_FLOW_PCT   
+DAILY_FLOW_PCT   
+WEEKLY_SIGNAL   
+DAILY_SIGNAL
+
+20260711 23:06
+=============================================================================
+ok. thanks.
+
+from the MySQL trend data we have, can you spot
+(a) scrips those are BULLISH (suitable for SELL PUT option)  and 
+(b) scrips those are BEARISH (suitable for SELL Covered CALL) 
+
+with strong rally potential BULLISH or BEARISH 
+and also just recently reached Combined_Signal BUY or SELL
+
+20260711 23:08
+=============================================================================
+Please note that scrips already with strong BULLISH or BEARISH momentum may be ready to reverse trend.
+I am not looking for scrips already with strong BULLISH or BEARISH momentum.
+I am looking for scrips with potential BULLISH or BEARISH momentum with recent Combined_Signal = BUY or SELL.
+
+20260711 23:49
+=============================================================================
+besides exp date, also please provide strike and premium
+
+20260711 23:52
+=============================================================================
+keep the 16-column shape, 
+remove any less important columns,
+ replace with strike, premium, and premium_roi_pct
+
+20260711 23:55
+=============================================================================
+double check the premium data.
+example, you have GPC   SELL PUT   strike 120.00  premium 4.2000   exp 20260821
+but in Robinhood, for GPC   SELL PUT   strike 120.00 exp 20260821 premium is 3.33
+please check and refine
+
+20260712 00:00
+=============================================================================
+I think Robinhood uses "Mark" as the premium price, rather than ask and bid.
+is it possible to calculate base on that
+
+20260712 00:27
+=============================================================================
+this is good approach for SELL PUT, especially GPC with a good premium_roi_pct.
+now, is there a way you can check another strategy where 
+we can buy a stock or etf and then sell covered call for premium with higher strike.
+recommend or screen with strike, premium, and premium_roi_pct for the same
+
+20260712 00:42
+=============================================================================
+what is your confidence level that price of GPC, CPB, BALL and COO will move higher
+
+20260712 00:46
+=============================================================================
+ok. can you include this confidence rating or score into the screener
+
+20260712 00:47
+=============================================================================
+remember to have the same for BEARISH picks also in the same logic
+
+20260712 00:48
+=============================================================================
+like BULLISH + star rating or score , BEARISH + star rating or score
+
+20260713 19:37
+=============================================================================
+The screener SQL works fine. 
+But when I run the Java code with SCREEN command line argument, I am getting this error.
+
+java.lang.NullPointerException: Cannot invoke "String.length()" because "inText2DArr[i][j]" is null
+
+20260713 19:44
+------------------------------------------------------------
+great. it fixed it.
+please check why "Momentum Score" is empty for SELL scrips, example ORCL, DD, BLK, EQT, PEP in the screener output
+
+
+20260713 19:51
+------------------------------------------------------------
+remove WEEKLY_CLOSE, OPTION_SUITABLIITY columns from Screener.
+keep separate column for Direction, Star Rating.
+The Star Rating should range from 1 to 5 allinged with Start
+Example: BULLISH, 4.5
+
+
+20260713 19:54
+------------------------------------------------------------
+ok. great. thanks
+what is the difference between  SELL CALL and  SELL COVERED CALL
+
+
+20260713 19:56
+------------------------------------------------------------
+I do not exercise SELL CALL options
+
+
+20260713 19:57
+------------------------------------------------------------
+in that case, include BUY PUT and BUY CALL as applicable
+
+
+20260713 19:58
+------------------------------------------------------------
+continue
+
+
+20260713 20:43
+------------------------------------------------------------
+great. is this momentum score and star rating computed for all scrips and the screener list only the top ones ?
+
+
+20260713 20:46
+------------------------------------------------------------
+in that case, can you compute the same into a SQL table, 
+may be as a SQL routine that creates a table,
+and screener reads the top ones based on Star ratings.
+
+what is your thought and suggestion on this idea
+
+
+20260713 20:49
+------------------------------------------------------------
+I like the idea. name the screener table as jstockdata_reco_screener.
+keep the screener columns same so that the java code has the same screener output shape.
+proceed.
+
+
+20260713 20:50
+------------------------------------------------------------
+name the routine as JStockDataRecoScreenerRefresh().
+keep it as part of the master routine
+
+
+20260713 20:54
+------------------------------------------------------------
+rename JStockDataRecoScreenerRefresh.sql as JStockRecoScreenerRefresh.sql
+
+
+20260713 20:56
+------------------------------------------------------------
+also, rename run_recommendations SQL routine as reco_run_recommendations
+to be consistent in naming routines.
+also, please change all relevant references
+
+
+20260713 20:57
+------------------------------------------------------------
+on second thought, change the JStockDataRecoRefresh to reco_screener_refresh
+
+
+20260713 20:59
+------------------------------------------------------------
+remember the naming convention for SQL routines created by you.
+it should start with "reco_" followed by relevant routine name
+
+
+20260713 21:00
+------------------------------------------------------------
+validate all routines names and usages
+
+
+20260713 21:32
+------------------------------------------------------------
+can you inspect reco_options and jstockdata_reco_options table schema,
+and incorporate the missing columns and computations from screener routine
+
+the idea is to have these include these important columns from screener into jstockdata_reco_oprions table,
+so that it has options scoring for all scrips and screener routine and sql only picks the top for this week.
+
+this will help me assess other scrips and their directional move
+
+
+20260713 22:28
+------------------------------------------------------------
+great. change the screener sql to filter with rank_overall <= 20
+
+
+20260713 22:35
+------------------------------------------------------------
+something is wrong. FSML is not optionable.
+can you inspect the scrips in jstockdata_scrips and determine if those are optionable or not?
+
+
+20260713 22:40
+------------------------------------------------------------
+delete scrips which are not optionable in jstockdata_scrips.
+after this cleanup, I will import EOD, and run Java trend again
+
