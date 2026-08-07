@@ -50,8 +50,7 @@ That wrapper runs:
 8. `reco_projection_enrich_outputs`
 9. `reco_momentum_refresh`
 10. `reco_predictive_direction_refresh`
-11. `reco_basket_refresh`
-12. `reco_weekly_target_refresh`
+11. `reco_weekly_target_refresh`
 
 The universe refresh updates `jstockdata_scrips.RecoUniverseStatus` and `RecoUniverseRank` before recommendation tables are rebuilt. Reco routines should only use rows where `RecoUniverseStatus = 'KEEP'` and `RecoUniverseRank <= 1000`. The news signal refresh scores already-fetched headlines; fetch fresh news first with `05_Tools/reco_news_fetcher.py` when an API key is configured. Predictive direction refresh then builds major pivot history and latest direction/weekly-verdict rows for screening.
 
@@ -59,7 +58,7 @@ Java then runs Yahoo options premium enrichment.
 
 ## 3. Check SQL Tables
 
-Before running basket routines, check the reco routine timestamp:
+Before running weekly recommendation routines, check the reco routine timestamp:
 
 ```sql
 SELECT routine_name, last_run_at, last_status, run_count
@@ -69,7 +68,7 @@ WHERE routine_name = 'reco_weekly_master_refresh';
 
 - If `last_run_at` is within 1 day, do not rerun SQL routines. Use the current reco tables.
 - If `last_run_at` is more than 2 days old, ask before running `CALL reco_weekly_master_refresh();`.
-- If the run log is missing or unclear, also check `MAX(updated_at)` from `jstockdata_reco_basket_current` and ask before any SQL refresh.
+- If the run log is missing or unclear, also check row freshness in `jstockdata_reco_weekly_target_recos` and `jstockdata_current_positions` before any SQL refresh or position analysis.
 
 Check these after Java completes:
 
@@ -81,9 +80,8 @@ Check these after Java completes:
 - `jstockdata_reco_options`
 - `jstockdata_reco_projection`
 - `jstockdata_reco_momentum_signal`
-- `jstockdata_reco_basket_current`
-- `jstockdata_reco_basket_actions`
 - `jstockdata_reco_weekly_target_recos`
+- `jstockdata_current_positions`
 
 Quick validation:
 

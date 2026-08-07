@@ -1,0 +1,8 @@
+﻿{
+    "Procedure":  "reco_run_recommendations",
+    "sql_mode":  "STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION",
+    "Create Procedure":  "CREATE DEFINER=`admin`@`%` PROCEDURE `reco_run_recommendations`()\nBEGIN\r\n    CALL `reco_backtest`();\r\n    CALL `reco_trade`();\r\n    CALL `reco_invest`();\r\n    CALL `reco_basket_refresh`();\r\n\r\n    -- SELECT\r\n        -- \u0027backtest\u0027 AS result_group,\r\n        -- COUNT(*) AS row_count\r\n    -- FROM `jstockdata_reco_backtest`\r\n    -- UNION ALL\r\n    -- SELECT \u0027trade\u0027, COUNT(*) FROM `jstockdata_reco_trade`\r\n    -- UNION ALL\r\n    -- SELECT \u0027investment\u0027, COUNT(*) FROM `jstockdata_reco_invest`\r\n    -- UNION ALL\r\n    -- SELECT \u0027basket_current\u0027, COUNT(*) FROM `jstockdata_reco_basket_current`;\r\n\r\n    -- SELECT\r\n        -- action,\r\n        -- COUNT(*) AS action_count\r\n    -- FROM `jstockdata_reco_basket_actions`\r\n    -- WHERE batch_id = (\r\n        -- SELECT batch_id\r\n        -- FROM `jstockdata_reco_basket_actions`\r\n        -- ORDER BY action_id DESC\r\n        -- LIMIT 1\r\n    -- )\r\n    -- GROUP BY action\r\n    -- ORDER BY FIELD(action, \u0027SELL\u0027, \u0027TAPER\u0027, \u0027BUY\u0027, \u0027HOLD\u0027);\r\nEND",
+    "character_set_client":  "latin1",
+    "collation_connection":  "latin1_swedish_ci",
+    "Database Collation":  "utf8_general_ci"
+}

@@ -1,0 +1,209 @@
+﻿20260628 18:36
+--------------------------------------------------------------------------------
+JStockGenie - 03.Fidelity Analysis
+
+20260628 18:37
+--------------------------------------------------------------------------------
+use use D:\Codex\Projects\JStockGenie\JStockGenie - 03.Fidelity Analysis
+as the working directory for this chat
+
+20260628 18:38
+--------------------------------------------------------------------------------
+moving forward, save all the prompts I provide in this chat in the file 
+"D:\Codex\Projects\JStockGenie\JStockGenie - 03.Fidelity Analysis v2.txt"
+
+organize it with YYYYMMDD HH:MM followed by a line divider
+
+20260707 22:26
+--------------------------------------------------------------------------------
+om 
+In Fidelity account, I have SPAXX, SPMO, SPY and VCR,
+I have around 16K in cash to invest.
+Please suggest top ETFs to buy. also, advise I should sell any of the existing ones
+
+20260708 09:53
+--------------------------------------------------------------------------------
+ok. thanks.
+
+Is this reco list aligned with Combined Signal from jstockdata_hatrend, jstockdata_hatrend_extend and 
+Momentum Signal from jstockdata_reco_momentum_signal.
+
+Refer to chat "JStockGenie - 02.Robinhood Automation"
+and "D:\Codex\Projects\JStockGenie\JStockGenie - 02.Robinhood Automation"
+
+20260714 21:28
+--------------------------------------------------------------------------------
+om
+
+Use Combined Signal from jstockdata_hatrend, jstockdata_hatrend_extend and 
+Momentum Signal from jstockdata_reco_momentum_signal.
+
+Analyze the following. 
+
+For MSFT, 
+(a) identify major peaks and troughs since Jan 2024
+(b) list the peaks and troughs
+(c) reason out why by looking at stock data. momentum, news, etc.
+(d) identify and determine the factors associated with these ups and downs
+(e) determine a path or approach to guess the future direction, probability and confidence levels
+(f) check if this approach can be used across all other scrips present in jstockdata_scrips
+(e) analyze existing SQL routines if the can contribute towards this "predictive direction analysis"
+
+remember to log this prompt
+
+20260714 22:19
+--------------------------------------------------------------------------------
+om
+
+
+I like your
+(a) Major Pivots Table (Peaks, Troughs, Dates, Price, Move%)
+(b) Current Direction Read
+
+Please proceed with your idea of reco_predictive_direction_refresh routine in SQL
+
+Hold the history of "Major Pivots" for all scrips so that we can cross check and refer to historical performance from past and predict future performance to determine how the scrips may react to a similar news.
+
+Create a way to get the latest "Direction and Prediction" using
+Daily Combined_Signal,
+Weekly Combined_Signal,
+Daily momentum,
+Daily Confidence%,
+Weekly momentum,
+Weekly Confidence%
+
+so that we can quickly use this data to fine tune the screener
+
+summarize your planned steps before proceeding
+
+20260714 22:19
+--------------------------------------------------------------------------------
+include "weekly verdict" for each scrips
+
+20260714 22:21
+--------------------------------------------------------------------------------
+please proceed
+
+20260714 23:36
+--------------------------------------------------------------------------------
+continue
+
+20260714 23:38
+--------------------------------------------------------------------------------
+please create required tables for
+(a) historical peaks, troughs data
+(b) recent directional data
+
+20260801 21:59
+--------------------------------------------------------------------------------
+please rename working folder
+"JStockGenie - 03.Fidelity Analysis" to "JStockGenie - 03.Fidelity and Market Analysis"
+
+save all the prompts including previousand future ones in this chat to 
+"D:\Codex\Projects\JStockGenie\JStockGenie - 04.Fidelity and Market Analysis v2.txt"
+
+organize it with YYYYMMDD HH:MM followed by a line divider
+
+20260801 22:01
+--------------------------------------------------------------------------------
+can you go back to history in this chat and record all the previous prompts into the text file
+20260801 22:02
+--------------------------------------------------------------------------------
+sorry. please use ""D:\Codex\Projects\JStockGenie\JStockGenie - 03.Fidelity and Market Analysis v2.txt"" file name
+20260801 22:05
+--------------------------------------------------------------------------------
+now move the prompt log file from 
+D:\Codex\Projects\JStockGenie\JStockGenie - 03.Fidelity and Market Analysis v2.txt
+to 
+D:\Codex\Prompts\JStockGenie - 03.Fidelity and Market Analysis v2.txt
+and use that in the future
+
+20260801 22:08
+--------------------------------------------------------------------------------
+I have a paid subscription to https://stockanalysis.com/
+can you use the stocks screener and etfs screener to create a list of good stocks and etfs
+with optionable, high dividend, good growth, high premium and roi that is suitable for investment and options trading especially SELL CALL and SELL PUT options
+
+can you do this? 
+
+If so, what do you need from me to login and access https://stockanalysis.com/
+
+20260801 22:28
+--------------------------------------------------------------------------------
+“I’m logged in.” but the screeners are in different pages.
+Stock Screener page: https://stockanalysis.com/stocks/screener/
+ETF Screener page: https://stockanalysis.com/etf/screener/
+
+Pleas enote that I have logged in with my other user id remokavi@gmail.com
+
+20260801 22:40
+--------------------------------------------------------------------------------
+om 
+I have logged in to https://stockanalysis.com using **Codex in-app browser.  please check**
+
+20260801 23:00
+--------------------------------------------------------------------------------
+om. great
+
+please proceed and build the final list with columns like:
+Symbol, Type, Name, Dividend Yield, Growth Score, Optionable, Weekly Verdict, Direction, Confidence %, SELL PUT Suitability, SELL CALL Suitability, Premium ROI, Notes
+
+for both Stocks and ETFs
+
+20260802 00:00
+--------------------------------------------------------------------------------
+rename "Type" to "AssetClass" in the csv
+rename "Stock" to "EQ" in the data within CSV
+
+20260802 00:18
+--------------------------------------------------------------------------------
+please include the close_price for all the scrips/symbols
+
+20260802 00:22
+--------------------------------------------------------------------------------
+can you 
+(a) truncate jstockdata_scrips table,
+(b) update scrip as symbol, company name, assetclass,
+(c) exclude close_price in the table
+(d) update RecoUniverse and RecoUniverseRank if possible or leave it blank for now
+we can update after I run this week's trend  
+20260806 23:24
+--------------------------------------------------------------------------------
+can you import  "My Investment Positions.csv" data into
+jstockdata_current_postions
+
+make sure the ExpDate column is reflect as date not timestamp
+
+20260806 23:25
+--------------------------------------------------------------------------------
+use table jstockdata_current_positions
+
+20260807 00:00
+--------------------------------------------------------------------------------
+besides JStockGenie, what are the other source you can refer to check performance and use signals for 
+trading stocks and etfs for swing, investment and options trading
+
+short term (1 to 2 weeks)
+mid term  (1 to 2 months)
+long term ( 3 to 12 months)
+
+20260807 00:03
+--------------------------------------------------------------------------------
+what would you like to call this type of combination (JStockGenie and External Sources) for future reference
+
+20260807 00:08
+--------------------------------------------------------------------------------
+great. I like the name too. 
+moving forward, after I run the JStockGenie Java Trend, I will ask you to run the JSG Fusion Signal analysis.
+what is your plan in terms of seqeunce and the above jstock_fusion_* tables
+
+20260807 00:12
+--------------------------------------------------------------------------------
+do you prefer to create the jstockdata_fusion_* tables now
+or after I run the Java trend tomorrow Friday ?
+
+20260807 00:14
+--------------------------------------------------------------------------------
+ok. proceed with jstockdata_fusion_* tables.
+please remember to pull the required data from the external sources after I informed completion of Java trend build 
+

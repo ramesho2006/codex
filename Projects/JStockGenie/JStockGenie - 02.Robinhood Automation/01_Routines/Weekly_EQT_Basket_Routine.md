@@ -36,11 +36,7 @@ Use these JStockGenie tables:
 - jstockdata_reco_trade
 - jstockdata_reco_backtest
 - jstockdata_reco_weekly_target_recos
-- jstockdata_reco_basket_current
-- jstockdata_reco_basket_actions
-- jstockdata_reco_basket_positions
-- jstockdata_reco_basket_reconciliation
-- jstockdata_reco_basket_summary
+- jstockdata_current_positions
 
 Use these routines when a fresh refresh is requested or approved:
 
@@ -49,7 +45,6 @@ Use these routines when a fresh refresh is requested or approved:
 - reco_projection_enrich_outputs
 - reco_trade
 - reco_backtest
-- reco_basket_refresh
 - reco_weekly_target_refresh
 
 Before running any mutating SQL routine, check:

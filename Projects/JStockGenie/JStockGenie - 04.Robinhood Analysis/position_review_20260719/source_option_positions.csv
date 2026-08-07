@@ -1,0 +1,8 @@
+Broker,Account,Scrip,Segment,Trade,Qty,Last Price,Ag Cost,Strike,Exp
+Robinhood,My Investments,MSFT,Options,Sell Call,2.0,15.88,16.06,470.0,18-Dec-2026
+Robinhood,My Investments,SLV,Options,Sell Call,2.0,2.67,3.17,65.0,15-Jan-2027
+Robinhood,My Investments,IVV,Options,Sell Call,1.0,107.0,103.45,750.0,16-Jun-2028
+Robinhood,My Investments,SPY,Options,Sell Call,1.0,104.86,102.01,750.0,16-Jun-2028
+Robinhood,Traditional IRA,NVDA,Options,Sell Call,1.0,51.08,54.25,155.0,31-Jul-2026
+Robinhood,Roth IRA,APH,Options,Sell Put,1.0,10.05,8.0,150.0,21-Aug-2026
+Robinhood,Roth IRA,GPC,Options,Sell Put,2.0,5.5,4.75,125.0,21-Aug-2026

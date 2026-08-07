@@ -48,7 +48,6 @@ Current reco routines:
 - reco_trade
 - reco_invest
 - reco_options
-- reco_basket_refresh
 
 ## Recommended New Layer
 
@@ -143,7 +142,7 @@ Suggested grain:
 - confidence_score
 - generated_at
 
-This table should be refreshed before reco_trade, reco_invest, reco_options, and basket refresh routines consume it.
+This table should be refreshed before reco_trade, reco_invest, reco_options, and weekly target routines consume it.
 
 ## Signal Context Key
 

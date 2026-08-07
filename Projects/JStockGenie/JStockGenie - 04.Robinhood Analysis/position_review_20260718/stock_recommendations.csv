@@ -1,0 +1,20 @@
+broker,account,symbol,qty,current_price,price_source,avg_cost,market_value,cost_basis,unrealized_pnl,unrealized_pnl_pct,recommendation,reason
+Robinhood,My Investments,SPY,100.25,743.29,yfinance_last_close,637.55,74514.82,63914.39,10600.43,16.59,HOLD,Core/index exposure; keep unless rebalancing duplicate S&P 500 concentration.
+Robinhood,My Investments,IVV,100.26,746.72,yfinance_last_close,621.65,74866.14,62326.63,12539.52,20.12,HOLD,Core/index exposure; keep unless rebalancing duplicate S&P 500 concentration.
+Robinhood,My Investments,SLV,200.0,50.78,yfinance_last_close,62.12,10156.0,12424.0,-2268.0,-18.25,SELL_REVIEW,"Below cost and commodity ETF; keep only if you want silver exposure, otherwise trim/let covered call work."
+Robinhood,My Investments,MSFT,200.44,393.82,yfinance_last_close,449.27,78937.28,90051.68,-11114.4,-12.34,HOLD,"Quality holding but below workbook cost; covered call is active, so avoid adding until option plan is resolved."
+Robinhood,My Agentic,AEP,0.725531,132.14,yfinance_last_close,272.99,95.87,198.06,-102.19,-51.6,SELL_REVIEW,Weak versus cost; review exit/trim unless trend signal improves.
+Robinhood,My Agentic,HWM,0.384409,272.43,yfinance_last_close,137.83,104.72,52.98,51.74,97.66,HOLD,Momentum/gain position; hold but do not chase small fractional position aggressively.
+Robinhood,My Agentic,CASY,0.131175,859.12,yfinance_last_close,800.0,112.7,104.94,7.76,7.39,HOLD,Momentum/gain position; hold but do not chase small fractional position aggressively.
+Robinhood,My Agentic,VLO,0.609246,309.65,yfinance_last_close,287.24,188.65,175.0,13.65,7.8,HOLD,Momentum/gain position; hold but do not chase small fractional position aggressively.
+Robinhood,My Agentic,FFIV,0.409912,409.1,yfinance_last_close,426.92,167.7,175.0,-7.3,-4.17,HOLD,Default risk review based on unrealized P/L and no stronger local signal.
+Fidelity,Roth IRA,SPMO,16.423,143.89,yfinance_last_close,105.65,2363.11,1735.09,628.02,36.19,HOLD,Core/index exposure; keep unless rebalancing duplicate S&P 500 concentration.
+Fidelity,Roth IRA,IVV,3.27,746.72,yfinance_last_close,635.59,2441.77,2078.38,363.4,17.48,HOLD,Core/index exposure; keep unless rebalancing duplicate S&P 500 concentration.
+Fidelity,Roth IRA,VTI,6.653,367.01,yfinance_last_close,312.45,2441.72,2078.73,362.99,17.46,HOLD,Core/index exposure; keep unless rebalancing duplicate S&P 500 concentration.
+Fidelity,Roth IRA,SPY,3.285,743.29,yfinance_last_close,635.31,2441.71,2086.99,354.71,17.0,HOLD,Core/index exposure; keep unless rebalancing duplicate S&P 500 concentration.
+Fidelity,Roth IRA,VCR,6.307,391.55,yfinance_last_close,385.9,2469.51,2433.87,35.63,1.46,HOLD,Diversifier; hold unless portfolio target allocation says otherwise.
+Fidelity,Roth IRA,SCHD,74.902,32.91,yfinance_last_close,32.48,2465.02,2432.82,32.21,1.32,HOLD,Diversifier; hold unless portfolio target allocation says otherwise.
+Fidelity,Roth IRA,BND,33.512,72.86,yfinance_last_close,72.61,2441.68,2433.31,8.38,0.34,HOLD,Defensive/cash-like or bond ballast; keep for liquidity/risk balance.
+Fidelity,Roth IRA,VIG,10.25,237.61,yfinance_last_close,237.38,2435.5,2433.14,2.36,0.1,HOLD,Diversifier; hold unless portfolio target allocation says otherwise.
+Fidelity,Roth IRA,SGOV,24.219,100.58,yfinance_last_close,100.46,2435.95,2433.04,2.91,0.12,HOLD,Defensive/cash-like or bond ballast; keep for liquidity/risk balance.
+Fidelity,Roth IRA,VXUS,29.113,83.37,yfinance_last_close,83.58,2427.15,2433.26,-6.11,-0.25,HOLD,Diversifier; hold unless portfolio target allocation says otherwise.

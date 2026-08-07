@@ -76,10 +76,9 @@ jstockdata_backtest_summary
 jstockdata_reco_backtest
 jstockdata_reco_trade
 jstockdata_reco_invest
-jstockdata_reco_basket_current
-jstockdata_reco_basket_actions
-jstockdata_reco_basket_history
 jstockdata_reco_options
+jstockdata_reco_weekly_target_recos
+jstockdata_current_positions
 ```
 
 ## Weekly Operating Sequence
@@ -122,8 +121,8 @@ Recommendation stored procedure order:
 CALL reco_backtest();
 CALL reco_trade();
 CALL reco_invest();
-CALL reco_basket_refresh();
 CALL reco_options();
+CALL reco_weekly_target_refresh();
 ```
 
 `run_recommendations()` currently calls:
@@ -132,7 +131,8 @@ CALL reco_options();
 CALL reco_backtest();
 CALL reco_trade();
 CALL reco_invest();
-CALL reco_basket_refresh();
+CALL reco_options();
+CALL reco_weekly_target_refresh();
 ```
 
 `reco_options()` is separate because options trades are manual-review only.
@@ -152,7 +152,7 @@ If stored procedures are not desired later, use this middle path instead:
 
 - Keep SQL in external `.sql` files.
 - Convert each procedure body into a plain executable SQL script.
-- Add Java methods such as `JStockDataRecoBacktest()`, `JStockDataRecoTrade()`, `JStockDataRecoInvest()`, `JStockDataRecoBasketRefresh()`, and `JStockDataRecoOptions()`.
+- Add Java methods such as `JStockDataRecoBacktest()`, `JStockDataRecoTrade()`, `JStockDataRecoInvest()`, `JStockDataRecoOptions()`, and `JStockDataRecoWeeklyTargetRefresh()`.
 - Each Java method executes one SQL script statement-by-statement in a single JDBC session.
 
 That gives Java function-level orchestration without burying the recommendation logic inside Java source code.
@@ -164,7 +164,7 @@ Robinhood account access confirmed:
 - One Agentic-enabled individual account is available for automated stock/ETF trading.
 - Other accounts are readable but not Agentic-enabled for automated order placement.
 
-Automation should use `jstockdata_reco_basket_actions` as the approval queue.
+Automation should use the weekly proposed-trades output and `jstockdata_current_positions.reco_action` as the review source.
 
 Rules:
 
@@ -201,23 +201,17 @@ After recommendations:
 SELECT COUNT(*) FROM jstockdata_reco_backtest;
 SELECT COUNT(*) FROM jstockdata_reco_trade;
 SELECT COUNT(*) FROM jstockdata_reco_invest;
-SELECT COUNT(*) FROM jstockdata_reco_basket_current;
-SELECT COUNT(*) FROM jstockdata_reco_basket_actions;
 SELECT COUNT(*) FROM jstockdata_reco_options;
+SELECT COUNT(*) FROM jstockdata_reco_weekly_target_recos;
+SELECT COUNT(*) FROM jstockdata_current_positions;
 ```
 
-Review latest basket batch:
+Review current position analysis:
 
 ```sql
 SELECT *
-FROM jstockdata_reco_basket_actions
-WHERE batch_id = (
-    SELECT batch_id
-    FROM jstockdata_reco_basket_actions
-    ORDER BY action_id DESC
-    LIMIT 1
-)
-ORDER BY FIELD(action, 'SELL', 'TAPER', 'BUY', 'HOLD'), assetclass, symbol;
+FROM jstockdata_current_positions
+ORDER BY analysis_date DESC, broker, segment, scrip;
 ```
 
 ## Rollback
@@ -243,7 +237,7 @@ Accuracy:
 
 - `reco_backtest()` should derive historical events from `Combined_Signal` changes. That is appropriate for backtesting completed BUY-to-SELL legs.
 - `reco_trade()` and `reco_invest()` use fresh `Combined_Signal_Ind` events and current `jstockdata_harecent*` state. That is appropriate for current recommendations.
-- `reco_basket_refresh()` should remain the bridge to automation because it creates explicit `BUY`, `SELL`, `TAPER`, and `HOLD` actions with `PENDING_APPROVAL`.
+- Weekly current-position analysis is now the bridge to manual review and automation prep because it carries each held position with `reco_action`.
 - `reco_options()` is directional only until premiums, IV, and chain data are populated.
 
 Performance:
@@ -331,9 +325,9 @@ Latest Java `RECO` validation:
 jstockdata_reco_backtest: 40
 jstockdata_reco_trade: 22
 jstockdata_reco_invest: 6
-jstockdata_reco_basket_current: 20
 jstockdata_reco_options: 1230
-latest basket action summary: HOLD = 20
+jstockdata_reco_weekly_target_recos: refreshed by weekly target routine
+jstockdata_current_positions: refreshed from the weekly investment positions CSV
 ```
 
 ## Yahoo Options Enrichment

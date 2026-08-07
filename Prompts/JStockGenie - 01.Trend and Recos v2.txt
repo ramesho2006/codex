@@ -245,3 +245,33 @@ can you inspect the scrips in jstockdata_scrips and determine if those are optio
 delete scrips which are not optionable in jstockdata_scrips.
 after this cleanup, I will import EOD, and run Java trend again
 
+
+20260718 21:59
+------------------------------------------------------------
+While running the weekly screener JStockScreener.sql via java code, I get this error while it tries to send the email
+javax.mail.MessagingException: Could not convert socket to TLS
+
+this is possibily because AVG Web and Email protection is on. 
+
+Can you either disable "AVG Web and Email protection" temporarily or include a try-catch in java code 
+and display an warning message instead that email cannot be sent due t this protection
+so that it avoid she error the above error message
+
+
+20260718 22:01
+------------------------------------------------------------
+While running the weekly screener JStockScreener.sql via java code, I get this error while it tries to send the email
+javax.mail.MessagingException: Could not convert socket to TLS
+this is possibily because AVG Web and Email protection is on. 
+Can you either disable "AVG Web and Email protection" temporarily or include a try-catch in java code
+and display an warning message instead that email cannot be sent due t this protection
+so that it avoid she error the above error message
+
+
+20260726 00:12
+------------------------------------------------------------
+When I run the Java Trend model, the reco_weekly_master_refresh() rotuine is taking more than 1318.94 seconds.
+This is the major chunk of the time consuming 60% of the total 2222 seconds.
+
+Can you inspect all the SQL routines call by this master refresh routine, rewrite and optimize any of them is required and improve the performance of these routines
+

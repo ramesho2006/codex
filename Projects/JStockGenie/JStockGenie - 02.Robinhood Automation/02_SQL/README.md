@@ -15,6 +15,9 @@ SQL files are split into migrations and reusable review queries.
 - `migrations/20260707_universe_status_refresh.sql` - adds `reco_universe_status_refresh(p_keep_limit)` to rerank EQ/ETF scrips periodically.
 - `migrations/20260707_news_signal.sql` - adds news raw/signal tables and `reco_news_signal_refresh(p_lookback_days)`.
 - `migrations/20260714_predictive_direction.sql` - adds major pivot history, latest predictive direction, `weekly_verdict`, and `reco_predictive_direction_refresh()`.
+- `migrations/20260726_quant_score_refresh.sql` - renames `jstockdata_reco_universe_score` to `jstockdata_reco_quant_score` and refines the universe rank into a JStockGenie Quant-style score.
+- `migrations/20260727_current_positions_quant_score.sql` - adds `quant_score` to `jstockdata_current_positions` for current-position review snapshots.
+- `migrations/20260727_current_positions_analysis_date_end.sql` - moves `jstockdata_current_positions.analysis_date` to the end of the table layout.
 
 ## Queries
 
@@ -28,7 +31,7 @@ CALL reco_weekly_master_refresh();
 
 This is the only weekly master refresh routine. Do not create duplicate wrapper routines for the same sequence.
 
-Recommendation refresh routines use `jstockdata_scrips.RecoUniverseStatus = 'KEEP'` and `RecoUniverseRank <= 1000` as the active EQ/ETF universe gate. `RecoUniverseRank` stores the numeric rank produced by `reco_universe_status_refresh(1000)`. Scrips marked `OMIT` or ranked above 1000 are excluded from trading analysis, momentum refresh, projection refresh, basket refresh, and target recommendation inputs.
+Recommendation refresh routines use `jstockdata_scrips.RecoUniverseStatus = 'KEEP'` and `RecoUniverseRank <= 1000` as the active EQ/ETF universe gate. `RecoUniverseRank` stores the numeric rank produced by `reco_universe_status_refresh(1000)` and recorded in `jstockdata_reco_quant_score`. Scrips marked `OMIT` or ranked above 1000 are excluded from trading analysis, momentum refresh, projection refresh, and target recommendation inputs.
 
 Child routine sequence:
 
@@ -42,10 +45,33 @@ Child routine sequence:
 8. `reco_projection_enrich_outputs`
 9. `reco_momentum_refresh`
 10. `reco_predictive_direction_refresh`
-11. `reco_basket_refresh`
-12. `reco_weekly_target_refresh`
+11. `reco_weekly_target_refresh`
 
 News data is fetched outside SQL with `05_Tools/reco_news_fetcher.py`. The SQL master refresh only rescans already-fetched raw news and applies the latest signal overlay.
+
+## JStockGenie Quant Score
+
+`jstockdata_reco_quant_score` is the canonical Quant-style score table. It is not a clone of Seeking Alpha's proprietary Quant Rating, but it uses the same spirit of a multi-factor composite. The available JStockGenie factors are:
+
+| Component | Purpose |
+|---|---|
+| `trend_score` | Daily/weekly Combined Signal, LO Delta, SMA Delta, and HARSI alignment. |
+| `momentum_score` | Heikin Ashi trend/momentum strength and rally slope/angle. |
+| `projection_score` | Expected return, upward/downward probability, risk/reward, and projection confidence. |
+| `backtest_score` | Historical win rate, average trade return, worst trade, and sample depth. |
+| `quality_score` | Source rank and liquidity/dollar-volume proxy for size and tradability. |
+| `news_score` | Recent headline sentiment/catalyst support minus risk-event pressure. |
+| `liquidity_score` | Dollar-volume tradability support. |
+
+Use `quant_star_rating` and `quant_analysis_rating` as the closest local analog to a Seeking Alpha Quant Rating:
+
+| `quant_analysis_rating` | Score Range |
+|---|---|
+| `STRONG_BUY` | `quant_score >= 85` |
+| `BUY` | `72 <= quant_score < 85` |
+| `HOLD` | `55 <= quant_score < 72` |
+| `SELL` | `40 <= quant_score < 55` |
+| `STRONG_SELL` | `quant_score < 40` |
 
 ## Momentum Phase
 

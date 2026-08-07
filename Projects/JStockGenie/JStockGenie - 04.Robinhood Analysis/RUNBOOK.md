@@ -12,7 +12,7 @@ Use this workflow to analyze Robinhood accounts against JStockGenie recommendati
 2. Capture Robinhood account-level portfolio snapshots.
 3. Select the Robinhood account for position-level analysis.
 4. Pull current equity positions for the selected account.
-5. Compare positions against JStockGenie trade, investment, ETF, and basket outputs.
+5. Compare positions against JStockGenie trade, investment, ETF, weekly target, and current-position outputs.
 6. Produce an analysis summary with hold, trim, add, avoid, and manual-review buckets.
 7. If the selected account is `My Agentic`, optionally hand approved ideas to the Robinhood automation workflow.
 
@@ -24,8 +24,8 @@ Primary database tables:
 - `jstockdata_reco_invest`
 - `jstockdata_reco_options`
 - `jstockdata_reco_projection`
-- `jstockdata_reco_basket_current`
-- `jstockdata_reco_basket_actions`
+- `jstockdata_reco_weekly_target_recos`
+- `jstockdata_current_positions`
 
 Existing file inputs:
 
@@ -54,7 +54,7 @@ YYYYMMDD\
 
 ## Recommendation Buckets
 
-- `HOLD`: current holding aligns with JStockGenie trend or basket.
+- `HOLD`: current holding aligns with JStockGenie trend, weekly target, or current-position analysis.
 - `ADD`: strong JStockGenie signal and enough account-level cash/buying power.
 - `TRIM`: current holding is overweight, duplicated, or weakly ranked.
 - `SELL_REVIEW`: current holding has weak signal or adverse projection; review manually before action.
@@ -64,4 +64,3 @@ YYYYMMDD\
 ## Approval Boundary
 
 This folder is analysis-only. Any live Robinhood order must move through the separate Robinhood automation workflow and requires explicit confirmation before order placement.
-

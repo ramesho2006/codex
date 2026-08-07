@@ -53,14 +53,13 @@ This folder is organized around the weekly JStockGenie Robinhood workflow.
    8. `reco_projection_enrich_outputs`
    9. `reco_momentum_refresh`
    10. `reco_predictive_direction_refresh`
-   11. `reco_basket_refresh`
-   12. `reco_weekly_target_refresh`
+   11. `reco_weekly_target_refresh`
 
    Do not create or run a second weekly wrapper. `reco_weekly_master_refresh()` is the canonical master routine.
 
-4. Use `jstockdata_scrips.RecoUniverseStatus = 'KEEP'` and `RecoUniverseRank <= 1000` as the active EQ/ETF universe gate for trading analysis and recommendation refreshes.
+4. Use `jstockdata_scrips.RecoUniverseStatus = 'KEEP'` and `RecoUniverseRank <= 1000` as the active EQ/ETF universe gate for trading analysis and recommendation refreshes. The rank and local Quant-style rating are recorded in `jstockdata_reco_quant_score`.
 5. Fetch recent news with `05_Tools/reco_news_fetcher.py` when an API key is configured; otherwise the news overlay remains neutral.
-6. Validate projections, momentum, predictive direction, news overlay, baskets, and target-band tables.
+6. Validate projections, momentum, predictive direction, news overlay, current positions, and target-band tables.
 7. Generate ETF, EQT, and manual options recommendations.
 8. For Agentic account, prepare orders as review-only and place only after explicit confirmation.
 9. For non-Agentic accounts, user manually reviews and places ETF/options trades.

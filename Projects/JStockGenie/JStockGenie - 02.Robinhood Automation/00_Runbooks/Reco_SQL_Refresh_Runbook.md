@@ -31,8 +31,7 @@ Do not create a duplicate weekly wrapper routine. Maintain this master routine a
 8. reco_projection_enrich_outputs
 9. reco_momentum_refresh
 10. reco_predictive_direction_refresh
-11. reco_basket_refresh
-12. reco_weekly_target_refresh
+11. reco_weekly_target_refresh
 
 The wrapper refreshes projection fields in:
 
@@ -62,9 +61,11 @@ The active trading universe is controlled by:
 
 - jstockdata_scrips.RecoUniverseStatus
 - jstockdata_scrips.RecoUniverseRank
-- jstockdata_reco_universe_score
+- jstockdata_reco_quant_score
 
-Use only `RecoUniverseStatus = 'KEEP'` and `RecoUniverseRank <= 1000` for EQ/ETF trading analysis and recommendation refreshes. `RecoUniverseRank` stores the numeric rank from the latest scoring pass. Rows marked `OMIT` or ranked above 1000 are excluded from the active reco routines and can be restored by rerunning `CALL reco_universe_status_refresh(1000);`.
+Use only `RecoUniverseStatus = 'KEEP'` and `RecoUniverseRank <= 1000` for EQ/ETF trading analysis and recommendation refreshes. `RecoUniverseRank` stores the numeric rank from the latest `jstockdata_reco_quant_score` pass. Rows marked `OMIT` or ranked above 1000 are excluded from the active reco routines and can be restored by rerunning `CALL reco_universe_status_refresh(1000);`.
+
+`jstockdata_reco_quant_score` is the local Seeking Alpha-style quant analog. It records `quant_score`, `quant_star_rating`, `quant_analysis_rating`, `quant_rank`, `reco_include_status`, and component scores for trend, momentum, projection, backtest, quality, news, and liquidity. Because JStockGenie currently does not store full fundamentals or EPS estimate revisions, this is a technical/projection quant score, not a full fundamental Quant clone.
 
 Manual SQL use is only needed for troubleshooting or ad hoc refreshes. The normal weekly process should be Java-driven.
 
@@ -93,7 +94,6 @@ WHERE routine_name IN (
   'reco_projection_enrich_outputs',
   'reco_momentum_refresh',
   'reco_predictive_direction_refresh',
-  'reco_basket_refresh',
   'reco_weekly_target_refresh'
 )
 ORDER BY routine_name;
