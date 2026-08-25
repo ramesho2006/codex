@@ -1,0 +1,55 @@
+MySQL 8 migration audit - jstocknse legacy views not recreated
+Date: 2026-08-17
+
+The jstocknse schema was copied from MySQL 5.7 to MySQL 8.0.
+All base tables, table data, functions, and procedures were copied.
+
+The following views exist on the MySQL 5.7 source but are already invalid
+when queried on the source. MySQL 8 could not recreate them as valid views
+because their definitions depend on missing/invalid view, table, or column
+references.
+
+jstockview_allrank
+jstockview_collectqtrstats
+jstockview_collectstats
+jstockview_emarank
+jstockview_entrypicks
+jstockview_entry_screener
+jstockview_exit_screener
+jstockview_firstrecord
+jstockview_hafirst
+jstockview_harecent
+jstockview_harecent_extend
+jstockview_harecent_extend_previous
+jstockview_harsizone_count
+jstockview_harsizone_grade
+jstockview_harsizone_pivotcnt
+jstockview_harsizone_pivotpct
+jstockview_harsizone_topzone
+jstockview_haseg_count
+jstockview_haseg_grade_safe
+jstockview_haseg_pivotcnt
+jstockview_haseg_pivotpct
+jstockview_haseg_topseg
+jstockview_monchgrank
+jstockview_monnetchg
+jstockview_performer_picks
+jstockview_portfolio
+jstockview_portfolio_3month
+jstockview_portfolio_health
+jstockview_pvgradepicks
+jstockview_qtrchgrank
+jstockview_qtrnetchg
+jstockview_rallyhighs
+jstockview_rallypicks
+jstockview_rallystats
+jstockview_recentpicks
+jstockview_recentstats
+jstockview_rocstats
+jstockview_rsi_rangepivot
+jstockview_rsi_rangeswing
+jstockview_topgainers
+jstockview_toplosers
+jstockview_trendrank
+jstockview_wekchgrank
+jstockview_weknetchg

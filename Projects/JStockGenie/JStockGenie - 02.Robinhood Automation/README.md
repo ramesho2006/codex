@@ -61,9 +61,22 @@ This folder is organized around the weekly JStockGenie Robinhood workflow.
 5. Fetch recent news with `05_Tools/reco_news_fetcher.py` when an API key is configured; otherwise the news overlay remains neutral.
 6. Validate projections, momentum, predictive direction, news overlay, current positions, and target-band tables.
 7. Generate ETF, EQT, and manual options recommendations.
-8. For Agentic account, prepare orders as review-only and place only after explicit confirmation.
-9. For non-Agentic accounts, user manually reviews and places ETF/options trades.
-10. Update the trading journal after fills, funds, or position changes.
+8. For Agentic account, use a concentrated basket of no more than four very high-conviction positions. Require high confidence for at least 3% weekly basket upside and keep max stop loss at -1% for each individual position; skipping a week is acceptable when signals are not highly favorable.
+9. For Agentic account, prepare orders as review-only and place only after explicit confirmation.
+10. For non-Agentic accounts, user manually reviews and places ETF/options trades.
+11. Run a midweek Agentic profit-lock review after Monday fills. The primary goal for `My Agentic` is to average about 3% weekly basket profit; if the total weekly basket crosses +3% at any point, prepare full basket profit/loss booking for user confirmation and move to next week's positions. A full exit and clean reset is allowed when profit is booked, risk rises, or the next-week setup quality is unclear.
+12. Update the trading journal after fills, funds, or position changes.
+
+Golden Trade Rule: `My Agentic` uses a +3% profit target at the full basket level and a -1% stop loss at the individual position level only. If any one position hits -1%, prepare an exit review for that position. If the full basket hits +3%, prepare full basket profit booking.
+
+Golden Trade Alert: check `My Agentic` P/L during market days, preferably 10:30 AM, 12:30 PM, and 2:30 PM Central. Apply the Golden Trade Rule, generate alerts, and log each snapshot to `jstockdata_agentic_pl_log`.
+
+Golden Trade Action: after an alert, get explicit user confirmation and then place the approved Robinhood orders. Do not place trades automatically from alerts without explicit confirmation.
+
+Golden Trade terms:
+- Golden Trade Rule - basic rules for P/L booking.
+- Golden Trade Alert - checking and applying the Golden Trade Rule and generating alerts.
+- Golden Trade Action - getting confirmation and placing orders.
 
 ## Momentum Phase Guide
 

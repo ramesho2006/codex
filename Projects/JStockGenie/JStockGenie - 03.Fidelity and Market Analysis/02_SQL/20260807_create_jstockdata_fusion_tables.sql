@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS jstockdata_fusion_run (
+﻿CREATE TABLE IF NOT EXISTS jstockdata_fusion_run (
     run_id BIGINT NOT NULL AUTO_INCREMENT,
     run_name VARCHAR(120) NOT NULL,
     trend_build_date DATE NULL,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_run (
 
 CREATE TABLE IF NOT EXISTS jstockdata_fusion_base_universe (
     run_id BIGINT NOT NULL,
-    symbol VARCHAR(20) NOT NULL,
+    scrip VARCHAR(20) NOT NULL,
     assetclass VARCHAR(30) NOT NULL,
     company_name VARCHAR(160) NULL,
     universe_rank INT NULL,
@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_base_universe (
     is_optionable TINYINT(1) NULL,
     source_table VARCHAR(80) NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (run_id, symbol, assetclass),
-    KEY idx_fusion_base_symbol (symbol),
+    PRIMARY KEY (run_id, scrip, assetclass),
+    KEY idx_fusion_base_scrip (scrip),
     KEY idx_fusion_base_assetclass (assetclass),
     KEY idx_fusion_base_position (run_id, is_current_position),
     CONSTRAINT fk_fusion_base_run
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_base_universe (
 
 CREATE TABLE IF NOT EXISTS jstockdata_fusion_internal_signal (
     run_id BIGINT NOT NULL,
-    symbol VARCHAR(20) NOT NULL,
+    scrip VARCHAR(20) NOT NULL,
     assetclass VARCHAR(30) NOT NULL,
     daily_combined_signal VARCHAR(80) NULL,
     weekly_combined_signal VARCHAR(80) NULL,
@@ -49,8 +49,8 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_internal_signal (
     signal_date DATE NULL,
     notes VARCHAR(1000) NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (run_id, symbol, assetclass),
-    KEY idx_fusion_internal_symbol (symbol),
+    PRIMARY KEY (run_id, scrip, assetclass),
+    KEY idx_fusion_internal_scrip (scrip),
     KEY idx_fusion_internal_signal_date (signal_date),
     CONSTRAINT fk_fusion_internal_run
         FOREIGN KEY (run_id) REFERENCES jstockdata_fusion_run (run_id)
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_internal_signal (
 CREATE TABLE IF NOT EXISTS jstockdata_fusion_external_signal (
     external_signal_id BIGINT NOT NULL AUTO_INCREMENT,
     run_id BIGINT NOT NULL,
-    symbol VARCHAR(20) NOT NULL,
+    scrip VARCHAR(20) NOT NULL,
     assetclass VARCHAR(30) NOT NULL,
     source_name VARCHAR(80) NOT NULL,
     signal_category VARCHAR(80) NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_external_signal (
     notes VARCHAR(1000) NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (external_signal_id),
-    KEY idx_fusion_external_run_symbol (run_id, symbol, assetclass),
+    KEY idx_fusion_external_run_scrip (run_id, scrip, assetclass),
     KEY idx_fusion_external_source (source_name, signal_category),
     KEY idx_fusion_external_timeframe (timeframe),
     CONSTRAINT fk_fusion_external_run
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_external_signal (
 
 CREATE TABLE IF NOT EXISTS jstockdata_fusion_score (
     run_id BIGINT NOT NULL,
-    symbol VARCHAR(20) NOT NULL,
+    scrip VARCHAR(20) NOT NULL,
     assetclass VARCHAR(30) NOT NULL,
     short_term_score DECIMAL(10,4) NULL,
     mid_term_score DECIMAL(10,4) NULL,
@@ -100,8 +100,8 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_score (
     notes VARCHAR(1000) NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME NULL,
-    PRIMARY KEY (run_id, symbol, assetclass),
-    KEY idx_fusion_score_symbol (symbol),
+    PRIMARY KEY (run_id, scrip, assetclass),
+    KEY idx_fusion_score_scrip (scrip),
     KEY idx_fusion_score_final (run_id, fusion_score),
     CONSTRAINT fk_fusion_score_run
         FOREIGN KEY (run_id) REFERENCES jstockdata_fusion_run (run_id)
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_score (
 
 CREATE TABLE IF NOT EXISTS jstockdata_fusion_verdict (
     run_id BIGINT NOT NULL,
-    symbol VARCHAR(20) NOT NULL,
+    scrip VARCHAR(20) NOT NULL,
     assetclass VARCHAR(30) NOT NULL,
     fusion_verdict VARCHAR(120) NULL,
     short_term_verdict VARCHAR(120) NULL,
@@ -125,8 +125,8 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_verdict (
     notes VARCHAR(1500) NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME NULL,
-    PRIMARY KEY (run_id, symbol, assetclass),
-    KEY idx_fusion_verdict_symbol (symbol),
+    PRIMARY KEY (run_id, scrip, assetclass),
+    KEY idx_fusion_verdict_scrip (scrip),
     KEY idx_fusion_verdict_rank (run_id, priority_rank),
     KEY idx_fusion_verdict_final (fusion_verdict),
     CONSTRAINT fk_fusion_verdict_run
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_position_action (
     run_id BIGINT NOT NULL,
     broker VARCHAR(50) NOT NULL,
     account_name VARCHAR(120) NOT NULL,
-    symbol VARCHAR(20) NOT NULL,
+    scrip VARCHAR(20) NOT NULL,
     assetclass VARCHAR(30) NOT NULL,
     segment VARCHAR(30) NULL,
     qty DECIMAL(18,6) NULL,
@@ -154,8 +154,8 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_position_action (
     confidence_pct DECIMAL(8,4) NULL,
     notes VARCHAR(1500) NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (run_id, broker, account_name, symbol, assetclass),
-    KEY idx_fusion_position_symbol (symbol),
+    PRIMARY KEY (run_id, broker, account_name, scrip, assetclass),
+    KEY idx_fusion_position_scrip (scrip),
     KEY idx_fusion_position_action (run_id, suggested_action),
     CONSTRAINT fk_fusion_position_run
         FOREIGN KEY (run_id) REFERENCES jstockdata_fusion_run (run_id)
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_position_action (
 CREATE TABLE IF NOT EXISTS jstockdata_fusion_history (
     history_id BIGINT NOT NULL AUTO_INCREMENT,
     run_id BIGINT NOT NULL,
-    symbol VARCHAR(20) NOT NULL,
+    scrip VARCHAR(20) NOT NULL,
     assetclass VARCHAR(30) NOT NULL,
     analysis_date DATE NOT NULL,
     fusion_score DECIMAL(10,4) NULL,
@@ -187,10 +187,11 @@ CREATE TABLE IF NOT EXISTS jstockdata_fusion_history (
     notes VARCHAR(1500) NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (history_id),
-    UNIQUE KEY uq_fusion_history_run_symbol (run_id, symbol, assetclass),
-    KEY idx_fusion_history_symbol_date (symbol, analysis_date),
+    UNIQUE KEY uq_fusion_history_run_scrip (run_id, scrip, assetclass),
+    KEY idx_fusion_history_scrip_date (scrip, analysis_date),
     KEY idx_fusion_history_analysis_date (analysis_date),
     CONSTRAINT fk_fusion_history_run
         FOREIGN KEY (run_id) REFERENCES jstockdata_fusion_run (run_id)
         ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+

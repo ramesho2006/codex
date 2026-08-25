@@ -1,0 +1,41 @@
+MySQL 8 migration audit - legacy views not recreated
+Date: 2026-08-17
+
+The following views exist on the MySQL 5.7 source but are already invalid there.
+MySQL 8 could not recreate them because their definitions reference missing
+tables, missing columns, or a different schema name.
+
+jstockview_avgindex :: Unknown database 'jstocknse'
+jstockview_collectqtrstats :: Unknown column 'd.HAROCValue'
+jstockview_collectstats :: Depends on missing jstockview_emarank
+jstockview_emarank :: Unknown column 'd.HAEMAFastTrend'
+jstockview_entrypicks :: Depends on missing jstockview_pvgradepicks
+jstockview_entry_screener :: Depends on missing jstockview_entrypicks
+jstockview_exit_screener :: Unknown column 'b.HARSI TRADE SIGNAL'
+jstockview_hafirst :: Unknown column 'a.HATradeSeg'
+jstockview_harecent :: Unknown column 'a.HATradeSeg'
+jstockview_harecent_extend :: Unknown column 'a.HAEMAValue'
+jstockview_harecent_extend_previous :: Unknown column 't1.HAEMAValue'
+jstockview_harsizone_count :: Unknown column 'a.HARSIZone'
+jstockview_harsizone_grade :: Depends on missing jstockview_harsizone_topzone
+jstockview_harsizone_pivotcnt :: Unknown column 'a.HARSIZone'
+jstockview_harsizone_pivotpct :: Depends on missing jstockview_harsizone_pivotcnt
+jstockview_harsizone_topzone :: Depends on missing jstockview_harsizone_count
+jstockview_haseg_count :: Unknown column 'a.HAInvestSeg'
+jstockview_haseg_grade_safe :: Depends on missing jstockview_haseg_topseg
+jstockview_haseg_pivotcnt :: Unknown column 'a.HAInvestSeg'
+jstockview_haseg_pivotpct :: Depends on missing jstockview_haseg_pivotcnt
+jstockview_haseg_topseg :: Depends on missing jstockview_haseg_count
+jstockview_performer_picks :: Depends on missing jstockview_harecent
+jstockview_portfolio_3month :: Depends on missing jstockview_harecent
+jstockview_pvgradepicks :: Unknown column 'a.AVGINDEX'
+jstockview_rallyhighs :: Depends on missing jstockview_rallystats
+jstockview_rallypicks :: Depends on missing jstockview_rallyhighs
+jstockview_rallystats :: Unknown column 'inv.HARSI AVG INVEST%'
+jstockview_recentpicks :: Missing table jstockdata_scripreturns
+jstockview_recentstats :: Missing table jstockdata_scripreturns
+jstockview_rocstats :: Unknown column 'd.HAROCValue'
+jstockview_topgainers :: Depends on missing jstockview_harecent
+jstockview_toplosers :: Depends on missing jstockview_harecent
+jstockview_trendrank :: Unknown column 'd.HATradeTrend'
+jstockview_twopolePL_daily :: Unknown column 'e.TwoPoleSignal'

@@ -21,7 +21,8 @@ Updated: 2026-07-05
 9. Prepare Agentic EQT proposed trades as review-only.
 10. Place Agentic orders only after explicit user confirmation.
 11. User manually reviews/places ETF and options trades in non-Agentic accounts.
-12. Update the Agentic trading journal after fills/funds/position changes.
+12. Run midweek Agentic profit-lock review after Monday fills.
+13. Update the Agentic trading journal after fills/funds/position changes.
 
 ## 1. EOD Data Upload
 
@@ -137,10 +138,13 @@ Steps:
    - poor projection confidence or downside risk
 5. Prepare BUY candidates:
    - strongest EQT target-band rows
-   - target 1% to 3% weekly review band
+   - target at least 3% weekly upside with high confidence
    - positive `Combined_Signal`
    - bullish or improving momentum
    - allocation preserves cash buffer
+   - maximum four active Agentic positions; prefer four or fewer excellent/fusion-aligned setups over broader diversification
+   - stop-loss risk should not exceed -1% from entry for each individual position
+   - skip the week when the top candidates are not strongly aligned; no trade is better than forcing average setups
 6. Check Robinhood tradability.
 7. Create proposed trades and summary files as review-only.
 8. Review orders with the user.
@@ -150,6 +154,41 @@ Steps:
 Sizing rule:
 
 - Keep a 25% cash buffer in the Agentic account for weekly BUY/SELL rotations unless the user explicitly overrides it.
+- Use a concentrated Agentic basket: maximum four active positions unless the user explicitly overrides it. If more than four candidates qualify, rank by fusion score, weekly target confidence, risk flag, liquidity/spread quality, and profit-lock fit, then keep only the top four.
+- Require very high conviction for weekly Agentic trades. Treat "sure shot" as a strict filter, not a guarantee: strong fusion verdict, bullish direction, at least 3% weekly upside target, max -1% stop-loss risk, clean risk flag, acceptable liquidity/spread, and no major negative catalyst. If this standard is not met, recommend holding cash and skipping that week.
+
+Golden Trade Rule:
+
+- Pick four super candidates with high confidence for at least 3% full-basket profit within the week.
+- +3% profit target is for the full `My Agentic` basket level.
+- -1% stop loss is for each individual position only.
+- If any one position hits -1%, prepare an exit review for that position.
+- If the full basket hits +3%, prepare full basket profit booking.
+- Exit all if needed and reset to cash.
+- If four excellent candidates are not available, do not trade that week; wait for the next weekly setup.
+- Golden Trade Alert: monitor `My Agentic` P/L during market days, preferably 10:30 AM, 12:30 PM, and 2:30 PM Central. Apply the Golden Trade Rule, generate alerts, and record every snapshot in `jstockdata_agentic_pl_log`.
+- Golden Trade Action: after an alert, get explicit user confirmation and place only the approved Robinhood orders. Do not place trades automatically from a scheduled monitor unless the user has explicitly confirmed the specific order action in the active conversation.
+
+Golden Trade terms:
+
+- Golden Trade Rule - basic rules for P/L booking.
+- Golden Trade Alert - checking and applying the Golden Trade Rule and generating alerts.
+- Golden Trade Action - getting confirmation and placing orders.
+
+Profit-lock rule:
+
+- Check Agentic positions at least once midweek after Monday fills, and again before Friday close when practical.
+- Calculate unrealized P/L % by position from live Robinhood quantity, average cost, and current quote.
+- Also calculate Monday-basket P/L % for positions opened or added during the current week.
+- Primary rule: `My Agentic` targets about 3% average weekly profit at the basket level. If the total current-week basket P/L reaches +3% at any point during the week, prepare a full basket profit/loss booking plan for user confirmation, then stop trading that basket and wait for the next weekly rotation.
+- Stop-loss rule: if any individual Agentic position reaches -1% unrealized P/L, prepare a SELL/exit review immediately. The -1% stop-loss rule is per position, not for the full basket. Do not allow positions intended for weekly trading to drift to -3% without a specific user-approved override.
+- A full exit and clean reset is allowed after profit booking, when risk rises, or when the next weekly setup quality is not highly favorable. It is acceptable for `My Agentic` to sit mostly or fully in cash until a better weekly basket appears.
+- If the total basket is below +3% but an individual position is up 3% to 5%, prepare a SELL/trim review:
+  - sell 50% when fusion verdict remains bullish but momentum is mature or weakening
+  - sell 100% when fusion/quant is weak, momentum is bearish, or the position was intended as a short 1-2 week profit capture
+  - use a trailing stop or manual review if the user wants to let a strong winner run
+- If the overall Monday basket is up 3% or more while individual gains are mixed, prioritize full basket profit/loss booking instead of waiting for each individual position to reach its own target.
+- Do not auto-sell for profit lock without explicit user confirmation.
 
 ## 5. Manual Trades For Other Robinhood Accounts
 

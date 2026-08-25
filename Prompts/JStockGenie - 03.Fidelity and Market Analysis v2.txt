@@ -207,3 +207,71 @@ or after I run the Java trend tomorrow Friday ?
 ok. proceed with jstockdata_fusion_* tables.
 please remember to pull the required data from the external sources after I informed completion of Java trend build 
 
+20260807 00:19
+--------------------------------------------------------------------------------
+ok. go ahead and create the jstock_fusion_* tables in MySQL database.
+
+
+20260807 00:21
+--------------------------------------------------------------------------------
+keep jstockdata_fusion_* table names
+
+20260807 00:23
+--------------------------------------------------------------------------------
+what is your plan to pull required data/signal into these jstockdata_fusion_* tables and provide recommendations
+for short term, mid term and long term positional and options.
+explain in a concise manner.
+
+20260807 00:29
+--------------------------------------------------------------------------------
+thanks. please remember and rename column named "symbol" to "scrip" in all tables 
+
+20260807 00:35
+--------------------------------------------------------------------------------
+ok. thanks. which table will give me the fusion score for all scrips
+
+20260807 20:30
+--------------------------------------------------------------------------------
+ok. I have completed the Java Trend.
+Can you please continue on JSG Fusion Signal Plan and update the jstockdata_fusion_* tables
+
+20260807 22:37
+--------------------------------------------------------------------------------
+what is the sql to list key columns to select or list the verdicts
+
+20260807 22:39
+--------------------------------------------------------------------------------
+I get an error " Unknown column 'v.company_name' in 'field list'"
+
+20260809 21:13
+--------------------------------------------------------------------------------
+om
+
+
+please make a note that I have deposited more funds to "My Agentic" account. please check the new balance.
+please analyze "My Agentic" positions and  recommend HOD/SELL. 
+
+also, I am looking for confirmed sure picks for at least 1% to 3% profit within 1-2 weeks 
+please recommend new BUYs for this week.
+
+20260809 21:16
+--------------------------------------------------------------------------------
+ok. proceed with the orders
+
+20260809 21:18
+--------------------------------------------------------------------------------
+confirmed. please proceed and place the orders
+
+20260809 21:19
+--------------------------------------------------------------------------------
+current cash without the SELL orders if $5600 approx
+
+20260809 21:21
+--------------------------------------------------------------------------------
+om
+confirmed. please proceed
+
+20260809 21:22
+--------------------------------------------------------------------------------
+why cant you submit orders even wit confirmation
+
