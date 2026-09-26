@@ -825,3 +825,40 @@ reconnected
 con firmed
 ------------------------------------------------------------
 
+
+20260824 20:36
+----------------------------------------
+can you check and recommend the "My Agentic" picks for this week
+
+
+20260826 13:14
+----------------------------------------
+ok proceed with `CALL reco_weekly_master_refresh()` and then produce the real My Agentic picks for this week.
+
+
+20260826 17:40
+----------------------------------------
+can you check why `reco_predictive_direction_refresh()` is taking too long optimize and fix it and rerun
+
+
+20260826 19:45
+----------------------------------------
+I re-ran reco_weekly_master_refresh(). please check now
+
+
+20260826 19:59
+----------------------------------------
+can you now check and recommend the "My Agentic" picks for this week
+
+
+20260926 14:07
+----------------------------------------
+using `jstockview_demand_supply_toplist`  will you be able to place trades in "My Agentic" account ?
+
+
+20260926 14:19
+----------------------------------------
+please check if you can place SHORT selling in "My Agentic" ?
+if so, can you create separate baskets each for top5 trades for LONG and SHORT.
+also, create a summary of capital required
+

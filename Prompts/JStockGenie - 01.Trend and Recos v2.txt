@@ -327,3 +327,211 @@ from the current Java Trend and recos, can you tell me the good candidates for s
 ------------------------------------------------------------
 instead of options BUY PUT, what are the clear candidates for short selling,
 give me the scrip, close price, suggested qty for shorting, suggested shorting days 
+
+20260826 11:20
+------------------------------------------------------------
+looking at the Java code, can you create a process flow diagram
+
+20260826 20:03
+------------------------------------------------------------
+can you look at schemas jstocksnp and jstocknse,
+and make sure both have the same routines and required tables for Java trend and SQL routines,
+so that I can run the Java Trend for both schemas 
+
+20260829 20:04
+------------------------------------------------------------
+I have renamed the column SMADelta to SMADeltaPct in table jstockdata_hatrend_extend
+in jstocknse and jstocksnp schemas
+can you make sure it is consistent in Java and other SQL routines\
+20260829 20:14
+------------------------------------------------------------
+can you analyze the columns 
+
+SMADeltaPct, 
+SMADeltaAvg, 
+SMADeltaTrend, 
+"LO DeltaSignal", 	
+"Combined Signal"	, 
+"Combined Signal Ind"
+
+from jstockdata_hatrend_extend table, 
+
+and determine which combinations to be used for the best picks for short term, mid term and long term signals.
+
+use jstockdata_hatrend and jstockdata_hatrend_extend tables for signal pattern analysis
+and  jstockdata_harecent and jstockdata_harecent_extend tables for signal triggers.
+
+please log this prompt
+20260829 20:24
+------------------------------------------------------------
+perfect. now alter all the appropriate SQL routines for recos and picks in SQL
+20260829 21:22
+------------------------------------------------------------
+I ran the Java Trend and the SQL routine calls within that can you please check now and let me know 
+(a) short term picks for "My Agentic" account suitable for 1-2 weeks 3% PL
+(b) long term picks for "Roth IRA" account suitable for SELL Covered calls after stock purchase
+20260829 21:43
+------------------------------------------------------------
+for ROTH IRA, do you have any picks for SELL NAKED PUT
+20260924 19:18
+------------------------------------------------------------
+om
+
+In the java code, change the following
+change SMADeltaPct	to SMADelta
+change SMADeltaAvg  to SMADeltaCum
+
+Formulas to implement
+SMADelta = SMAValue1 - SMAValue2
+SMADeltaCumm = 0 for  SMAValue2 period (from config file), reset for each scrip, frequency, cumulative sum of SMADelta
+
+Fix SMADeltaTrend as below
+SMADeltaTrend = UP, if SMADeltaCum > 0 
+SMADeltaTrend = DOWN, if SMADeltaCum < 0 
+SMADeltaTrend = previous SMADeltaTrend, if SMADeltaCum = 0 
+
+make sure to change the code, MySQL tables, SQL routines as needed
+
+give me the plan before making the changes
+20260924 19:26
+------------------------------------------------------------
+please proceed
+20260924 20:09
+------------------------------------------------------------
+need slight change on computing SMADeltaCum.
+SMADeltaCumm = 0 for SMAValue2 period (from config file),
+cumulatively add previous SMADelta until SMADelta sign changes,
+when sign of previous SMADelta is different from current, set SMADeltaCum = current SMADelta
+20260924 20:45
+------------------------------------------------------------
+need another change for SMADelta computation
+SMADelta = Close - SMAValue1
+
+and
+
+SMADeltaTrend = "UP" if Close > SMAValue1
+SMADeltaTrend = "DOWN" if Close < SMAValue1
+20260924 21:59
+------------------------------------------------------------
+om
+
+thank you. log this prompt
+
+now, can you create a screener table "jstockdata_sma_screener" that lists scrips for LONG and SHORT trading
+using SMADelaTrend, and days since recent trend changes from UP to DOWN or DOWN to UP
+
+I need the following values in that screener.
+SCRIP, FREQUENCY, DATE, TRADE, DAYS_SINCE, TREND_STRENGTH, TREND_CHG, TREND_CHGPCT
+
+example
+BAC, DAILY, 20260914, SHORT, 8, 4.56, 0.76
+
+Computations
+TRADE = LONG or SHORT
+DAYS_SINCE = days since the trend change
+TREND_STRENGTH = SMADeltaCum value
+TREND_CHG = difference between current close price and close price at trend change
+TREND_CHGPCT = TREND_CHG / close price at trend change
+
+add additional column for TREND_POP to indicate "Probability of Profit"
+
+create a SQL routine that creates a SQL table "jstockdata_sma_screener" for this purpose
+20260924 22:01
+------------------------------------------------------------
+include recent CLOSE price in the table
+20260924 22:05
+------------------------------------------------------------
+include this routine in the master_refresh routine
+20260925 13:27
+------------------------------------------------------------
+om
+
+ok. please log this prompt.
+
+from the recent price movement and volume for each scrip, frequency,
+can you compute
+the demand and supply zones with price range for each zone,
+the probability of the future price touching those zones (POT),
+probability of reversal (POR)
+
+example -
+in a current downtrend, POT (probability of touching) probability of price touching the demand zone and reversing,
+in a current uptrend, POT (probability of touching in percentage) probability of price touching the supply zone and reversing,
+
+create "jstockdata_demand_supply table"
+
+in that table I need
+scrip, frequency, close (recent)
+price_lo_limit, price_up_limit,
+touch_zone (demand, supply)
+expected_pot (probability of touching),
+expected_por (probability of reversal),
+
+add POR (Probability of Reversal) for demand and
+add other necessary fields, but keep it concise
+20260925 13:28
+------------------------------------------------------------
+backtest with appropriate demand/supply retracements
+20260925 14:05
+------------------------------------------------------------
+in `jstocksnp`, how many are in "APPROACHING" and in "IN_ZONE"?
+20260925 14:09
+------------------------------------------------------------
+can you give me the SQL for this query
+20260925 15:51
+------------------------------------------------------------
+for the statuses besides `IN_ZONE` or `APPROACHING`, can we also have
+reversing and breached
+20260925 16:07
+------------------------------------------------------------
+thanks.
+
+you may want to revisit and check the demand and supply zones based on previous trend reversals
+20260925 18:42
+------------------------------------------------------------
+om
+
+give me one liner description of fields in jstockdata_demand_supply table
+20260926 13:15
+------------------------------------------------------------
+the `jstockdata_sma_screener` table and routine table are missing.
+can you check in jstocksnp and jstocknse schemas
+recreate if necessary referring to the earlier prompts
+20260925 18:52
+------------------------------------------------------------
+how do I use jstockdata_demand_supply table for finding tickers that are good for LONG and SHORT trades
+20260925 18:55
+------------------------------------------------------------
+join jstockdata_scrips table and also list the assetclass and rank
+20260925 18:42
+------------------------------------------------------------
+give me one liner description of fields in jstockdata_demand_supply table
+20260926 13:32
+------------------------------------------------------------
+the field name "TRADE" in jstockdata_demand_supply is meant for "REVERSAL_TRADE"
+the field name "TRADE" in jstockdata_sma_screener is meant for current "DIRECTION"
+so,
+(1) please change the field "TRADE" in jstockdata_demand_supply to an appropriate name.
+
+also,
+(2) include to filter frequency like 'DAILY%' in the jstockdata_demand_supply SQL query WHERE clause - let the table have the data for all frequencies
+(3) in the jstockdata_demand_supply SQL query, join jstockdata_sma_screener table with scrip and frequency and include 'DAYS_SINCE' as 'DAYS_SINCE_LAST_TREND'
+20260926 13:39
+------------------------------------------------------------
+please give me the consumption query SQL
+20260926 13:44
+------------------------------------------------------------
+please include sma.TRADE as 'LAST_TRADE' before sma.`DAYS_SINCE`
+and save the sql so that we can refer to that later
+20260926 13:48
+------------------------------------------------------------
+ok. now, create this query as a view (such as jstockview_demand_supply_screener)
+and give me a SQL to fetch the top 10 LONG and top 10 SHORT for "REVERSAL_TRADE"
+20260926 13:53
+------------------------------------------------------------
+great. can you create a separate view as "jstockview_demand_supply_toplist"
+I want to run just this view and get the top 10 list every week for LONG and SHORT short-term trades
+20260926 14:03
+------------------------------------------------------------
+please include "TREND_CHGPCT" as "CHGPCT_SINCE_LAST_TREND" in `jstockdata_demand_supply` table.
+update the `jstockview_demand_supply_screener` view accordingly
