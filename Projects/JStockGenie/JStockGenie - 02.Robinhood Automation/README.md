@@ -78,6 +78,38 @@ Golden Trade terms:
 - Golden Trade Alert - checking and applying the Golden Trade Rule and generating alerts.
 - Golden Trade Action - getting confirmation and placing orders.
 
+## Leveraged Dip Monitor
+
+`SNP-ETF-LEVG` is a separate one-month leveraged ETF test strategy. Its intraday
+monitor complements the EOD Java Trend model; it does not replace the EOD signal
+or automatically place an averaging-down order.
+
+Run during regular market hours:
+
+```powershell
+python 05_Tools\leveraged_dip_monitor.py --basket SNP-ETF-LEVG
+```
+
+The monitor:
+
+- fetches live quotes and compares them with the latest daily EOD close;
+- logs every observation to `jstockdata_live_quote_snapshot` and
+  `jstockdata_reco_leveraged_dip_monitor_log`;
+- uses review levels at -2%, -4%, and -6% from the prior EOD close;
+- caps suggested staged adds at 2.5%, 3.0%, and 4.5% of account capital;
+- requires `Combined_Signal = 'BUY'`, `SMADeltaTrend = 'UP'`, and
+  `LODeltaSignal <> 'SELL'`;
+- also requires aligned OptiTrend: `Opti_LastSignal = 'BUY'`,
+  `Opti_Direction = 'BULLISH'`, strength at least 30%, and age no more than
+  180 days;
+- preserves at least 10% cash and limits repeated alerts with cooldown and
+  monthly caps;
+- generates `ADD_REVIEW` only. Every real order remains a Golden Trade Action
+  requiring explicit user confirmation.
+
+Leveraged ETF averaging is not governed by the normal -1% weekly-position exit
+rule unless the user explicitly applies that rule to this separate test basket.
+
 ## Momentum Phase Guide
 
 Use `jstockdata_reco_momentum_signal.momentum_phase` beside `momentum_direction`, `momentum_score`, and `Combined_Signal`.

@@ -175,6 +175,26 @@ Golden Trade terms:
 - Golden Trade Alert - checking and applying the Golden Trade Rule and generating alerts.
 - Golden Trade Action - getting confirmation and placing orders.
 
+Leveraged Dip Monitor:
+
+- Treat `SNP-ETF-LEVG` as a separate one-month leveraged ETF test basket.
+- Run `python 05_Tools\leveraged_dip_monitor.py --basket SNP-ETF-LEVG` during
+  regular market hours, normally with the 10:30 AM, 12:30 PM, and 2:30 PM
+  Central Golden Trade Alert checks.
+- Compare live price with the latest daily EOD close at -2%, -4%, and -6% dip
+  levels. Suggested add caps are 2.5%, 3.0%, and 4.5% of account capital.
+- Require Java Trend alignment: Combined Signal BUY, SMA Delta Trend UP, and LO
+  Delta Signal not SELL.
+- Require OptiTrend alignment: last signal BUY, direction BULLISH, strength at
+  least 30%, and age no more than 180 days.
+- Log market-closed, stale-quote, blocked-signal, cooldown, and review outcomes;
+  do not silently discard failed guardrails.
+- Preserve at least 10% account cash after any proposed add.
+- `ADD_REVIEW` is an alert, not an order. Get explicit user confirmation before
+  placing each add order.
+- The normal Golden Trade -1% individual stop is not automatically applied to
+  this leveraged test basket; define the test-basket loss limit separately.
+
 Profit-lock rule:
 
 - Check Agentic positions at least once midweek after Monday fills, and again before Friday close when practical.

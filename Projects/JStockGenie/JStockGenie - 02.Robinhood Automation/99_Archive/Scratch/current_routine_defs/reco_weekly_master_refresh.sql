@@ -14,6 +14,10 @@ BEGIN
   CALL reco_backtest();
   CALL reco_runlog_mark('reco_backtest', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
 
+  SET v_current_step = 'reco_aroon_backtest_refresh';
+  CALL reco_aroon_backtest_refresh();
+  CALL reco_runlog_mark('reco_aroon_backtest_refresh', 'SUCCESS', 'Completed by reco_weekly_master_refresh');
+
   SET v_current_step = 'reco_trade';
   CALL reco_trade();
   CALL reco_runlog_mark('reco_trade', 'SUCCESS', 'Completed by reco_weekly_master_refresh');

@@ -22,4 +22,16 @@ Use `JStockGenie - 06 Golden Trade Alert.csv` to record:
 
 Do not place trades automatically from alert checks. Real Robinhood orders require explicit user confirmation.
 
+## Leveraged Dip Alerts
+
+The weekday Golden Trade Alert schedule also runs the review-only
+`SNP-ETF-LEVG` monitor from the Robinhood Automation workspace. It compares
+live prices with the latest EOD Java Trend close and reports staged -2%, -4%,
+and -6% dips. An `ADD_REVIEW` requires aligned Combined/LO/SMA signals and
+aligned OptiTrend direction, signal, strength, and freshness. Preserve at least
+10% cash and obtain explicit user confirmation before any add order.
+
+The one-month leveraged test basket is separate from the ordinary weekly basket;
+the ordinary -1% individual stop is not automatically applied to it.
+
 For August 17, 2026, the user already checked and placed a manual order in the morning. Continue Golden Trade Alert checks from 12:30 PM CT onward.

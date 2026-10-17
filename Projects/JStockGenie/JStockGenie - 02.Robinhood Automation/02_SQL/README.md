@@ -18,6 +18,8 @@ SQL files are split into migrations and reusable review queries.
 - `migrations/20260726_quant_score_refresh.sql` - renames `jstockdata_reco_universe_score` to `jstockdata_reco_quant_score` and refines the universe rank into a JStockGenie Quant-style score.
 - `migrations/20260727_current_positions_quant_score.sql` - adds `quant_score` to `jstockdata_current_positions` for current-position review snapshots.
 - `migrations/20260727_current_positions_analysis_date_end.sql` - moves `jstockdata_current_positions.analysis_date` to the end of the table layout.
+- `migrations/20261006_leveraged_dip_monitor.sql` - adds leveraged-basket dip
+  configuration, live quote snapshots, and review-only monitor logs.
 
 ## Queries
 
