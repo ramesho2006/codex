@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JStockGenie Options Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-lockup">
+        <div class="brand-mark">G</div>
+        <div><strong>JStockGenie Options Lab</strong><span>Tradier-powered research</span></div>
+      </div>
+      <div class="sidebar-section">
+        <div class="section-kicker">Universe</div>
+        <button class="universe-button active" data-universe="all">All shortlisted <span id="universe-count">23</span></button>
+        <button class="universe-button" data-universe="BULLISH">Strong bullish <span>20</span></button>
+        <button class="universe-button" data-universe="BEARISH">Strong bearish <span>3</span></button>
+      </div>
+      <div class="sidebar-section">
+        <div class="section-kicker">Strategy</div>
+        <button class="strategy-button active" data-strategy="CASH_SECURED_PUT">Cash-secured puts</button>
+        <button class="strategy-button" data-strategy="COVERED_CALL">Covered calls</button>
+        <button class="strategy-button" data-strategy="BULL_PUT_CREDIT_SPREAD">Bull put spreads</button>
+        <button class="strategy-button" data-strategy="BEAR_CALL_CREDIT_SPREAD">Bear call spreads</button>
+      </div>
+      <div class="sidebar-note">
+        <span class="status-dot"></span>
+        <div><strong>Read-only research</strong><p>No orders or broker actions are connected.</p></div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">Trend-aligned option screener</div>
+          <h1>Option candidates</h1>
+        </div>
+        <div class="top-actions">
+          <span id="last-updated" class="muted">Not analyzed</span>
+          <label class="refresh-toggle"><input id="force-refresh" type="checkbox"> Force refresh</label>
+          <label class="refresh-toggle"><input id="refresh-shortlist" type="checkbox"> Refresh scrips from SQL</label>
+          <button id="analyze-button" class="primary-button"><span class="button-icon">↻</span> Scan</button>
+        </div>
+      </header>
+
+      <section class="control-strip" aria-label="Screening controls">
+        <label class="scrip-filter">Scrips<input id="scrip-filter" type="text" placeholder="AAPL, ABBV, IWD"></label>
+        <details class="asset-class-filter"><summary>Asset Class <span id="asset-class-summary">All</span></summary><div class="asset-options"><label><input type="checkbox" name="asset-class" value="EQT" checked> EQT</label><label><input type="checkbox" name="asset-class" value="ETF" checked> ETF</label><label><input type="checkbox" name="asset-class" value="LEQT" checked> LEQT</label><label><input type="checkbox" name="asset-class" value="LETF" checked> LETF</label></div></details>
+        <label>Min DTE<input id="min-dte" type="number" min="0" max="120" value="30"></label>
+        <label>Max DTE<input id="max-dte" type="number" min="0" max="120" value="120"></label>
+        <label>Min COP / POP %<input id="min-pop" type="number" min="0" max="100" step="1" value="0"></label>
+        <label>Min Return %<input id="min-return" type="number" min="0" step="0.1" value="0"></label>
+        <label>Max Collateral<input id="max-collateral" type="number" min="0" step="100" placeholder="Any"></label>
+        <label>Top per scrip<input id="top-limit" type="number" min="1" max="25" value="3"></label>
+        <label>Sort by<select id="sort-by"><option value="original" selected>Scan order</option><option value="pop">COP / POP</option><option value="return">Return on risk</option><option value="dte">DTE</option><option value="symbol">Symbol</option></select></label>
+        <button id="reset-button" class="quiet-button">Reset filters</button>
+      </section>
+
+      <section class="summary-row">
+        <div class="summary-stat"><span>Shortlist</span><strong id="summary-shortlist">23</strong><small>scrips</small></div>
+        <div class="summary-stat"><span>Results</span><strong id="summary-results">0</strong><small>selected rows</small></div>
+        <div class="summary-stat"><span>Min DTE</span><strong id="summary-dte">30</strong><small>days</small></div>
+        <div class="summary-stat"><span>Data source</span><strong>Tradier</strong><small id="summary-source">production chain / local cache</small></div>
+      </section>
+
+      <section class="workspace-panel">
+        <div class="panel-toolbar">
+          <div>
+            <h2 id="table-title">Cash-secured put candidates</h2>
+            <p id="table-subtitle">Long-bias shortlist · sell puts below the current price</p>
+          </div>
+          <div class="view-tools">
+            <button class="view-button active" data-view="table" title="Show list"><span>☷</span> List</button>
+            <button id="download-button" class="icon-button" title="Download CSV">⇩</button>
+          </div>
+        </div>
+
+        <div id="status-banner" class="status-banner info"><span class="status-symbol">i</span><span>Choose Scan to load current option data.</span></div>
+
+        <div id="table-view" class="table-wrap">
+          <table class="results-table">
+            <thead><tr>
+              <th class="sortable-header" data-sort-key="symbol" role="button" tabindex="0" aria-sort="none">Scrip <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="assetClass" role="button" tabindex="0" aria-sort="none">Asset Class <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="direction" role="button" tabindex="0" aria-sort="none">Direction <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="price" role="button" tabindex="0" aria-sort="none">Current close <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="strategy" role="button" tabindex="0" aria-sort="none">Strategy <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="expiry" role="button" tabindex="0" aria-sort="none">Expiry <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="dte" role="button" tabindex="0" aria-sort="none">DTE <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="legs" role="button" tabindex="0" aria-sort="none">Legs <span class="sort-indicator"></span></th>
+              <th class="sortable-header" data-sort-key="premiumPerContract" role="button" tabindex="0" aria-sort="none">Premium/Contract <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="collateral" role="button" tabindex="0" aria-sort="none">Collateral <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="popPct" role="button" tabindex="0" aria-sort="none">COP / POP <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="returnPct" role="button" tabindex="0" aria-sort="none">Return % <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="annualizedReturnPct" role="button" tabindex="0" aria-sort="none">Annualized % <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="breakeven" role="button" tabindex="0" aria-sort="none">Breakeven <span class="sort-indicator"></span></th><th class="sortable-header" data-sort-key="source" role="button" tabindex="0" aria-sort="none">Data <span class="sort-indicator"></span></th><th>Action</th>
+            </tr></thead>
+            <tbody id="results-body"><tr><td colspan="12" class="empty-cell">No analysis loaded.</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+  <footer class="page-footer">Tradier provides production US equity and ETF option chains. Validate quote timestamps, spread width, liquidity, contract size, and broker margin before trading.</footer>
+    </main>
+  </div>
+  <dialog id="paper-order-dialog" class="paper-order-dialog">
+    <form method="dialog" id="paper-order-form">
+      <div class="dialog-heading"><div><div class="eyebrow">Tradier Sandbox</div><h2>Paper order</h2></div><button type="button" id="close-order-button" class="icon-button" title="Close">×</button></div>
+      <p id="order-summary" class="order-summary"></p>
+      <div class="order-grid">
+        <label>Quantity<input id="order-quantity" type="number" min="1" max="1" step="1" value="1" readonly></label>
+        <label>Limit price<input id="order-price" type="number" min="0.01" step="0.01" required></label>
+        <label>Duration<select id="order-duration"><option value="day">Day</option></select></label>
+      </div>
+      <label id="covered-confirmation" class="confirmation-row hidden"><input id="covered-shares-confirmed" type="checkbox"> I confirm the paper account holds the underlying shares for this covered call.</label>
+      <label class="confirmation-row"><input id="paper-only-confirmed" type="checkbox"> I understand this submits to Tradier Sandbox only, with a maximum of one contract.</label>
+      <div id="order-status" class="order-status info">Preview the order before submitting it.</div>
+      <div class="dialog-actions"><button type="button" id="preview-order-button" class="quiet-button">Preview order</button><button type="button" id="place-order-button" class="primary-button" disabled>Place paper order</button></div>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>

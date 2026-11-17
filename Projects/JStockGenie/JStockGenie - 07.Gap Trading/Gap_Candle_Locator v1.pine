@@ -1,0 +1,69 @@
+//@version=6
+indicator("Gap Up/Down Candle Levels", overlay = true, max_lines_count = 10)
+
+// A gap is evaluated between the current chart candle and the previous chart candle.
+// For regular-session daily market gaps, use this indicator on a 1D chart.
+// gapUp = not na(high[1]) and open > high[1]
+// gapDown = not na(low[1]) and open < low[1]
+
+gapChgVal = open > high[1] ? open - high[1] : open < low[1] ? open - low[1] : 0
+gapChgPct =(gapChgVal / open)
+
+gapUp   =  gapChgPct > 0.02
+gapDown =  gapChgPct < -0.02
+
+
+newGap = gapUp or gapDown
+
+upColor = input.color(color.lime, "Gap Up line color")
+downColor = input.color(color.red, "Gap Down line color")
+lineWidth = input.int(2, "Line width", minval = 1, maxval = 4)
+showLabels = input.bool(true, "Show historical gap labels")
+
+var line gapHighLine = na
+var line gapLowLine = na
+
+if newGap
+    // Remove the prior gap's two levels. The new levels then extend right
+    // until another gap is detected.
+    if not na(gapHighLine)
+        line.delete(gapHighLine)
+    if not na(gapLowLine)
+        line.delete(gapLowLine)
+
+    gapColor = gapUp ? upColor : downColor
+    gapHighLine := line.new(
+         x1 = bar_index, y1 = high,
+         x2 = bar_index + 1, y2 = high,
+         xloc = xloc.bar_index,
+         extend = extend.right,
+         color = gapColor,
+         width = lineWidth)
+    gapLowLine := line.new(
+         x1 = bar_index, y1 = low,
+         x2 = bar_index + 1, y2 = low,
+         xloc = xloc.bar_index,
+         extend = extend.right,
+         color = gapColor,
+         width = lineWidth)
+
+// Keep markers for past gaps so the historical signals remain identifiable.
+plotshape(showLabels and gapUp,
+     title = "Gap Up",
+     style = shape.labeldown,
+     location = location.abovebar,
+     color = upColor,
+     text = "GAP UP",
+     textcolor = color.black,
+     size = size.tiny)
+plotshape(showLabels and gapDown,
+     title = "Gap Down",
+     style = shape.labelup,
+     location = location.belowbar,
+     color = downColor,
+     text = "GAP DOWN",
+     textcolor = color.white,
+     size = size.tiny)
+
+alertcondition(gapUp, title = "Gap Up", message = "Gap Up on {{ticker}}: current open is above the previous candle high.")
+alertcondition(gapDown, title = "Gap Down", message = "Gap Down on {{ticker}}: current open is below the previous candle low.")

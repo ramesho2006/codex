@@ -1,0 +1,1402 @@
+[
+  {
+    "symbol": "PG",
+    "reported_date": "2026-10-22",
+    "timestamp_et": "2026-10-22T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2026-07-29",
+    "timestamp_et": "2026-07-29T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2026-04-24",
+    "timestamp_et": "2026-04-24T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2026-01-22",
+    "timestamp_et": "2026-01-22T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2025-10-24",
+    "timestamp_et": "2025-10-24T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2025-07-29",
+    "timestamp_et": "2025-07-29T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2025-04-24",
+    "timestamp_et": "2025-04-24T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2025-01-22",
+    "timestamp_et": "2025-01-22T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2024-10-18",
+    "timestamp_et": "2024-10-18T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2024-07-30",
+    "timestamp_et": "2024-07-30T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2024-04-19",
+    "timestamp_et": "2024-04-19T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2024-01-23",
+    "timestamp_et": "2024-01-23T06:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2023-10-18",
+    "timestamp_et": "2023-10-18T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2023-07-28",
+    "timestamp_et": "2023-07-28T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2023-04-21",
+    "timestamp_et": "2023-04-21T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2023-01-19",
+    "timestamp_et": "2023-01-19T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2022-10-19",
+    "timestamp_et": "2022-10-19T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2022-07-29",
+    "timestamp_et": "2022-07-29T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2022-04-20",
+    "timestamp_et": "2022-04-20T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2022-01-19",
+    "timestamp_et": "2022-01-19T06:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2021-10-19",
+    "timestamp_et": "2021-10-19T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2021-07-30",
+    "timestamp_et": "2021-07-30T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2021-04-20",
+    "timestamp_et": "2021-04-20T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2021-01-20",
+    "timestamp_et": "2021-01-20T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2020-10-20",
+    "timestamp_et": "2020-10-20T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2020-07-30",
+    "timestamp_et": "2020-07-30T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2020-04-17",
+    "timestamp_et": "2020-04-17T08:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2020-01-23",
+    "timestamp_et": "2020-01-23T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2019-10-22",
+    "timestamp_et": "2019-10-22T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2019-07-30",
+    "timestamp_et": "2019-07-30T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2019-04-23",
+    "timestamp_et": "2019-04-23T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2019-01-23",
+    "timestamp_et": "2019-01-23T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2018-10-19",
+    "timestamp_et": "2018-10-19T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2018-07-31",
+    "timestamp_et": "2018-07-31T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2018-04-19",
+    "timestamp_et": "2018-04-19T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2018-01-23",
+    "timestamp_et": "2018-01-23T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2017-10-20",
+    "timestamp_et": "2017-10-20T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2017-07-27",
+    "timestamp_et": "2017-07-27T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2017-04-26",
+    "timestamp_et": "2017-04-26T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2017-01-20",
+    "timestamp_et": "2017-01-20T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2016-10-25",
+    "timestamp_et": "2016-10-25T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2016-08-02",
+    "timestamp_et": "2016-08-02T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2016-04-26",
+    "timestamp_et": "2016-04-26T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2016-01-26",
+    "timestamp_et": "2016-01-26T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2015-10-23",
+    "timestamp_et": "2015-10-23T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2015-07-30",
+    "timestamp_et": "2015-07-30T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2015-04-23",
+    "timestamp_et": "2015-04-23T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2015-01-27",
+    "timestamp_et": "2015-01-27T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2014-10-24",
+    "timestamp_et": "2014-10-24T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2014-08-01",
+    "timestamp_et": "2014-08-01T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2014-04-23",
+    "timestamp_et": "2014-04-23T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2014-01-24",
+    "timestamp_et": "2014-01-24T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2013-10-25",
+    "timestamp_et": "2013-10-25T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2013-08-01",
+    "timestamp_et": "2013-08-01T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2013-04-24",
+    "timestamp_et": "2013-04-24T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2013-01-25",
+    "timestamp_et": "2013-01-25T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2012-10-25",
+    "timestamp_et": "2012-10-25T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2012-08-03",
+    "timestamp_et": "2012-08-03T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2012-04-27",
+    "timestamp_et": "2012-04-27T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2012-01-27",
+    "timestamp_et": "2012-01-27T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2011-10-27",
+    "timestamp_et": "2011-10-27T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2011-08-05",
+    "timestamp_et": "2011-08-05T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2011-04-28",
+    "timestamp_et": "2011-04-28T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2011-01-27",
+    "timestamp_et": "2011-01-27T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2010-10-27",
+    "timestamp_et": "2010-10-27T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2010-08-03",
+    "timestamp_et": "2010-08-03T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2010-04-29",
+    "timestamp_et": "2010-04-29T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2010-01-28",
+    "timestamp_et": "2010-01-28T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2009-10-29",
+    "timestamp_et": "2009-10-29T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2009-08-05",
+    "timestamp_et": "2009-08-05T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2009-04-30",
+    "timestamp_et": "2009-04-30T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2009-01-30",
+    "timestamp_et": "2009-01-30T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2008-10-29",
+    "timestamp_et": "2008-10-29T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2008-08-05",
+    "timestamp_et": "2008-08-05T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2008-04-30",
+    "timestamp_et": "2008-04-30T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2008-01-31",
+    "timestamp_et": "2008-01-31T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2007-10-30",
+    "timestamp_et": "2007-10-30T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2007-08-03",
+    "timestamp_et": "2007-08-03T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2007-05-01",
+    "timestamp_et": "2007-05-01T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2007-01-30",
+    "timestamp_et": "2007-01-30T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2006-10-31",
+    "timestamp_et": "2006-10-31T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2006-08-02",
+    "timestamp_et": "2006-08-02T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2006-05-03",
+    "timestamp_et": "2006-05-03T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2006-01-27",
+    "timestamp_et": "2006-01-27T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2005-11-01",
+    "timestamp_et": "2005-11-01T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2005-08-01",
+    "timestamp_et": "2005-08-01T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2005-04-28",
+    "timestamp_et": "2005-04-28T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2005-01-27",
+    "timestamp_et": "2005-01-27T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2004-10-27",
+    "timestamp_et": "2004-10-27T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2004-08-02",
+    "timestamp_et": "2004-08-02T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2004-04-30",
+    "timestamp_et": "2004-04-30T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2004-01-28",
+    "timestamp_et": "2004-01-28T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2003-10-27",
+    "timestamp_et": "2003-10-27T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2003-07-31",
+    "timestamp_et": "2003-07-31T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2003-04-28",
+    "timestamp_et": "2003-04-28T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2003-01-28",
+    "timestamp_et": "2003-01-28T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2002-10-29",
+    "timestamp_et": "2002-10-29T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2002-08-05",
+    "timestamp_et": "2002-08-05T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2002-04-30",
+    "timestamp_et": "2002-04-30T07:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "PG",
+    "reported_date": "2002-01-31",
+    "timestamp_et": "2002-01-31T07:00:00-05:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=PG"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2026-11-02",
+    "timestamp_et": "2026-11-02T15:00:00-05:00",
+    "timing": "INTRADAY",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2026-07-30",
+    "timestamp_et": "2026-07-30T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2026-04-30",
+    "timestamp_et": "2026-04-30T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2026-01-29",
+    "timestamp_et": "2026-01-29T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2025-10-30",
+    "timestamp_et": "2025-10-30T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2025-07-31",
+    "timestamp_et": "2025-07-31T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2025-05-01",
+    "timestamp_et": "2025-05-01T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2025-01-30",
+    "timestamp_et": "2025-01-30T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2024-10-31",
+    "timestamp_et": "2024-10-31T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2024-08-01",
+    "timestamp_et": "2024-08-01T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2024-05-02",
+    "timestamp_et": "2024-05-02T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2024-02-01",
+    "timestamp_et": "2024-02-01T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2023-11-02",
+    "timestamp_et": "2023-11-02T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2023-08-03",
+    "timestamp_et": "2023-08-03T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2023-05-04",
+    "timestamp_et": "2023-05-04T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2023-02-02",
+    "timestamp_et": "2023-02-02T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2022-10-27",
+    "timestamp_et": "2022-10-27T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2022-07-28",
+    "timestamp_et": "2022-07-28T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2022-04-28",
+    "timestamp_et": "2022-04-28T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2022-01-27",
+    "timestamp_et": "2022-01-27T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2021-10-28",
+    "timestamp_et": "2021-10-28T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2021-07-27",
+    "timestamp_et": "2021-07-27T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2021-04-28",
+    "timestamp_et": "2021-04-28T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2021-01-27",
+    "timestamp_et": "2021-01-27T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2020-10-29",
+    "timestamp_et": "2020-10-29T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2020-07-30",
+    "timestamp_et": "2020-07-30T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2020-04-30",
+    "timestamp_et": "2020-04-30T17:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2020-01-28",
+    "timestamp_et": "2020-01-28T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2019-10-30",
+    "timestamp_et": "2019-10-30T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2019-07-30",
+    "timestamp_et": "2019-07-30T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2019-04-30",
+    "timestamp_et": "2019-04-30T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2019-01-29",
+    "timestamp_et": "2019-01-29T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2018-11-01",
+    "timestamp_et": "2018-11-01T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2018-07-31",
+    "timestamp_et": "2018-07-31T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2018-05-01",
+    "timestamp_et": "2018-05-01T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2018-02-01",
+    "timestamp_et": "2018-02-01T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2017-11-02",
+    "timestamp_et": "2017-11-02T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2017-08-01",
+    "timestamp_et": "2017-08-01T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2017-05-02",
+    "timestamp_et": "2017-05-02T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2017-01-31",
+    "timestamp_et": "2017-01-31T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2016-10-25",
+    "timestamp_et": "2016-10-25T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2016-07-26",
+    "timestamp_et": "2016-07-26T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2016-04-26",
+    "timestamp_et": "2016-04-26T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2016-01-26",
+    "timestamp_et": "2016-01-26T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2015-10-27",
+    "timestamp_et": "2015-10-27T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2015-07-21",
+    "timestamp_et": "2015-07-21T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2015-04-27",
+    "timestamp_et": "2015-04-27T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2015-01-27",
+    "timestamp_et": "2015-01-27T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2014-10-20",
+    "timestamp_et": "2014-10-20T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2014-07-22",
+    "timestamp_et": "2014-07-22T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2014-04-23",
+    "timestamp_et": "2014-04-23T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2014-01-27",
+    "timestamp_et": "2014-01-27T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2013-10-28",
+    "timestamp_et": "2013-10-28T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2013-07-23",
+    "timestamp_et": "2013-07-23T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2013-04-23",
+    "timestamp_et": "2013-04-23T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2013-01-23",
+    "timestamp_et": "2013-01-23T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2012-10-25",
+    "timestamp_et": "2012-10-25T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2012-07-24",
+    "timestamp_et": "2012-07-24T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2012-04-24",
+    "timestamp_et": "2012-04-24T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2012-01-24",
+    "timestamp_et": "2012-01-24T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2011-10-18",
+    "timestamp_et": "2011-10-18T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2011-07-19",
+    "timestamp_et": "2011-07-19T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2011-04-20",
+    "timestamp_et": "2011-04-20T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2011-01-18",
+    "timestamp_et": "2011-01-18T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2010-10-18",
+    "timestamp_et": "2010-10-18T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2010-07-20",
+    "timestamp_et": "2010-07-20T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2010-04-20",
+    "timestamp_et": "2010-04-20T20:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2010-01-25",
+    "timestamp_et": "2010-01-25T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2009-10-19",
+    "timestamp_et": "2009-10-19T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2009-07-21",
+    "timestamp_et": "2009-07-21T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2009-04-22",
+    "timestamp_et": "2009-04-22T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2009-01-21",
+    "timestamp_et": "2009-01-21T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2008-10-21",
+    "timestamp_et": "2008-10-21T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2008-07-21",
+    "timestamp_et": "2008-07-21T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2008-04-23",
+    "timestamp_et": "2008-04-23T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2008-01-22",
+    "timestamp_et": "2008-01-22T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2007-10-22",
+    "timestamp_et": "2007-10-22T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2007-07-25",
+    "timestamp_et": "2007-07-25T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2007-04-25",
+    "timestamp_et": "2007-04-25T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2007-01-17",
+    "timestamp_et": "2007-01-17T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2006-10-18",
+    "timestamp_et": "2006-10-18T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2006-07-19",
+    "timestamp_et": "2006-07-19T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2006-04-19",
+    "timestamp_et": "2006-04-19T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2006-01-18",
+    "timestamp_et": "2006-01-18T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2005-10-11",
+    "timestamp_et": "2005-10-11T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2005-07-13",
+    "timestamp_et": "2005-07-13T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2005-04-13",
+    "timestamp_et": "2005-04-13T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2005-01-12",
+    "timestamp_et": "2005-01-12T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2004-10-13",
+    "timestamp_et": "2004-10-13T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2004-07-14",
+    "timestamp_et": "2004-07-14T06:00:00-04:00",
+    "timing": "BMO",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2004-04-14",
+    "timestamp_et": "2004-04-14T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2004-01-14",
+    "timestamp_et": "2004-01-14T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2003-10-15",
+    "timestamp_et": "2003-10-15T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2003-07-16",
+    "timestamp_et": "2003-07-16T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2003-04-16",
+    "timestamp_et": "2003-04-16T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2003-01-15",
+    "timestamp_et": "2003-01-15T16:00:00-05:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2002-10-16",
+    "timestamp_et": "2002-10-16T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2002-07-16",
+    "timestamp_et": "2002-07-16T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2002-07-16",
+    "timestamp_et": "2002-07-16T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  },
+  {
+    "symbol": "AAPL",
+    "reported_date": "2002-04-17",
+    "timestamp_et": "2002-04-17T16:00:00-04:00",
+    "timing": "AMC",
+    "source": "https://finance.yahoo.com/calendar/earnings?symbol=AAPL"
+  }
+]

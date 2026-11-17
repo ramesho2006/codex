@@ -1,0 +1,630 @@
+symbol,status,rows,message
+A,ok,11,
+AAPL,ok,11,
+ABBV,ok,11,
+ABNB,ok,11,
+ABT,ok,12,
+ACGL,ok,11,
+ACN,ok,11,
+ADBE,ok,11,
+ADI,ok,11,
+ADM,ok,11,
+ADP,ok,11,
+ADSK,ok,11,
+AEE,ok,11,
+AEP,ok,11,
+AES,ok,11,
+AFL,ok,11,
+AIG,ok,11,
+AIZ,ok,11,
+AJG,ok,11,
+AKAM,ok,11,
+ALB,ok,11,
+ALGN,ok,11,
+ALL,ok,11,
+ALLE,ok,12,
+AMAT,ok,11,
+AMCR,ok,11,
+AMD,ok,11,
+AME,ok,11,
+AMGN,ok,11,
+AMP,ok,11,
+AMT,ok,11,
+AMZN,ok,11,
+ANET,ok,11,
+AON,ok,11,
+AOS,ok,11,
+APA,ok,11,
+APD,ok,11,
+APH,ok,11,
+APO,ok,11,
+APP,ok,11,
+APTV,ok,11,
+ARE,ok,11,
+ARES,ok,11,
+ATO,ok,11,
+AVGO,ok,10,
+AVY,ok,11,
+AWK,ok,11,
+AXON,ok,11,
+AXP,ok,11,
+AZO,ok,11,
+BA,ok,11,
+BAC,ok,12,
+BALL,ok,11,
+BAX,ok,11,
+BBY,ok,11,
+BDX,ok,11,
+BE,ok,11,
+BEN,ok,11,
+BF.B,ok,11,
+BG,ok,11,
+BIIB,ok,11,
+BKNG,ok,11,
+BKR,ok,11,
+BLK,ok,12,
+BMY,ok,11,
+BNY,ok,12,
+BR,ok,11,
+BRK.B,ok,11,
+BRO,ok,11,
+BSX,ok,11,
+BX,ok,12,
+BXP,ok,11,
+C,ok,12,
+CAH,ok,11,
+CARR,ok,11,
+CASY,ok,11,
+CAT,ok,11,
+CB,ok,12,
+CBOE,ok,11,
+CBRE,ok,12,
+CCI,ok,12,
+CCL,ok,11,
+CDNS,ok,11,
+CDW,ok,11,
+CEG,ok,11,
+CF,ok,11,
+CFG,ok,12,
+CHD,ok,11,
+CHRW,ok,11,
+CHTR,ok,11,
+CI,ok,11,
+CIEN,ok,11,
+CINF,ok,11,
+CL,ok,11,
+CLX,ok,11,
+CMCSA,ok,12,
+CME,ok,12,
+CMG,ok,11,
+CMI,ok,11,
+CMS,ok,11,
+CNC,ok,11,
+CNP,ok,11,
+COF,ok,12,
+COHR,ok,11,
+COIN,ok,11,
+COO,ok,11,
+COP,ok,11,
+COR,ok,11,
+COST,ok,11,
+CPAY,ok,11,
+CPRT,ok,11,
+CPT,ok,11,
+CRH,ok,10,
+CRL,ok,11,
+CRM,ok,11,
+CRWD,ok,11,
+CSCO,ok,11,
+CSGP,ok,11,
+CSX,ok,12,
+CTAS,ok,11,
+CTSH,ok,11,
+CTVA,ok,11,
+CVNA,ok,11,
+CVS,ok,11,
+CVX,ok,11,
+D,ok,11,
+DAL,ok,12,
+DASH,ok,11,
+DD,ok,11,
+DDOG,ok,11,
+DE,ok,11,
+DECK,ok,11,
+DELL,ok,11,
+DG,ok,11,
+DGX,ok,12,
+DHI,ok,11,
+DHR,ok,12,
+DIS,ok,11,
+DLR,ok,11,
+DLTR,ok,11,
+DOC,ok,11,
+DOV,ok,12,
+DOW,ok,12,
+DPZ,ok,12,
+DRI,ok,11,
+DTE,ok,11,
+DUK,ok,11,
+DVA,ok,11,
+DVN,ok,11,
+DXCM,ok,11,
+EBAY,ok,11,
+ECHO,ok,11,
+ECL,ok,11,
+ED,ok,11,
+EFX,ok,12,
+EG,ok,11,
+EIX,ok,11,
+EL,ok,11,
+ELV,ok,12,
+EME,ok,11,
+EMR,ok,11,
+EOG,ok,11,
+EQIX,ok,11,
+EQT,ok,11,
+ERIE,ok,11,
+ES,ok,11,
+ESS,ok,11,
+ETN,ok,11,
+ETR,ok,11,
+EVRG,ok,11,
+EW,ok,11,
+EXC,ok,11,
+EXE,ok,11,
+EXPD,ok,11,
+EXPE,ok,11,
+EXR,ok,11,
+F,ok,11,
+FANG,ok,11,
+FAST,ok,11,
+FCX,ok,11,
+FDS,ok,11,
+FDX,ok,10,
+FDXF,no_results,0,
+FE,ok,11,
+FERG,ok,9,
+FFIV,ok,11,
+FICO,ok,11,
+FIS,ok,11,
+FISV,ok,11,
+FITB,ok,12,
+FIX,ok,11,
+FLEX,ok,11,
+FOX,ok,11,
+FOXA,ok,11,
+FRT,ok,11,
+FSLR,ok,11,
+FTNT,ok,11,
+FTV,ok,11,
+GD,ok,11,
+GDDY,ok,11,
+GE,ok,12,
+GEHC,ok,11,
+GEN,ok,11,
+GEV,ok,10,
+GILD,ok,11,
+GIS,ok,11,
+GL,ok,12,
+GLW,ok,11,
+GM,ok,12,
+GNRC,ok,11,
+GOOG,ok,11,
+GOOGL,ok,11,
+GPC,ok,12,
+GPN,ok,11,
+GRMN,ok,11,
+GS,ok,12,
+GWW,ok,11,
+HAL,ok,12,
+HAS,ok,12,
+HBAN,ok,12,
+HCA,ok,11,
+HD,ok,11,
+HIG,ok,11,
+HII,ok,11,
+HLT,ok,11,
+HON,ok,12,
+HONA,ok,1,
+HOOD,ok,11,
+HPE,ok,10,
+HPQ,ok,11,
+HRL,ok,11,
+HSIC,ok,11,
+HST,ok,11,
+HSY,ok,11,
+HUBB,ok,11,
+HUM,ok,11,
+HWM,ok,11,
+IBKR,ok,12,
+IBM,ok,12,
+ICE,ok,11,
+IDXX,ok,11,
+IEX,ok,11,
+IFF,ok,11,
+ILMN,ok,11,
+INCY,ok,11,
+INTC,ok,11,
+INTU,ok,11,
+INVH,ok,11,
+IP,ok,11,
+IQV,ok,11,
+IR,ok,11,
+IRM,ok,11,
+ISRG,ok,12,
+IT,ok,11,
+ITW,ok,11,
+IVZ,ok,11,
+J,ok,11,
+JBHT,ok,12,
+JBL,ok,11,
+JCI,ok,11,
+JKHY,ok,11,
+JNJ,ok,12,
+JPM,ok,12,
+KDP,ok,11,
+KEY,ok,12,
+KEYS,ok,11,
+KHC,ok,11,
+KIM,ok,11,
+KKR,ok,11,
+KLAC,ok,11,
+KMB,ok,11,
+KMI,ok,12,
+KO,ok,11,
+KR,ok,11,
+KVUE,ok,11,
+L,no_results,0,
+LDOS,ok,11,
+LEN,ok,11,
+LH,ok,11,
+LHX,ok,11,
+LII,ok,11,
+LIN,ok,11,
+LITE,ok,11,
+LLY,ok,11,
+LMT,ok,12,
+LNT,ok,11,
+LOW,ok,11,
+LRCX,ok,12,
+LULU,ok,11,
+LUV,ok,12,
+LVS,ok,12,
+LYB,ok,11,
+LYV,ok,11,
+MA,ok,11,
+MAA,ok,11,
+MAR,ok,11,
+MAS,ok,11,
+MCD,ok,11,
+MCHP,ok,11,
+MCK,ok,11,
+MCO,ok,12,
+MDLZ,ok,11,
+MDT,ok,11,
+MET,ok,11,
+META,ok,12,
+MGM,ok,11,
+MKC,ok,12,
+MLM,ok,11,
+MMM,ok,12,
+MNST,ok,11,
+MO,ok,11,
+MOS,ok,11,
+MPC,ok,11,
+MPWR,ok,11,
+MRK,ok,11,
+MRNA,ok,11,
+MRSH,ok,12,
+MRVL,ok,11,
+MS,ok,12,
+MSCI,ok,12,
+MSFT,ok,11,
+MSI,ok,11,
+MTB,ok,12,
+MTD,ok,11,
+MU,ok,11,
+NCLH,ok,11,
+NDAQ,ok,12,
+NDSN,ok,11,
+NEE,ok,12,
+NEM,ok,11,
+NFLX,ok,12,
+NI,ok,11,
+NKE,ok,11,
+NOC,ok,12,
+NOW,ok,11,
+NRG,ok,11,
+NSC,ok,12,
+NTAP,ok,10,
+NTRS,ok,12,
+NUE,ok,11,
+NVDA,ok,11,
+NVR,ok,12,
+NWS,ok,11,
+NWSA,ok,11,
+NXPI,ok,11,
+O,ok,11,
+ODFL,ok,11,
+OKE,ok,11,
+OMC,ok,11,
+ON,ok,11,
+ORCL,ok,11,
+ORLY,ok,11,
+OTIS,ok,11,
+OXY,ok,11,
+P,ok,11,
+PANW,ok,11,
+PAYX,ok,11,
+PCAR,ok,11,
+PCG,ok,12,
+PEG,ok,11,
+PEP,ok,12,
+PFE,ok,11,
+PFG,ok,11,
+PG,ok,12,
+PGR,ok,12,
+PH,ok,11,
+PHM,ok,12,
+PKG,ok,12,
+PLD,ok,12,
+PLTR,ok,11,
+PM,ok,12,
+PNC,ok,12,
+PNR,ok,11,
+PNW,ok,11,
+PODD,ok,11,
+PPG,ok,11,
+PPL,ok,11,
+PRU,ok,11,
+PSA,ok,11,
+PSKY,ok,11,
+PSX,ok,11,
+PTC,ok,11,
+PWR,ok,11,
+PYPL,ok,11,
+Q,ok,4,
+QCOM,ok,11,
+RCL,ok,11,
+RDDT,ok,10,
+REG,ok,11,
+REGN,ok,11,
+RF,ok,12,
+RJF,ok,11,
+RL,ok,11,
+RMD,ok,11,
+ROK,ok,11,
+ROL,ok,12,
+ROP,ok,12,
+ROST,ok,11,
+RSG,ok,11,
+RTX,ok,12,
+RVTY,ok,11,
+SBAC,ok,11,
+SBUX,ok,11,
+SCHW,ok,12,
+SHW,ok,11,
+SJM,ok,11,
+SLB,ok,11,
+SMCI,ok,11,
+SNA,ok,12,
+SNDK,ok,6,
+SNPS,ok,11,
+SO,ok,11,
+SOLV,ok,10,
+SPG,ok,11,
+SPGI,ok,11,
+SRE,ok,11,
+STE,ok,11,
+STLD,ok,12,
+STT,ok,12,
+STX,ok,11,
+STZ,ok,12,
+SW,ok,9,
+SWK,ok,11,
+SWKS,ok,11,
+SYF,ok,12,
+SYK,ok,11,
+SYY,ok,11,
+T,ok,12,
+TDG,ok,11,
+TDY,ok,12,
+TECH,ok,11,
+TEL,ok,11,
+TER,ok,11,
+TFC,ok,12,
+TGT,ok,11,
+TJX,ok,11,
+TKO,ok,11,
+TMO,ok,12,
+TMUS,ok,11,
+TPL,ok,8,
+TPR,ok,10,
+TRGP,ok,11,
+TRMB,ok,11,
+TROW,ok,11,
+TRV,ok,12,
+TSCO,ok,12,
+TSLA,ok,12,
+TSN,ok,11,
+TT,ok,11,
+TTWO,ok,11,
+TXN,ok,12,
+TXT,ok,11,
+TYL,ok,11,
+UAL,ok,12,
+UBER,ok,11,
+UDR,ok,11,
+UHS,ok,11,
+ULTA,ok,11,
+UNH,ok,12,
+UNP,ok,12,
+UPS,ok,11,
+URI,ok,12,
+USB,ok,12,
+V,ok,11,
+VEEV,ok,11,
+VICI,ok,11,
+VLO,ok,12,
+VLTO,ok,11,
+VMC,ok,11,
+VMRK,no_results,0,
+VRSK,ok,11,
+VRSN,ok,11,
+VRT,ok,11,
+VRTX,ok,11,
+VST,ok,11,
+VTR,ok,11,
+VTRS,ok,11,
+VZ,ok,11,
+WAB,ok,12,
+WAT,ok,11,
+WBD,no_results,0,
+WDAY,ok,11,
+WDC,ok,11,
+WEC,ok,11,
+WELL,ok,11,
+WFC,ok,12,
+WM,ok,11,
+WMB,ok,11,
+WMT,ok,11,
+WRB,ok,12,
+WSM,ok,11,
+WST,ok,11,
+WTW,ok,11,
+WY,ok,11,
+WYNN,ok,11,
+XEL,ok,11,
+XOM,ok,11,
+XYL,ok,11,
+XYZ,ok,11,
+YUM,ok,11,
+ZBH,ok,11,
+ZBRA,ok,11,
+ZTS,ok,11,
+BBUS,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+DIVB,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+ESGU,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+ESGV,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+ESML,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+FLQL,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+FNDA,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+FNDB,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+FNDX,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+GARP,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+GSUS,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+HDV,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IBB,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IEO,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IEZ,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IGE,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IGM,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IHE,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IHF,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IJK,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IJR,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IJS,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IJT,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IMCG,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+ITOT,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IUSG,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IVOG,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IVV,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IVW,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IWB,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IWC,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IWD,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IWM,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IWN,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IWR,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IWS,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IWV,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IWX,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IYE,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IYM,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IYW,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IYZ,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+JMOM,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+JQUA,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+LRGF,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+MDYG,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+MTUM,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+OEF,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+OMFL,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+PBUS,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+PEY,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+PSI,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+PWB,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+PWV,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+PXE,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+QQQ,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+QQQJ,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+QQQM,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+QTOP,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+QUAL,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+RPG,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+RPV,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+RSPH,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+RSPT,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+RWJ,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+RWL,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SCHA,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SCHB,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SCHD,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SCHK,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SCHM,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SCHV,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SCHX,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SLYG,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SLYV,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SMLF,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SMMD,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SOXQ,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SPHB,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SPHQ,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SPMO,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SPSM,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SPTM,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SPY,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SPYG,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SPYM,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SPYX,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+TOPT,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+USPX,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+USXF,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+VDE,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+VGT,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+VIOO,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+VIOV,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+VLUE,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+VONE,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+VONV,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+VOO,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+VOOG,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+VTWO,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+VXF,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+XBI,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+XMHQ,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+XOP,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+XPH,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+XSD,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+XSMO,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+TQQQ,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+QLD,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SSO,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SPXL,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+UDOW,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+UPRO,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+USD,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+URTY,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+UWM,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+DDM,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SQQQ,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+SLV,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+IAU,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+FXAIX,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+FSKAX,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+FTIHX,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+MES=F,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+MNQ=F,error,0,Yahoo returned no earnings table. Check the ticker or retry later.
+MYM=F,error,0,Yahoo returned no earnings table. Check the ticker or retry later.

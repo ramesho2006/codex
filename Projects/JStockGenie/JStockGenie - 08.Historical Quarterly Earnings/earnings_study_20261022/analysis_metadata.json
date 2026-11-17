@@ -1,0 +1,41 @@
+{
+  "report_date": "2026-10-22",
+  "price_start": "2024-01-02",
+  "price_end": "2026-10-16",
+  "input_rows": 5547,
+  "input_symbols": 499,
+  "stocks": 499,
+  "excluded_symbols": 0,
+  "matched_events": 5433,
+  "positive_matched": 4423,
+  "usable_positive": 4409,
+  "quality_flag_events": 20,
+  "exact_duplicate_rows_removed": 0,
+  "exclusions": {
+    "missing_date_or_surprise": 5,
+    "outside_price_coverage_or_nontrading_date": 96,
+    "missing_adjacent_price_bar": 11,
+    "conflicting_duplicate_date": 2
+  },
+  "source_sha256": "6f24cefb4d2429af4f16048b662eb9d942437e03a174e292444ac181b9b794e4",
+  "profiles": {
+    "Mixed reaction / confirmation": 313,
+    "Bullish reaction watch": 87,
+    "Insufficient sample": 43,
+    "Bearish reaction watch": 37,
+    "Price-quality review": 19
+  },
+  "supplementary_equity_classifications": [
+    "ADP",
+    "APP",
+    "BNY",
+    "EQIX",
+    "FCX",
+    "MCK",
+    "PSX",
+    "PWR",
+    "SYK",
+    "TT",
+    "VRT"
+  ]
+}

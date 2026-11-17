@@ -1,0 +1,68 @@
+[
+  {
+    "symbol": "ADP",
+    "quoteType": "EQUITY",
+    "name": "Automatic Data Processing, Inc.",
+    "source": "Yahoo Finance search"
+  },
+  {
+    "symbol": "APP",
+    "quoteType": "EQUITY",
+    "name": "Applovin Corporation",
+    "source": "Yahoo Finance search"
+  },
+  {
+    "symbol": "BNY",
+    "quoteType": "EQUITY",
+    "name": "The Bank of New York Mellon Cor",
+    "source": "Yahoo Finance search"
+  },
+  {
+    "symbol": "EQIX",
+    "quoteType": "EQUITY",
+    "name": "Equinix, Inc.",
+    "source": "Yahoo Finance search"
+  },
+  {
+    "symbol": "FCX",
+    "quoteType": "EQUITY",
+    "name": "Freeport-McMoRan, Inc.",
+    "source": "Yahoo Finance search"
+  },
+  {
+    "symbol": "MCK",
+    "quoteType": "EQUITY",
+    "name": "McKesson Corporation",
+    "source": "Yahoo Finance search"
+  },
+  {
+    "symbol": "PSX",
+    "quoteType": "EQUITY",
+    "name": "Phillips 66",
+    "source": "Yahoo Finance search"
+  },
+  {
+    "symbol": "PWR",
+    "quoteType": "EQUITY",
+    "name": "Quanta Services, Inc.",
+    "source": "Yahoo Finance search"
+  },
+  {
+    "symbol": "SYK",
+    "quoteType": "EQUITY",
+    "name": "Stryker Corporation",
+    "source": "Yahoo Finance search"
+  },
+  {
+    "symbol": "TT",
+    "quoteType": "EQUITY",
+    "name": "Trane Technologies plc",
+    "source": "Yahoo Finance search"
+  },
+  {
+    "symbol": "VRT",
+    "quoteType": "EQUITY",
+    "name": "Vertiv Holdings, LLC",
+    "source": "Yahoo Finance search"
+  }
+]

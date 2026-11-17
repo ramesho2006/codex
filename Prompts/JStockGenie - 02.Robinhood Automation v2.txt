@@ -34,6 +34,28 @@ please try to place the orders now
 20260629 23:02
 ------------------------------------------------------------
 confirmed
+
+20261027 19:46
+----------------------------------------
+om
+
+if I provide a login for optionstrat.com, can you check if you can connect to give me screener list of option trades
+
+20261027 19:49
+----------------------------------------
+logged in using codex browser panel. please check
+
+20261027 19:50
+----------------------------------------
+can you generate for scrip "SPY" first
+
+20261027 19:53
+----------------------------------------
+great. can you include expiry dates, days to expire in this table please
+
+20261027 19:55
+----------------------------------------
+please add if the premium is credit or debit
 20260629 23:10
 ------------------------------------------------------------
 great. thanks.
@@ -1056,6 +1078,130 @@ Scheduled Golden Trade Alert run for `My Agentic` including leveraged dip monito
 om
 did you run the Leveraged Dip Monitor today?
 
+20261022 12:31
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor reports USD `BLOCKED_SIGNAL` at -4.0151% from prior EOD, level 2. No orders placed.
+
+20261022 12:31
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor reports USD `BLOCKED_SIGNAL` at -4.0151% from prior EOD, level 2. No orders placed.
+
+20261022 12:31
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor reports USD `BLOCKED_SIGNAL` at -4.0151% from prior EOD, level 2. No orders placed.
+
+20261017 09:18
+----------------------------------------
+om
+
+is it possible to convert this pine script so that the scrips / tickers in the table or clickable to show the specific chart of that ticker in Traingview
+
+20261023 12:49
+----------------------------------------
+can you create a pine script in version 6 for Tradingview that draws a horizontal line at pre-market highs and lows eveyday extend till the day in lower minute-based timeframes
+
+20261023 12:53
+----------------------------------------
+can you change the default line width to 1
+
+20261023 12:59
+----------------------------------------
+can you create a new copy version of this code and implement
+(a) BUY when price crosses above pre-market high in regular session
+(b) SELL when price crosses below pre-market low in regular session
+(c) BUY STOP LOSS = pre-market high
+(d) SELL STOP LOSS = pre-market low
+(e) Take Profit = 1% (configurable)
+(d) Quantity = 1 (configurable)
+
+I want to implement this using TradingView.
+design this strategy script for backtesting and trading
+
+20261023 13:07
+----------------------------------------
+make sure the candle is closed above (for BUY) or below (for SELL) and enter in the next candle it is in the same direction
+
+20261028 23:00
+----------------------------------------
+take a look at this sql query
+
+select scrip, GapCnt, TrndCnt,
+      round((GapCnt/TrndCnt) * 100,2) GapRank
+from
+(
+   with trend_count as
+    (
+     select scrip, count(d.scrip) TrndCnt
+     from jstockdata_hatrend d
+     where d.frequency like 'daily%'
+     group by scrip
+     )
+       select g.scrip, count(g.scrip) GapCnt, t.TrndCnt
+       from jstockdata_gap_trades g
+       join trend_count t on t.scrip = g.scrip
+       group by g.scrip
+) as abc
+where abc.TrndCnt > 700
+and abc.GapRank < 1;
+
+I want to get the NextEarnings date from jstockdata_scrips_earnings table.
+can you inspect the relevant tables and give me a sql query with above columns plus NextEarnings
+
+20261028 23:02
+----------------------------------------
+I am getting this error.
+Illegal mix of collations (utf8mb4_unicode_ci,IMPLICIT) and (utf8mb4_0900_ai_ci,IMPLICIT) for operation '='
+
+20261028 23:03
+----------------------------------------
+another error.
+COLLATION 'utf8mb4_unicode_ci' is not valid for CHARACTER SET 'utf8mb3'
+
+20261113 19:03
+----------------------------------------
+om
+
+can you include a new column in jstockdata_hatrend_extend table, name it as "SMADeltaTrend" with these conditions
+(a) if SMADeltaCum value is >=10, then "BUY"
+(b) if SMADeltaCum value is <=10, then "SELL"
+(c) if SMADeltaCum value is between +9.99 and -9.99, then "EXIT"
+
+20261113 19:20
+----------------------------------------
+the SMADeltaTrend is still showing UP/DOWN, can in the csv as well as in the database.
+example scrip NVDA. can you please check
+
+20261114 13:37
+----------------------------------------
+can you create a view jstockview_smadelta_screener with essentials columns from jstockdata_harecent and jstockdata_harecent_extend
+(a) scrip, frequency, date, close, smadeltatrend,
+(b) include new column "days_since_recent_smatrend".
+
+20261114 13:39
+----------------------------------------
+include session days rather than calendar days for "days_since_recent_smatrend" column
+
+20261114 13:51
+----------------------------------------
+I think, for calculating "days_since_recent_smatrend", you need to check jstockdata_hatrend_extend" table to get accurate computations.
+for example, for scrip "ORCL" the date when smadeltatrend changed from "EXIT" to "BUY" was 20261112" and hence the "days_since_recent_smatrend" should be 2 sessions where as the view says 1.
+please check and make appropriate changes to the view accordingly
+
+20261114 13:56
+----------------------------------------
+rename the column "DAYS_SINCE_RECENT_SMATREND" to "SMADeltaTrend_Days"
+
+20261114 14:06
+----------------------------------------
+perfect.
+
+now, look at the jstockdata_hatrend_extend, use the right combination of available signals, apply appropriate frequency for BUY/SELL trades for
+(a) swing trade
+(b) weekly options
+(c) investments (long term)
+
+conduct a backtest and provide the right combination recommendations for the above list trade type (swing, options, invesments)
+
 20261016 20:10
 ----------------------------------------
 can you please include a numeric star rating to the table and screener
@@ -1209,6 +1355,46 @@ Scheduled Golden Trade Alert run for `My Agentic`; Robinhood account tools unava
 ----------------------------------------
 Scheduled Golden Trade Alert run for `My Agentic`; Robinhood account tools unavailable. Leveraged monitor completed successfully and logged; QLD/TQQQ/URTY/USD/UWM were blocked by signals, SPXL/SSO by OptiTrend, and UPRO reached `MONTHLY_CAP`.
 
+20261019 14:28
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood account tool call unavailable. Leveraged dip monitor completed successfully with no dip triggers or quote errors.
+
+20261019 12:27
+----------------------------------------
+Scheduled Golden Trade Alert for `My Agentic`; Robinhood account lookup unavailable. Leveraged monitor completed successfully with no dip triggers or quote errors.
+
+20261020 10:31
+----------------------------------------
+Scheduled Golden Trade Alert for `My Agentic`; Robinhood account lookup unavailable. Leveraged monitor completed successfully and logged to MySQL 8 with no dip triggers or quote errors.
+
+20261022 10:29
+----------------------------------------
+Scheduled Golden Trade Alert for `My Agentic`; Robinhood account lookup unavailable. Leveraged monitor completed and logged; USD at dip level 1 returned `BLOCKED_SIGNAL` due to misaligned EOD Java Trend.
+
+20261021 14:30
+----------------------------------------
+Scheduled Golden Trade Alert for `My Agentic`; Robinhood account lookup unavailable. Leveraged monitor completed successfully and logged to MySQL 8 with no dip triggers or quote errors.
+
+20261021 12:27
+----------------------------------------
+Scheduled Golden Trade Alert for `My Agentic`; Robinhood account lookup unavailable. Leveraged monitor completed successfully and logged to MySQL 8 with no dip triggers or quote errors.
+
+20261021 10:31
+----------------------------------------
+Scheduled Golden Trade Alert for `My Agentic`; Robinhood account lookup unavailable. Leveraged monitor completed successfully and logged to MySQL 8 with no dip triggers or quote errors.
+
+20261020 12:31
+----------------------------------------
+Scheduled Golden Trade Alert for `My Agentic`; Robinhood account lookup unavailable. Leveraged monitor completed successfully and logged to MySQL 8 with no dip triggers or quote errors.
+
+20261020 14:26
+----------------------------------------
+Scheduled Golden Trade Alert for `My Agentic`; Robinhood account lookup unavailable. Leveraged monitor completed successfully and logged to MySQL 8 with no dip triggers or quote errors.
+
+20261019 14:27
+----------------------------------------
+Scheduled Golden Trade Alert for `My Agentic`; Robinhood account lookup unavailable. Leveraged monitor completed successfully with no dip triggers or quote errors.
+
 20261015 14:31
 ----------------------------------------
 Scheduled Golden Trade Alert run for `My Agentic`; Robinhood tools unavailable. Leveraged monitor `SNP-ETF-LEVG` completed successfully; QLD/TQQQ/URTY/USD were blocked by signal gates, SPXL by OptiTrend, and UPRO reached `MONTHLY_CAP`.
@@ -1347,3 +1533,195 @@ Scheduled Golden Trade Alert run for `My Agentic` including leveraged dip monito
 om
 did you run the Leveraged Dip Monitor today?
 
+20261022 14:35
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor reports QLD (-2.0634%, level 1), TQQQ (-3.2473%, level 1), and USD (-5.6003%, level 2) as `BLOCKED_SIGNAL`. No orders placed.
+
+20261023 10:29
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports USD `BLOCKED_SIGNAL` at -3.7227% from prior EOD, level 1. No orders placed.
+
+20261023 12:32
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports TQQQ (-2.4366%, level 1) and USD (-4.3581%, level 2) as `BLOCKED_SIGNAL`. No orders placed.
+
+20261023 14:26
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports TQQQ (-2.6169%, level 1) and USD (-4.4569%, level 2) as `BLOCKED_SIGNAL`. No orders placed.
+
+20261026 10:28
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor completed with no dip triggers. No orders placed.
+
+20261111 10:28
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable, so no live basket calculation or MySQL snapshot; leveraged monitor reported USD DIP_LEVEL_3 BLOCKED_SIGNAL and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261027 12:31
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor completed with no dip triggers. No orders placed.
+
+20261027 10:32
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor completed with no dip triggers. No orders placed.
+
+20261111 10:28
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable, so no live basket calculation or MySQL snapshot; leveraged monitor reported USD DIP_LEVEL_3 BLOCKED_SIGNAL and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261110 14:27
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports QLD, SPXL, SSO, TQQQ, UPRO, and USD `BLOCKED_SIGNAL`; URTY and UWM lack current EOD trend data. No orders placed.
+
+20261110 12:25
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports QLD, SPXL, SSO, TQQQ, UPRO, and USD `BLOCKED_SIGNAL`; URTY and UWM lack current EOD trend data. No orders placed.
+
+20261110 10:27
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports QLD, SPXL, SSO, TQQQ, UPRO, and USD `BLOCKED_SIGNAL`; URTY and UWM lack current EOD trend data. No orders placed.
+
+20261109 17:14
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor ran after market close, so add reviews were deferred; URTY and UWM lack current EOD trend data. No orders placed.
+
+20261104 14:29
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports USD (-6.6982%) as `BLOCKED_SIGNAL`; URTY and UWM lack current EOD trend data. No orders placed.
+
+20261104 12:32
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports USD (-5.1238%) as `BLOCKED_SIGNAL`; URTY and UWM lack current EOD trend data. No orders placed.
+
+20261104 14:30
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports USD (-5.3528%) as `BLOCKED_SIGNAL`; URTY and UWM lack EOD trend data. No orders placed.
+
+20261103 14:30
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports TQQQ (-2.4190%) as `BLOCKED_SIGNAL`; URTY and UWM lack EOD trend data. No orders placed.
+
+20261103 12:25
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor had no dip triggers but URTY and UWM lack current EOD trend data. No orders placed.
+
+20261103 10:33
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports TQQQ (-2.4351%) as `BLOCKED_SIGNAL`; URTY and UWM lack EOD trend data. No orders placed.
+
+20261102 14:34
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports QLD (-2.4519%), TQQQ (-3.6817%), and USD (-5.4458%) as `BLOCKED_SIGNAL`; URTY and UWM missing EOD data. No orders placed.
+
+20261102 12:33
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor had no dip triggers but URTY and UWM lacked current EOD trend data. No orders placed.
+
+20261102 11:28
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor had no dip triggers but URTY and UWM lacked current EOD trend data. No orders placed.
+
+20261030 14:27
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports UDOW `ADD_REVIEW` capped at 3.00% with 10% cash preserved; DDM on `COOLDOWN`; QLD, SPXL, SSO, TQQQ, UPRO, and USD `BLOCKED_SIGNAL`; URTY and UWM missing EOD data. No orders placed.
+
+20261030 12:33
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports DDM `ADD_REVIEW` capped at 2.50% with 10% cash preserved; QLD, SPXL, SSO, TQQQ, UPRO, and USD `BLOCKED_SIGNAL`; URTY and UWM missing EOD data. No orders placed.
+
+20261030 10:28
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports UDOW `ADD_REVIEW` capped at 2.50% with at least 10% cash preserved; QLD, SPXL, SSO, TQQQ, UPRO, and USD `BLOCKED_SIGNAL`; URTY and UWM lack EOD data. No orders placed.
+
+20261029 14:34
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports QLD (-3.1404%), TQQQ (-4.7043%), and USD (-3.4387%) as `BLOCKED_SIGNAL`; URTY and UWM lack EOD data. No orders placed.
+
+20261029 12:28
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports QLD (-2.6316%), TQQQ (-4.5799%), and USD (-2.9786%) as `BLOCKED_SIGNAL`; URTY and UWM lack EOD data. No orders placed.
+
+20261029 10:25
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor reports QLD (-2.6316%), TQQQ (-3.9110%), and USD (-2.4180%) as `BLOCKED_SIGNAL`; URTY and UWM are missing EOD data. No orders placed.
+
+20261028 14:34
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged monitor returned DDM `QUOTE_STALE` (quote 21 minutes old). No dip-trigger adds; no orders placed.
+
+20261028 12:29
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor completed with no dip triggers. No orders placed.
+
+20261028 10:25
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor completed with no dip triggers. No orders placed.
+
+20261027 14:27
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor completed with no dip triggers. No orders placed.
+
+20261027 12:31
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor completed with no dip triggers. No orders placed.
+
+20261026 14:34
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor completed with no dip triggers. No orders placed.
+
+20261026 12:28
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor completed with no dip triggers. No orders placed.
+
+20261027 10:32
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable; leveraged dip monitor completed with no dip triggers. No orders placed.
+
+
+20261111 10:28
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable, so no live basket calculation or MySQL snapshot; leveraged monitor reported USD DIP_LEVEL_3 BLOCKED_SIGNAL and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261111 12:34
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable, so weekly basket check and MySQL snapshot could not be completed; leveraged monitor reported USD DIP_LEVEL_3 BLOCKED_SIGNAL (-11.0920% from EOD) and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261111 14:25
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable, so weekly basket check and MySQL snapshot could not be completed; leveraged monitor reported TQQQ DIP_LEVEL_1 BLOCKED_SIGNAL (-2.1448%), USD DIP_LEVEL_3 BLOCKED_SIGNAL (-13.3820%), and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261112 10:28
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable, so weekly basket check and MySQL snapshot could not be completed; leveraged monitor reported USD DIP_LEVEL_3 BLOCKED_SIGNAL (-14.9134%) and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261112 12:34
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable, so weekly basket check and MySQL snapshot could not be completed; leveraged monitor reported TQQQ DIP_LEVEL_1 BLOCKED_SIGNAL (-2.0642%), USD DIP_LEVEL_3 BLOCKED_SIGNAL (-15.3786%), and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261112 14:31
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable, so weekly basket check and MySQL snapshot could not be completed; leveraged monitor reported QLD DIP_LEVEL_1 BLOCKED_SIGNAL (-2.0644%), TQQQ DIP_LEVEL_2 BLOCKED_SIGNAL (-4.2235%), USD DIP_LEVEL_3 BLOCKED_SIGNAL (-17.2177%), and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261113 10:25
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable, so weekly basket check and MySQL snapshot could not be completed; leveraged monitor reported QLD DIP_LEVEL_2, SPXL DIP_LEVEL_1, TQQQ DIP_LEVEL_3, UPRO DIP_LEVEL_1, USD DIP_LEVEL_3 (all BLOCKED_SIGNAL) and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261113 12:30
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable, so weekly basket check and MySQL snapshot could not be completed; leveraged monitor reported QLD DIP_LEVEL_1, SPXL DIP_LEVEL_1, TQQQ DIP_LEVEL_2, UPRO DIP_LEVEL_1, USD DIP_LEVEL_3 (all BLOCKED_SIGNAL) and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261113 14:28
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood connector unavailable, so weekly basket check and MySQL snapshot could not be completed; leveraged monitor reported QLD DIP_LEVEL_1, TQQQ DIP_LEVEL_2, USD DIP_LEVEL_3 (all BLOCKED_SIGNAL) and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261116 10:32
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood MCP startup/discovery failed, so weekly basket check and MySQL snapshot could not be completed; leveraged monitor reported QLD, SPXL, SSO, TQQQ, UPRO, USD dip levels (all BLOCKED_SIGNAL) and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261116 12:35
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood MCP startup/discovery failed, so weekly basket check and MySQL snapshot could not be completed; leveraged monitor reported DDM, QLD, SPXL, SSO, TQQQ, UDOW, UPRO, USD dip levels (all BLOCKED_SIGNAL) and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.
+
+20261116 14:35
+----------------------------------------
+Scheduled Golden Trade Alert run for `My Agentic`; Robinhood MCP startup/discovery failed, so weekly basket check and MySQL snapshot could not be completed; leveraged monitor reported DDM, QLD, SPXL, SSO, TQQQ, UDOW, UPRO, USD dip levels (all BLOCKED_SIGNAL) and URTY/UWM MISSING_EOD. Results logged to the Golden Trade Alert CSV. No orders placed.

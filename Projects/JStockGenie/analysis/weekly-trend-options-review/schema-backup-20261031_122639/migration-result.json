@@ -1,0 +1,31 @@
+{
+  "backup_table": "jstockdata_option_recommendations_backup_20261031_122639",
+  "rows": 6,
+  "columns": [
+    "reco_id",
+    "review_date",
+    "scrip",
+    "strategy",
+    "expiry_date",
+    "dte",
+    "option_type",
+    "short_strike",
+    "long_strike",
+    "delta_short_leg",
+    "delta_long_leg",
+    "contract_quantity",
+    "daily_trend",
+    "weekly_trend",
+    "underlying_close",
+    "ha_rsi",
+    "remark",
+    "roi_pct",
+    "pop_pct",
+    "collateral",
+    "roi_basis",
+    "earnings_date",
+    "earnings_in_holding_period",
+    "legs_json",
+    "qualifications"
+  ]
+}
